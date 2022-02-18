@@ -45,10 +45,10 @@
 
 
 /* Array to store callback objects of each configured interrupt */
-GPIO_PIN_CALLBACK_OBJ portPinCbObj[1];
+GPIO_PIN_CALLBACK_OBJ portPinCbObj[2];
 
 /* Array to store number of interrupts in each PORT Channel + previous interrupt count */
-uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, };
+uint8_t portNumCb[10 + 1] = { 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, };
 
 /******************************************************************************
   Function:
@@ -80,7 +80,7 @@ void GPIO_Initialize ( void )
     /* PORTH Initialization */
     LATH = 0x0; /* Initial Latch Value */
     TRISHCLR = 0x8000; /* Direction Control */
-    CNPDHSET = 0x8; /* Pull-Down Enable */
+    CNPDHSET = 0x108; /* Pull-Down Enable */
 
     /* Change Notice Enable */
     CNCONHSET = _CNCONH_ON_MASK;
@@ -88,7 +88,8 @@ void GPIO_Initialize ( void )
     IEC3SET = _IEC3_CNHIE_MASK;
     /* PORTJ Initialization */
     LATJ = 0x0; /* Initial Latch Value */
-    TRISJCLR = 0x1400; /* Direction Control */
+    TRISJCLR = 0x1600; /* Direction Control */
+    ANSELJCLR = 0x200; /* Digital Mode Enable */
     /* PORTK Initialization */
 
     /* Unlock system for PPS configuration */
@@ -123,7 +124,9 @@ void GPIO_Initialize ( void )
     /* Initialize Interrupt Pin data structures */
     portPinCbObj[0 + 0].pin = GPIO_PIN_RH3;
     
-    for(i=0; i<1; i++)
+    portPinCbObj[0 + 1].pin = GPIO_PIN_RH8;
+    
+    for(i=0; i<2; i++)
     {
         portPinCbObj[i].callback = NULL;
     }
@@ -430,7 +433,7 @@ void CHANGE_NOTICE_H_InterruptHandler(void)
     IFS3CLR = _IFS3_CNHIF_MASK;
 
     /* Check pending events and call callback if registered */
-    for(i = 0; i < 1; i++)
+    for(i = 0; i < 2; i++)
     {
         if((status & (1 << (portPinCbObj[i].pin & 0xF))) && (portPinCbObj[i].callback != NULL))
         {

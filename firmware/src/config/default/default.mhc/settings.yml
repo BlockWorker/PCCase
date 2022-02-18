@@ -5,7 +5,7 @@ frameworkPath: F:\Programme\Microchip\Harmony3
 processor: PIC32MZ1024EFH144
 projectName: Controller
 settings:
-  PackageFilter: audio;bsp;core;csp;dev_packs;gfx;quick_docs;usb;usb_apps_device
+  PackageFilter: audio;bsp;bt;core;csp;dev_packs;gfx;quick_docs;usb;usb_apps_device
   FORCE_OPTIMIZATION: 'false'
   GENERATE_BACKUP: 'true'
   TRUSTZONE: 'false'

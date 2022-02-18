@@ -10,7 +10,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usb_device_vendor, value: '78'}
+        attributes: {id: usb_device_vendor, value: '154'}
 - type: Instances
   children:
   - type: InstanceComponent

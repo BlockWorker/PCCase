@@ -62,6 +62,15 @@
 // *****************************************************************************
 
 
+/*** Macros for PUMP_WD_RUN pin ***/
+#define PUMP_WD_RUN_Set()               (LATJSET = (1<<9))
+#define PUMP_WD_RUN_Clear()             (LATJCLR = (1<<9))
+#define PUMP_WD_RUN_Toggle()            (LATJINV= (1<<9))
+#define PUMP_WD_RUN_OutputEnable()      (TRISJCLR = (1<<9))
+#define PUMP_WD_RUN_InputEnable()       (TRISJSET = (1<<9))
+#define PUMP_WD_RUN_Get()               ((PORTJ >> 9) & 0x1)
+#define PUMP_WD_RUN_PIN                  GPIO_PIN_RJ9
+
 /*** Macros for BUZZER pin ***/
 #define BUZZER_Set()               (LATJSET = (1<<12))
 #define BUZZER_Clear()             (LATJCLR = (1<<12))
@@ -118,6 +127,17 @@
 #define PWR_DETECT_PIN                  GPIO_PIN_RH3
 #define PWR_DETECT_InterruptEnable()   (CNENHSET = (1<<3))
 #define PWR_DETECT_InterruptDisable()  (CNENHCLR = (1<<3))
+
+/*** Macros for WD_DETECT pin ***/
+#define WD_DETECT_Set()               (LATHSET = (1<<8))
+#define WD_DETECT_Clear()             (LATHCLR = (1<<8))
+#define WD_DETECT_Toggle()            (LATHINV= (1<<8))
+#define WD_DETECT_OutputEnable()      (TRISHCLR = (1<<8))
+#define WD_DETECT_InputEnable()       (TRISHSET = (1<<8))
+#define WD_DETECT_Get()               ((PORTH >> 8) & 0x1)
+#define WD_DETECT_PIN                  GPIO_PIN_RH8
+#define WD_DETECT_InterruptEnable()   (CNENHSET = (1<<8))
+#define WD_DETECT_InterruptDisable()  (CNENHCLR = (1<<8))
 
 /*** Macros for FPLED_R_INV pin ***/
 #define FPLED_R_INV_Get()               ((PORTA >> 15) & 0x1)

@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 1842F757B6C9027FE9971030B80E0FBE
-- generatedChecksum: 29E5489BA41F4B8E5DD1016E04617521
+- generatedChecksum: 3141FFDE12D11BF8A78FF16E4E11D60C
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.c
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 29E5489BA41F4B8E5DD1016E04617521
+  userChecksum: 3141FFDE12D11BF8A78FF16E4E11D60C
 - generatedChecksum: 92BC11D164D59D1974BBAB8156C3D939
   logicalPath: config/default/peripheral/icap
   name: plib_icap1.c
@@ -335,13 +335,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E81965F9AF1D7FBAC5D322A8A15C0E85
-- generatedChecksum: BCD2BCBE024FC0A1DC30C0B53871F395
+- generatedChecksum: AC91789AD8D4836B53904ADAD55A8EDA
   logicalPath: config/default
   name: usb_device_init_data.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: BCD2BCBE024FC0A1DC30C0B53871F395
+  userChecksum: AC91789AD8D4836B53904ADAD55A8EDA
 - generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
   logicalPath: config/default/stdio
   name: xc32_monitor.c
@@ -496,13 +496,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 3C465EE2268CD765C11300F75C6560CC
-- generatedChecksum: 8C5413EAA270B56128876A662629EA66
+- generatedChecksum: 80F057D0149190E6E309417A09BF1194
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.h
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: HEADER
-  userChecksum: 8C5413EAA270B56128876A662629EA66
+  userChecksum: 80F057D0149190E6E309417A09BF1194
 - generatedChecksum: A2930C35476550FC4FE79B9F7B6009B5
   logicalPath: config/default/peripheral/icap
   name: plib_icap1.h

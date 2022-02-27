@@ -490,7 +490,7 @@ reflow soldering</description>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
-<package name="CPC1006N" urn="urn:adsk.eagle:footprint:33936581/1" library_version="12">
+<package name="CPC10*N" urn="urn:adsk.eagle:footprint:33936581/2" library_version="19">
 <wire x1="-1.905" y1="2.0445" x2="1.905" y2="2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="2.0445" x2="1.905" y2="-2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="-2.0445" x2="-1.905" y2="-2.0445" width="0.127" layer="21"/>
@@ -575,11 +575,9 @@ reflow soldering</description>
 <packageinstance name="SOT23"/>
 </packageinstances>
 </package3d>
-<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/2" type="model" library_version="12">
-<description>4-SOP, 2.54 mm pitch, 6.10 mm span, 4.09 X 3.81 X 2.18 mm body
-&lt;p&gt;4-pin SOP package with 2.54 mm pitch, 6.10 mm span with body size 4.09 X 3.81 X 2.18 mm&lt;/p&gt;</description>
+<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/3" type="model" library_version="19">
 <packageinstances>
-<packageinstance name="CPC1006N"/>
+<packageinstance name="CPC10*N"/>
 </packageinstances>
 </package3d>
 <package3d name="DO-214AC" urn="urn:adsk.eagle:package:43416/2" type="model" library_version="16">
@@ -1189,7 +1187,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TXU0104" urn="urn:adsk.eagle:component:34025952/1" prefix="U" library_version="12">
+<deviceset name="TXU0*04" urn="urn:adsk.eagle:component:34025952/2" prefix="U" library_version="18">
 <description>4-pin unidirectional level shifter</description>
 <gates>
 <gate name="P" symbol="TXU0*04-COMMON" x="0" y="22.86"/>
@@ -1199,7 +1197,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <gate name="D" symbol="BUFFER" x="22.86" y="-22.86"/>
 </gates>
 <devices>
-<device name="" package="TSSOP14">
+<device name="-1" package="TSSOP14">
 <connects>
 <connect gate="A" pin="I" pad="2"/>
 <connect gate="A" pin="O" pad="13"/>
@@ -1218,7 +1216,29 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:33783235/2"/>
 </package3dinstances>
 <technologies>
-<technology name=""/>
+<technology name="1"/>
+</technologies>
+</device>
+<device name="-3" package="TSSOP14">
+<connects>
+<connect gate="A" pin="I" pad="2"/>
+<connect gate="A" pin="O" pad="13"/>
+<connect gate="B" pin="I" pad="3"/>
+<connect gate="B" pin="O" pad="12"/>
+<connect gate="C" pin="I" pad="4"/>
+<connect gate="C" pin="O" pad="11"/>
+<connect gate="D" pin="I" pad="10"/>
+<connect gate="D" pin="O" pad="5"/>
+<connect gate="P" pin="GND" pad="7"/>
+<connect gate="P" pin="OE" pad="8"/>
+<connect gate="P" pin="VCCA" pad="1"/>
+<connect gate="P" pin="VCCB" pad="14"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33783235/2"/>
+</package3dinstances>
+<technologies>
+<technology name="3"/>
 </technologies>
 </device>
 </devices>
@@ -1243,13 +1263,13 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="CPC1006N" urn="urn:adsk.eagle:component:33936583/2" prefix="U" library_version="12">
-<description>75mA solid state relay</description>
+<deviceset name="CPC1017N" urn="urn:adsk.eagle:component:34319522/1" prefix="U" library_version="19">
+<description>100mA solid state relay</description>
 <gates>
 <gate name="G$1" symbol="SOLID-STATE-RELAY" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="CPC1006N">
+<device name="" package="CPC10*N">
 <connects>
 <connect gate="G$1" pin="1" pad="3"/>
 <connect gate="G$1" pin="2" pad="4"/>
@@ -1257,7 +1277,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <connect gate="G$1" pin="K" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33936582/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33936582/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -20662,7 +20682,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1µF"/>
 <part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1µF"/>
 <part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1µF"/>
-<part name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="TXU0104" device="" package3d_urn="urn:adsk.eagle:package:33783235/2"/>
+<part name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="TXU0*04" device="-3" package3d_urn="urn:adsk.eagle:package:33783235/2" technology="3"/>
 <part name="R9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="100kΩ"/>
 <part name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="100kΩ"/>
 <part name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="100kΩ"/>
@@ -20671,8 +20691,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="Q1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
 <part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="10kΩ"/>
 <part name="Q2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
-<part name="U5" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1006N" device="" package3d_urn="urn:adsk.eagle:package:33936582/2"/>
-<part name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
+<part name="U5" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1017N" device="" package3d_urn="urn:adsk.eagle:package:33936582/3"/>
+<part name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2kΩ"/>
 <part name="Q3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
 <part name="SJ1" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="GNDLINK"/>
 <part name="Q4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
@@ -22308,6 +22328,8 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <wire x1="127" y1="124.46" x2="127" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="124.46" y1="124.46" x2="127" y2="124.46" width="0.1524" layer="91"/>
 <junction x="127" y="124.46"/>
+<wire x1="127" y1="124.46" x2="129.54" y2="124.46" width="0.1524" layer="91"/>
+<label x="129.54" y="124.46" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="R18" gate="G$1" pin="2"/>

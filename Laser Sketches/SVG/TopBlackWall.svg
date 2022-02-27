@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49.01mm" height="488.01mm" viewBox="0 0 138.926 1383.335">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 0.028px;
+      }
+    </style>
+  </defs>
+  <title>TopBlackWall</title>
+  <rect class="a" x="0.014" y="0.014" width="138.898" height="1383.307"/>
+  <rect class="a" x="27.184" y="56.948" width="84.557" height="433.219" rx="8.263" ry="8.263"/>
+</svg>

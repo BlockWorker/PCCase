@@ -166,7 +166,7 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="config" projectFiles="true">
         <logicalFolder name="f1" displayName="default" projectFiles="true">
-          <itemPath>../src/config/default/p32MZ1024EFH144.ld</itemPath>
+          <itemPath>../src/config/default/p32MZ1024EFE144.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -333,7 +333,7 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC32MZ1024EFH144</targetDevice>
+        <targetDevice>PIC32MZ1024EFE144</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
@@ -445,7 +445,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="1024"/>
+        <property key="heap-size" value="4096"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>

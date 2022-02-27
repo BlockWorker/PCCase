@@ -57,6 +57,7 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
@@ -71,6 +72,8 @@
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -816,7 +819,7 @@
 <packageinstance name="ACJS-NV35-5"/>
 </packageinstances>
 </package3d>
-<package3d name="ACJS-MV35-5" urn="urn:adsk.eagle:package:33935524/2" type="model" library_version="6">
+<package3d name="ACJS-MV35-5" urn="urn:adsk.eagle:package:33935524/3" type="model" library_version="15">
 <packageinstances>
 <packageinstance name="ACJS-MV35-5"/>
 </packageinstances>
@@ -865,7 +868,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="ACJS-*V35-5" urn="urn:adsk.eagle:component:33935526/4" prefix="J" library_version="8">
+<deviceset name="ACJS-*V35-5" urn="urn:adsk.eagle:component:33935526/5" prefix="J" library_version="15">
 <description>Vertical 3.5mm audio jack</description>
 <gates>
 <gate name="G$1" symbol="PHONE-5PIN" x="0" y="0"/>
@@ -895,7 +898,7 @@
 <connect gate="G$1" pin="T-RETURN" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33935524/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33935524/3"/>
 </package3dinstances>
 <technologies>
 <technology name="M"/>
@@ -5183,7 +5186,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </library>
 <library name="BW-Active" urn="urn:adsk.eagle:library:33783073">
 <packages>
-<package name="CPC1006N" urn="urn:adsk.eagle:footprint:33936581/1" library_version="7">
+<package name="CPC10*N" urn="urn:adsk.eagle:footprint:33936581/2" library_version="19">
 <wire x1="-1.905" y1="2.0445" x2="1.905" y2="2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="2.0445" x2="1.905" y2="-2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="-2.0445" x2="-1.905" y2="-2.0445" width="0.127" layer="21"/>
@@ -5233,11 +5236,9 @@ reflow soldering</description>
 </package>
 </packages>
 <packages3d>
-<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/2" type="model" library_version="7">
-<description>4-SOP, 2.54 mm pitch, 6.10 mm span, 4.09 X 3.81 X 2.18 mm body
-&lt;p&gt;4-pin SOP package with 2.54 mm pitch, 6.10 mm span with body size 4.09 X 3.81 X 2.18 mm&lt;/p&gt;</description>
+<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/3" type="model" library_version="19">
 <packageinstances>
-<packageinstance name="CPC1006N"/>
+<packageinstance name="CPC10*N"/>
 </packageinstances>
 </package3d>
 <package3d name="SOT23" urn="urn:adsk.eagle:package:33783194/2" type="model" library_version="7">
@@ -5449,13 +5450,13 @@ reflow soldering</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="CPC1006N" urn="urn:adsk.eagle:component:33936583/2" prefix="U" library_version="7">
-<description>75mA solid state relay</description>
+<deviceset name="CPC1017N" urn="urn:adsk.eagle:component:34319522/1" prefix="U" library_version="19">
+<description>100mA solid state relay</description>
 <gates>
 <gate name="G$1" symbol="SOLID-STATE-RELAY" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="CPC1006N">
+<device name="" package="CPC10*N">
 <connects>
 <connect gate="G$1" pin="1" pad="3"/>
 <connect gate="G$1" pin="2" pad="4"/>
@@ -5463,7 +5464,7 @@ reflow soldering</description>
 <connect gate="G$1" pin="K" pad="2"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33936582/2"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33936582/3"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -9984,22 +9985,22 @@ Source: AVX .. aphvc.pdf</description>
 <part name="J4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="PWR_LED"/>
 <part name="J5" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="HDD_LED"/>
 <part name="J6" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="/90" package3d_urn="urn:adsk.eagle:package:22404/2" value="SW_LED"/>
-<part name="J7" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="ACJS-*V35-5" device="" package3d_urn="urn:adsk.eagle:package:33935525/5" technology="N" value="MIC"/>
-<part name="J8" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="ACJS-*V35-5" device="" package3d_urn="urn:adsk.eagle:package:33935525/5" technology="N" value="HP"/>
+<part name="J7" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="ACJS-*V35-5" device="-" package3d_urn="urn:adsk.eagle:package:33935524/3" technology="M" value="MIC"/>
+<part name="J8" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="ACJS-*V35-5" device="-" package3d_urn="urn:adsk.eagle:package:33935524/3" technology="M" value="HP"/>
 <part name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1kΩ?"/>
 <part name="R2" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
 <part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
 <part name="R4" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
 <part name="R5" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
-<part name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1006N" device="" package3d_urn="urn:adsk.eagle:package:33936582/2"/>
-<part name="U2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1006N" device="" package3d_urn="urn:adsk.eagle:package:33936582/2"/>
+<part name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1017N" device="" package3d_urn="urn:adsk.eagle:package:33936582/3"/>
+<part name="U2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1017N" device="" package3d_urn="urn:adsk.eagle:package:33936582/3"/>
 <part name="Q1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
 <part name="Q2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-N-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="NMOSL"/>
 <part name="R6" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1kΩ?"/>
-<part name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
+<part name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2kΩ"/>
 <part name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="470kΩ"/>
 <part name="R9" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1kΩ?"/>
-<part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ"/>
+<part name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2kΩ"/>
 <part name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="470kΩ"/>
 <part name="Q3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-P-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="PMOS"/>
 <part name="Q4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="SOT23-P-MOSFET" device="" package3d_urn="urn:adsk.eagle:package:33783194/2" value="PMOS"/>
@@ -10011,8 +10012,8 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R15" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="470Ω"/>
 <part name="R16" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="330Ω"/>
 <part name="R17" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="330Ω"/>
-<part name="U3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1006N" device="" package3d_urn="urn:adsk.eagle:package:33936582/2"/>
-<part name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1006N" device="" package3d_urn="urn:adsk.eagle:package:33936582/2"/>
+<part name="U3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1017N" device="" package3d_urn="urn:adsk.eagle:package:33936582/3"/>
+<part name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="CPC1017N" device="" package3d_urn="urn:adsk.eagle:package:33936582/3"/>
 <part name="R18" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1kΩ"/>
 <part name="R19" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="1kΩ"/>
 <part name="SW1" library="BW-PassiveMechanical" library_urn="urn:adsk.eagle:library:33858467" deviceset="TLS-*J-LFS" device="" package3d_urn="urn:adsk.eagle:package:33942065/4" technology="A-070" value="RST"/>

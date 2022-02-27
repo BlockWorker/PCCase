@@ -57,6 +57,7 @@
 <layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="no" active="no"/>
@@ -71,9 +72,11 @@
 <layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
+<layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
+<layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYmY1N2E4" projecturn="a.cGVyc29uYWw6dWUyYmY1N2E4IzIwMjIwMTIwNDg3Nzg3NTgx" f3durn="urn:adsk.wipprod:dm.lineage:TSz83DG2Q-msOJfVkx_v7g" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="0ba3b859-e271-4129-8f01-a1532b939d05" lastsyncedrevisionid="0ba3b859-e271-4129-8f01-a1532b939d05" lastboardhashguid="18cc49b1-a552-ead0-d879-1fbbab7b1ec7" lastpushedtime="2022-02-08T18:33:26Z" linktopcb3d="true"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYmY1N2E4" projecturn="a.cGVyc29uYWw6dWUyYmY1N2E4IzIwMjIwMTIwNDg3Nzg3NTgx" f3durn="urn:adsk.wipprod:dm.lineage:TSz83DG2Q-msOJfVkx_v7g" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="93165bb4-4907-44d5-bfa0-c8a3bc8672d5" lastsyncedrevisionid="93165bb4-4907-44d5-bfa0-c8a3bc8672d5" lastboardhashguid="c17c3de9-f9ca-41f0-d9cb-a886b428a5c7" lastpushedtime="2022-02-19T19:56:35Z" linktopcb3d="true"/>
 <plain>
 <wire x1="0" y1="0" x2="21" y2="0" width="0" layer="20"/>
 <wire x1="21" y1="0" x2="21" y2="87" width="0" layer="20"/>
@@ -1452,7 +1455,16 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </library>
 <library name="BW-Connectors" urn="urn:adsk.eagle:library:33858393">
 <packages>
-<package name="ACJS-NV35-5" urn="urn:adsk.eagle:footprint:33935522/1" library_version="6">
+<package name="7466313R" urn="urn:adsk.eagle:footprint:33858395/1" library_version="7">
+<wire x1="-2.75" y1="2.165" x2="2.75" y2="2.165" width="0.127" layer="51"/>
+<wire x1="-2.75" y1="-2.165" x2="2.75" y2="-2.165" width="0.127" layer="51"/>
+<wire x1="2.75" y1="2.165" x2="2.75" y2="-2.165" width="0.127" layer="51" curve="-76.4237"/>
+<wire x1="-2.75" y1="-2.165" x2="-2.75" y2="2.165" width="0.127" layer="51" curve="-76.4237"/>
+<smd name="P" x="0" y="0" dx="8" dy="6.33" layer="1"/>
+<pad name="H1" x="-2.77" y="0" drill="1"/>
+<pad name="H2" x="2.77" y="0" drill="1"/>
+</package>
+<package name="ACJS-MV35-5" urn="urn:adsk.eagle:footprint:33935523/1" library_version="6">
 <wire x1="7.9" y1="-4" x2="7.9" y2="6.9" width="0.127" layer="21"/>
 <wire x1="7.9" y1="6.9" x2="6.9" y2="7.9" width="0.127" layer="21" curve="90"/>
 <wire x1="6.9" y1="7.9" x2="1.5" y2="7.9" width="0.127" layer="21"/>
@@ -1471,25 +1483,16 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <text x="-2.54" y="1.27" size="1.016" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-1.27" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-<package name="7466313R" urn="urn:adsk.eagle:footprint:33858395/1" library_version="7">
-<wire x1="-2.75" y1="2.165" x2="2.75" y2="2.165" width="0.127" layer="51"/>
-<wire x1="-2.75" y1="-2.165" x2="2.75" y2="-2.165" width="0.127" layer="51"/>
-<wire x1="2.75" y1="2.165" x2="2.75" y2="-2.165" width="0.127" layer="51" curve="-76.4237"/>
-<wire x1="-2.75" y1="-2.165" x2="-2.75" y2="2.165" width="0.127" layer="51" curve="-76.4237"/>
-<smd name="P" x="0" y="0" dx="8" dy="6.33" layer="1"/>
-<pad name="H1" x="-2.77" y="0" drill="1"/>
-<pad name="H2" x="2.77" y="0" drill="1"/>
-</package>
 </packages>
 <packages3d>
-<package3d name="ACJS-NV35-5" urn="urn:adsk.eagle:package:33935525/5" type="model" library_version="8">
-<packageinstances>
-<packageinstance name="ACJS-NV35-5"/>
-</packageinstances>
-</package3d>
 <package3d name="7466313R" urn="urn:adsk.eagle:package:33858427/2" type="model" library_version="7">
 <packageinstances>
 <packageinstance name="7466313R"/>
+</packageinstances>
+</package3d>
+<package3d name="ACJS-MV35-5" urn="urn:adsk.eagle:package:33935524/3" type="model" library_version="15">
+<packageinstances>
+<packageinstance name="ACJS-MV35-5"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -1531,7 +1534,7 @@ reflow soldering</description>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
 </package>
-<package name="CPC1006N" urn="urn:adsk.eagle:footprint:33936581/1" library_version="7">
+<package name="CPC10*N" urn="urn:adsk.eagle:footprint:33936581/2" library_version="19">
 <wire x1="-1.905" y1="2.0445" x2="1.905" y2="2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="2.0445" x2="1.905" y2="-2.0445" width="0.127" layer="21"/>
 <wire x1="1.905" y1="-2.0445" x2="-1.905" y2="-2.0445" width="0.127" layer="21"/>
@@ -1558,11 +1561,9 @@ reflow soldering</description>
 <packageinstance name="SOT23"/>
 </packageinstances>
 </package3d>
-<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/2" type="model" library_version="7">
-<description>4-SOP, 2.54 mm pitch, 6.10 mm span, 4.09 X 3.81 X 2.18 mm body
-&lt;p&gt;4-pin SOP package with 2.54 mm pitch, 6.10 mm span with body size 4.09 X 3.81 X 2.18 mm&lt;/p&gt;</description>
+<package3d name="CPC1006N" urn="urn:adsk.eagle:package:33936582/3" type="model" library_version="19">
 <packageinstances>
-<packageinstance name="CPC1006N"/>
+<packageinstance name="CPC10*N"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -2911,11 +2912,11 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <attribute name="POPULARITY" value="9" x="-31" y="30" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="14.185" y="0.715" size="1.27" layer="27" font="vector" ratio="12" rot="R90"/>
 </element>
-<element name="J7" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" package="ACJS-NV35-5" package3d_urn="urn:adsk.eagle:package:33935525/5" value="MIC" x="10.5" y="56" smashed="yes">
+<element name="J7" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" package="ACJS-MV35-5" package3d_urn="urn:adsk.eagle:package:33935524/3" value="MIC" x="10.5" y="56" smashed="yes">
 <attribute name="NAME" x="17.96" y="49.97" size="1.016" layer="25" font="vector" ratio="15"/>
 <attribute name="VALUE" x="16.56" y="48.23" size="1.016" layer="27" font="vector" ratio="15"/>
 </element>
-<element name="J8" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" package="ACJS-NV35-5" package3d_urn="urn:adsk.eagle:package:33935525/5" value="HP" x="10.5" y="39.6" smashed="yes">
+<element name="J8" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" package="ACJS-MV35-5" package3d_urn="urn:adsk.eagle:package:33935524/3" value="HP" x="10.5" y="39.6" smashed="yes">
 <attribute name="NAME" x="18.06" y="33.47" size="1.016" layer="25" font="vector" ratio="15"/>
 <attribute name="VALUE" x="16.56" y="31.83" size="1.016" layer="27" font="vector" ratio="15"/>
 </element>
@@ -2945,9 +2946,9 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <attribute name="NAME" x="17.835" y="71.635" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
 <attribute name="VALUE" x="16.135" y="73.195" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ" x="4.1" y="34.7" smashed="yes" rot="MR270">
+<element name="R10" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2kΩ" x="4.1" y="34.7" smashed="yes" rot="MR270">
 <attribute name="NAME" x="2.235" y="33.465" size="1.016" layer="26" font="vector" ratio="15" rot="MR90"/>
-<attribute name="VALUE" x="0.995" y="32.865" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
+<attribute name="VALUE" x="0.895" y="33.465" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
 </element>
 <element name="R11" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="470kΩ" x="7.6" y="30.7" smashed="yes" rot="MR0">
 <attribute name="NAME" x="5.835" y="30.835" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
@@ -3013,9 +3014,9 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <attribute name="NAME" x="15.035" y="56.835" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
 <attribute name="VALUE" x="15.035" y="55.695" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="4.7kΩ" x="4.1" y="51.3" smashed="yes" rot="MR270">
+<element name="R7" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="2kΩ" x="4.1" y="51.3" smashed="yes" rot="MR270">
 <attribute name="NAME" x="2.235" y="50.565" size="1.016" layer="26" font="vector" ratio="15" rot="MR90"/>
-<attribute name="VALUE" x="0.995" y="49.465" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
+<attribute name="VALUE" x="0.995" y="49.965" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
 </element>
 <element name="R8" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0603" package3d_urn="urn:adsk.eagle:package:23555/3" value="470kΩ" x="7.4" y="47.2" smashed="yes" rot="MR0">
 <attribute name="NAME" x="5.635" y="46.435" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
@@ -3029,19 +3030,19 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <attribute name="NAME" x="2.9" y="72.6" size="1.016" layer="25" font="vector" ratio="15"/>
 <attribute name="VALUE" x="15.7" y="72.8" size="1.016" layer="27" font="vector" ratio="15"/>
 </element>
-<element name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC1006N" package3d_urn="urn:adsk.eagle:package:33936582/2" value="CPC1006N" x="8.9" y="55.9" smashed="yes" rot="MR90">
+<element name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC10*N" package3d_urn="urn:adsk.eagle:package:33936582/3" value="CPC1017N" x="8.9" y="55.9" smashed="yes" rot="MR90">
 <attribute name="NAME" x="12.84" y="52.64" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
 <attribute name="VALUE" x="18.167" y="53.944" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="U2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC1006N" package3d_urn="urn:adsk.eagle:package:33936582/2" value="CPC1006N" x="9" y="39" smashed="yes" rot="MR90">
+<element name="U2" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC10*N" package3d_urn="urn:adsk.eagle:package:33936582/3" value="CPC1017N" x="9" y="39" smashed="yes" rot="MR90">
 <attribute name="NAME" x="12.74" y="35.54" size="1.016" layer="26" font="vector" ratio="15" rot="MR0"/>
 <attribute name="VALUE" x="18.267" y="37.044" size="1.016" layer="28" font="vector" ratio="15" rot="MR0"/>
 </element>
-<element name="U3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC1006N" package3d_urn="urn:adsk.eagle:package:33936582/2" value="CPC1006N" x="16" y="19.1" smashed="yes" rot="MR90">
+<element name="U3" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC10*N" package3d_urn="urn:adsk.eagle:package:33936582/3" value="CPC1017N" x="16" y="19.1" smashed="yes" rot="MR90">
 <attribute name="NAME" x="15.44" y="15.16" size="1.016" layer="26" font="vector" ratio="15" rot="MR90"/>
 <attribute name="VALUE" x="18.444" y="15.833" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
 </element>
-<element name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC1006N" package3d_urn="urn:adsk.eagle:package:33936582/2" value="CPC1006N" x="4.6" y="16.9" smashed="yes" rot="MR270">
+<element name="U4" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" package="CPC10*N" package3d_urn="urn:adsk.eagle:package:33936582/3" value="CPC1017N" x="4.6" y="16.9" smashed="yes" rot="MR270">
 <attribute name="NAME" x="4.04" y="13.06" size="1.016" layer="26" font="vector" ratio="15" rot="MR90"/>
 <attribute name="VALUE" x="1.144" y="13.533" size="1.016" layer="28" font="vector" ratio="15" rot="MR90"/>
 </element>

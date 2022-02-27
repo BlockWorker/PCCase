@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484.01mm" height="102.01mm" viewBox="0 0 1371.997 289.162">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 0.028px;
+      }
+    </style>
+  </defs>
+  <title>BottomLeftInnerWall</title>
+  <polygon class="a" points="14.187 289.148 14.187 280.644 0.014 280.644 0.014 0.014 1371.983 0.014 1371.983 280.644 1357.809 280.644 1357.809 289.148 14.187 289.148"/>
+  <path class="a" d="M1509.909,724.961a4.961,4.961,0,1,1,9.921,0v5.669a4.961,4.961,0,1,1-9.921,0Z" transform="translate(-164.395 -705.813)"/>
+  <path class="a" d="M691.194,724.961a4.961,4.961,0,1,1,9.921,0v5.669a4.961,4.961,0,1,1-9.921,0Z" transform="translate(-164.395 -705.813)"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="159.51mm" height="180.01mm" viewBox="0 0 452.154 510.265">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 0.028px;
+      }
+    </style>
+  </defs>
+  <title>BottomUpperInnerWallFixed</title>
+  <polygon class="a" points="29.82 464.187 0.014 464.187 0.014 0.014 452.14 0.014 452.14 510.25 0.014 510.25 0.014 466.625 29.82 466.625 29.82 464.187"/>
+  <path class="a" d="M654.917,945.95v24.661a5.1,5.1,0,1,0,10.2,0V945.95a5.1,5.1,0,1,0-10.2,0Z" transform="translate(-624.317 -595.261)"/>
+  <path class="a" d="M654.917,628.469v20.41a5.1,5.1,0,1,0,10.2,0v-20.41a5.1,5.1,0,1,0-10.2,0Z" transform="translate(-624.317 -595.261)"/>
+</svg>

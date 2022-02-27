@@ -105,15 +105,24 @@ void GPIO_Initialize ( void )
     IC3R = 1;
 
     /* PPS Output Remapping */
+    RPA15R = 4;
+    RPD9R = 12;
+    RPD10R = 2;
+    RPD0R = 11;
+    RPD1R = 11;
+    RPD2R = 11;
+    RPC2R = 12;
+    RPC3R = 2;
+    RPG7R = 12;
+    RPC2R = 13;
+    RPC3R = 12;
+    RPG7R = 12;
     RPA15R = 11;
     RPD9R = 11;
     RPD10R = 12;
     RPD0R = 12;
     RPD1R = 11;
     RPD2R = 11;
-    RPC2R = 13;
-    RPC3R = 12;
-    RPG7R = 12;
 
         /* Lock back the system after PPS configuration */
     CFGCONbits.IOLOCK = 1;

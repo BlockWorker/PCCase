@@ -83,13 +83,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: 1842F757B6C9027FE9971030B80E0FBE
-- generatedChecksum: 3141FFDE12D11BF8A78FF16E4E11D60C
+- generatedChecksum: 183447A53FB4221A3C341FEE51C357AB
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.c
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3141FFDE12D11BF8A78FF16E4E11D60C
+  userChecksum: 183447A53FB4221A3C341FEE51C357AB
 - generatedChecksum: 92BC11D164D59D1974BBAB8156C3D939
   logicalPath: config/default/peripheral/icap
   name: plib_icap1.c
@@ -335,13 +335,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: E81965F9AF1D7FBAC5D322A8A15C0E85
-- generatedChecksum: AC91789AD8D4836B53904ADAD55A8EDA
+- generatedChecksum: 12CCE8E740CC30056364AE311B62D793
   logicalPath: config/default
   name: usb_device_init_data.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: AC91789AD8D4836B53904ADAD55A8EDA
+  userChecksum: 12CCE8E740CC30056364AE311B62D793
 - generatedChecksum: 7806B30ECAE0D18D08CD583D8775530D
   logicalPath: config/default/stdio
   name: xc32_monitor.c
@@ -489,13 +489,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: AC36F429D7162D7D1A68B9955ED194A3
-- generatedChecksum: 3C465EE2268CD765C11300F75C6560CC
+- generatedChecksum: 8B79859DBC780EA12969B9D3099178DE
   logicalPath: config/default/peripheral/evic
   name: plib_evic.h
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: HEADER
-  userChecksum: 3C465EE2268CD765C11300F75C6560CC
+  userChecksum: 8B79859DBC780EA12969B9D3099178DE
 - generatedChecksum: 80F057D0149190E6E309417A09BF1194
   logicalPath: config/default/peripheral/gpio
   name: plib_gpio.h
@@ -1035,13 +1035,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: null
-- generatedChecksum: 8E763A3ADC665D650E44D9A9B3EC3B4C
+- generatedChecksum: 3BA41F9CFFC7D4B7E28974CE3CDBC899
   logicalPath: config/default
-  name: p32MZ1024EFH144.ld
+  name: p32MZ1024EFE144.ld
   physicalPath: ''
   security: NON_SECURE
   type: LINKER
-  userChecksum: 8E763A3ADC665D650E44D9A9B3EC3B4C
+  userChecksum: 3BA41F9CFFC7D4B7E28974CE3CDBC899
 format_version: v1.0
 libraries: []
 settings:
@@ -1062,7 +1062,7 @@ settings:
   delimiter: ''
   key: heap-size
   security: NON_SECURE
-  value: '1024'
+  value: '4096'
 - append: false
   category: C32-LD
   delimiter: ''

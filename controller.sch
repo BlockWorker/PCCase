@@ -534,6 +534,161 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <text x="-3.81" y="1.238" size="1.27" layer="25">&gt;NAME</text>
 <text x="-3.81" y="-0.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
+<package name="TQFP144-16X16" urn="urn:adsk.eagle:footprint:34569131/1" library_version="21">
+<description>&lt;b&gt;TQFP144&lt;/b&gt;&lt;p&gt;
+thin profile quad flat pack, square</description>
+<wire x1="-8" y1="-8" x2="8" y2="-8" width="0.2032" layer="51"/>
+<wire x1="8" y1="-8" x2="8" y2="8" width="0.2032" layer="51"/>
+<wire x1="8" y1="8" x2="-8" y2="8" width="0.2032" layer="51"/>
+<wire x1="-8" y1="8" x2="-8" y2="-8" width="0.2032" layer="51"/>
+<circle x="-7.1031" y="-7.1031" radius="0.508" width="0.1524" layer="21"/>
+<smd name="18" x="-0.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="19" x="0.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="20" x="0.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="21" x="1" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="22" x="1.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="23" x="1.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="24" x="2.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="25" x="2.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="26" x="3" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="27" x="3.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="28" x="3.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="1" x="-7" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="2" x="-6.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="3" x="-6.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="4" x="-5.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="5" x="-5.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="6" x="-5" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="7" x="-4.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="8" x="-4.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="9" x="-3.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="10" x="-3.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="11" x="-3" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="12" x="-2.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="13" x="-2.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="14" x="-1.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="15" x="-1.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="16" x="-1" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="17" x="-0.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="29" x="4.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="30" x="4.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="31" x="5" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="32" x="5.4" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="33" x="5.8" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="34" x="6.2" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="35" x="6.6" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="36" x="7" y="-9.7" dx="0.2" dy="2.5" layer="1"/>
+<smd name="37" x="9.7" y="-7" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="38" x="9.7" y="-6.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="39" x="9.7" y="-6.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="40" x="9.7" y="-5.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="41" x="9.7" y="-5.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="42" x="9.7" y="-5" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="43" x="9.7" y="-4.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="44" x="9.7" y="-4.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="45" x="9.7" y="-3.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="46" x="9.7" y="-3.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="47" x="9.7" y="-3" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="48" x="9.7" y="-2.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="49" x="9.7" y="-2.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="50" x="9.7" y="-1.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="51" x="9.7" y="-1.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="52" x="9.7" y="-1" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="53" x="9.7" y="-0.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="54" x="9.7" y="-0.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="55" x="9.7" y="0.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="56" x="9.7" y="0.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="57" x="9.7" y="1" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="58" x="9.7" y="1.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="59" x="9.7" y="1.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="60" x="9.7" y="2.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="61" x="9.7" y="2.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="62" x="9.7" y="3" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="63" x="9.7" y="3.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="64" x="9.7" y="3.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="65" x="9.7" y="4.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="66" x="9.7" y="4.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="67" x="9.7" y="5" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="68" x="9.7" y="5.4" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="69" x="9.7" y="5.8" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="70" x="9.7" y="6.2" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="71" x="9.7" y="6.6" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="72" x="9.7" y="7" dx="0.2" dy="2.5" layer="1" rot="R90"/>
+<smd name="73" x="7" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="74" x="6.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="75" x="6.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="76" x="5.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="77" x="5.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="78" x="5" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="79" x="4.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="80" x="4.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="81" x="3.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="82" x="3.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="83" x="3" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="84" x="2.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="85" x="2.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="86" x="1.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="87" x="1.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="88" x="1" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="89" x="0.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="90" x="0.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="91" x="-0.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="92" x="-0.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="93" x="-1" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="94" x="-1.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="95" x="-1.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="96" x="-2.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="97" x="-2.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="98" x="-3" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="99" x="-3.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="100" x="-3.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="101" x="-4.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="102" x="-4.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="103" x="-5" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="104" x="-5.4" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="105" x="-5.8" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="106" x="-6.2" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="107" x="-6.6" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="108" x="-7" y="9.7" dx="0.2" dy="2.5" layer="1" rot="R180"/>
+<smd name="109" x="-9.7" y="7" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="110" x="-9.7" y="6.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="111" x="-9.7" y="6.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="112" x="-9.7" y="5.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="113" x="-9.7" y="5.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="114" x="-9.7" y="5" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="115" x="-9.7" y="4.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="116" x="-9.7" y="4.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="117" x="-9.7" y="3.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="118" x="-9.7" y="3.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="119" x="-9.7" y="3" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="120" x="-9.7" y="2.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="121" x="-9.7" y="2.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="122" x="-9.7" y="1.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="123" x="-9.7" y="1.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="124" x="-9.7" y="1" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="125" x="-9.7" y="0.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="126" x="-9.7" y="0.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="127" x="-9.7" y="-0.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="128" x="-9.7" y="-0.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="129" x="-9.7" y="-1" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="130" x="-9.7" y="-1.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="131" x="-9.7" y="-1.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="132" x="-9.7" y="-2.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="133" x="-9.7" y="-2.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="134" x="-9.7" y="-3" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="135" x="-9.7" y="-3.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="136" x="-9.7" y="-3.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="137" x="-9.7" y="-4.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="138" x="-9.7" y="-4.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="139" x="-9.7" y="-5" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="140" x="-9.7" y="-5.4" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="141" x="-9.7" y="-5.8" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="142" x="-9.7" y="-6.2" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="143" x="-9.7" y="-6.6" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<smd name="144" x="-9.7" y="-7" dx="0.2" dy="2.5" layer="1" rot="R270"/>
+<text x="-3.81" y="-3.175" size="1.524" layer="25">&gt;NAME</text>
+<text x="-3.81" y="1.905" size="1.524" layer="27">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="LQFP144-20X20" urn="urn:adsk.eagle:package:33783198/2" type="model" library_version="7">
@@ -591,6 +746,13 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <package3d name="VXO78" urn="urn:adsk.eagle:package:33783231/5" type="model" library_version="16">
 <packageinstances>
 <packageinstance name="VXO78-500"/>
+</packageinstances>
+</package3d>
+<package3d name="TQFP144-16X16" urn="urn:adsk.eagle:package:34569132/2" type="model" library_version="21">
+<description>&lt;b&gt;TQFP144&lt;/b&gt;&lt;p&gt;
+thin profile quad flat pack, square</description>
+<packageinstances>
+<packageinstance name="TQFP144-16X16"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -976,13 +1138,13 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PIC32MZ-EF-144" urn="urn:adsk.eagle:component:33783256/2" prefix="U" library_version="7">
+<deviceset name="PIC32MZ-EF-144" urn="urn:adsk.eagle:component:33783256/4" prefix="U" library_version="21">
 <description>32-bit 200MHz microcontroller, 144-pin</description>
 <gates>
 <gate name="G$1" symbol="PIC32MZ-EF-144" x="-22.86" y="25.4"/>
 </gates>
 <devices>
-<device name="" package="LQFP144-20X20">
+<device name="PL" package="LQFP144-20X20">
 <connects>
 <connect gate="G$1" pin="!EBIBS0!/RJ12" pad="9"/>
 <connect gate="G$1" pin="!EBIBS1!/RJ10" pad="10"/>
@@ -1116,6 +1278,145 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 </connects>
 <package3dinstances>
 <package3dinstance package3d_urn="urn:adsk.eagle:package:33783198/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PH" package="TQFP144-16X16">
+<connects>
+<connect gate="G$1" pin="!EBIBS0!/RJ12" pad="9"/>
+<connect gate="G$1" pin="!EBIBS1!/RJ10" pad="10"/>
+<connect gate="G$1" pin="!EBICS0!/RJ4" pad="131"/>
+<connect gate="G$1" pin="!EBICS1!/RJ5" pad="132"/>
+<connect gate="G$1" pin="!EBICS2!/RJ6" pad="133"/>
+<connect gate="G$1" pin="!EBICS3!/RJ7" pad="134"/>
+<connect gate="G$1" pin="!EBIOE!/AN19/RPC4/PMRD/RC4" pad="13"/>
+<connect gate="G$1" pin="!EBIRP!/RH2" pad="45"/>
+<connect gate="G$1" pin="!EBIWE!/AN20/RPC3/PMWR/RC3" pad="12"/>
+<connect gate="G$1" pin="!MCLR" pad="20"/>
+<connect gate="G$1" pin="!SQICS0!/RPD4/RD4" pad="118"/>
+<connect gate="G$1" pin="!SQICS1!/RPD5/RD5" pad="119"/>
+<connect gate="G$1" pin="AN10/RPB15/OCFB/RB15" pad="62"/>
+<connect gate="G$1" pin="AN12/C2IND/RPG8/SCL4/RG8" pad="16"/>
+<connect gate="G$1" pin="AN13/C1INC/RPG7/SDA4/RG7" pad="15"/>
+<connect gate="G$1" pin="AN14/C1IND/RPG6/SCK2/RG6" pad="14"/>
+<connect gate="G$1" pin="AN2/C2INB/RPB2/RB2" pad="34"/>
+<connect gate="G$1" pin="AN23/RG15" pad="1"/>
+<connect gate="G$1" pin="AN25/RPE8/RE8" pad="23"/>
+<connect gate="G$1" pin="AN26/RPE9/RE9" pad="24"/>
+<connect gate="G$1" pin="AN3/C2INA/RPB3/RB3" pad="31"/>
+<connect gate="G$1" pin="AN32/RPD14/RD14" pad="69"/>
+<connect gate="G$1" pin="AN33/RPD15/SCK6/RD15" pad="70"/>
+<connect gate="G$1" pin="AN35/ETXD0/RJ8" pad="7"/>
+<connect gate="G$1" pin="AN36/ETDX1/RJ9" pad="8"/>
+<connect gate="G$1" pin="AN37/ERXCLK/EREFCLK/RJ11" pad="27"/>
+<connect gate="G$1" pin="AN38/ETXD2/RH0" pad="43"/>
+<connect gate="G$1" pin="AN39/ETXD3/RH1" pad="44"/>
+<connect gate="G$1" pin="AN4/C1INB/RB4" pad="26"/>
+<connect gate="G$1" pin="AN40/ERXERR/RH4" pad="65"/>
+<connect gate="G$1" pin="AN41/ERXD1/RH5" pad="66"/>
+<connect gate="G$1" pin="AN42/ERXD2/RH6" pad="67"/>
+<connect gate="G$1" pin="AN45/C1INA/RPB5/RB5" pad="25"/>
+<connect gate="G$1" pin="AN6/RB11" pad="50"/>
+<connect gate="G$1" pin="AN7/RB12" pad="59"/>
+<connect gate="G$1" pin="AN8/RB13" pad="60"/>
+<connect gate="G$1" pin="AN9/RPB14/SCK3/RB14" pad="61"/>
+<connect gate="G$1" pin="AVDD" pad="41"/>
+<connect gate="G$1" pin="AVSS" pad="42"/>
+<connect gate="G$1" pin="CVREFOUT/AN5/RPB10/RB10" pad="49"/>
+<connect gate="G$1" pin="D+" pad="77"/>
+<connect gate="G$1" pin="D-" pad="76"/>
+<connect gate="G$1" pin="EBIA0/PMA0/RJ15" pad="30"/>
+<connect gate="G$1" pin="EBIA1/PMA1/RK1" pad="51"/>
+<connect gate="G$1" pin="EBIA10/AN48/RPB8/PMA10/RB8" pad="47"/>
+<connect gate="G$1" pin="EBIA11/PMA11/RJ14" pad="29"/>
+<connect gate="G$1" pin="EBIA12/AN21/RPC2/PMA12/RC2" pad="11"/>
+<connect gate="G$1" pin="EBIA13/PMA13/RJ13" pad="28"/>
+<connect gate="G$1" pin="EBIA14/PMCS1/PMA14/RA4" pad="87"/>
+<connect gate="G$1" pin="EBIA15/RPD9/PMCS2/PMA15/RD9" pad="97"/>
+<connect gate="G$1" pin="EBIA16/RK0" pad="19"/>
+<connect gate="G$1" pin="EBIA17/RK3" pad="53"/>
+<connect gate="G$1" pin="EBIA18/RK4" pad="92"/>
+<connect gate="G$1" pin="EBIA19/RK5" pad="93"/>
+<connect gate="G$1" pin="EBIA2/AN11/C2INC/RPG9/PMA2/RG9" pad="21"/>
+<connect gate="G$1" pin="EBIA20/RK6" pad="94"/>
+<connect gate="G$1" pin="EBIA21/RK7" pad="126"/>
+<connect gate="G$1" pin="EBIA22/RJ3" pad="117"/>
+<connect gate="G$1" pin="EBIA23/RH15" pad="103"/>
+<connect gate="G$1" pin="EBIA3/PMA3/RK2" pad="52"/>
+<connect gate="G$1" pin="EBIA4/PMA4/RH7" pad="68"/>
+<connect gate="G$1" pin="EBIA5/AN34/PMA5/RA5" pad="2"/>
+<connect gate="G$1" pin="EBIA6/AN22/RPC1/PMA6/RC1" pad="6"/>
+<connect gate="G$1" pin="EBIA7/AN49/RPB9/PMA7/RB9" pad="48"/>
+<connect gate="G$1" pin="EBIA8/RPF5/SCL5/PMA8/RF5" pad="91"/>
+<connect gate="G$1" pin="EBIA9/RPF4/SDA5/PMA9/RF4" pad="90"/>
+<connect gate="G$1" pin="EBID0/PMD0/RE0" pad="135"/>
+<connect gate="G$1" pin="EBID1/PMD1/RE1" pad="138"/>
+<connect gate="G$1" pin="EBID10/RPF1/PMD10/RF1" pad="125"/>
+<connect gate="G$1" pin="EBID11/RPF0/PMD11/RF0" pad="124"/>
+<connect gate="G$1" pin="EBID12/RPD12/PMD12/RD12" pad="112"/>
+<connect gate="G$1" pin="EBID13/PMD13/RD13" pad="113"/>
+<connect gate="G$1" pin="EBID14/RPD2/PMD14/RD2" pad="110"/>
+<connect gate="G$1" pin="EBID15/RPD3/PMD15/RD3" pad="111"/>
+<connect gate="G$1" pin="EBID2/PMD2/RE2" pad="142"/>
+<connect gate="G$1" pin="EBID3/RPE3/PMD3/RE3" pad="143"/>
+<connect gate="G$1" pin="EBID4/AN18/PMD4/RE4" pad="144"/>
+<connect gate="G$1" pin="EBID5/AN17/RPE5/PMD5/RE5" pad="3"/>
+<connect gate="G$1" pin="EBID6/AN16/PMD6/RE6" pad="4"/>
+<connect gate="G$1" pin="EBID7/AN15/PMD7/RE7" pad="5"/>
+<connect gate="G$1" pin="EBID8/RPG0/PMD8/RG0" pad="128"/>
+<connect gate="G$1" pin="EBID9/RPG1/PMD9/RG1" pad="127"/>
+<connect gate="G$1" pin="EBIRDY1/SDA2/RA3" pad="86"/>
+<connect gate="G$1" pin="EBIRDY2/RH11" pad="84"/>
+<connect gate="G$1" pin="EBIRDY3/RJ2" pad="116"/>
+<connect gate="G$1" pin="ECOL/RH10" pad="83"/>
+<connect gate="G$1" pin="ECRS/RH12" pad="100"/>
+<connect gate="G$1" pin="EMDC/RPD11/RD11" pad="99"/>
+<connect gate="G$1" pin="EMDIO/RJ1" pad="115"/>
+<connect gate="G$1" pin="ERXD0/RH8" pad="81"/>
+<connect gate="G$1" pin="ERXD3/RH9" pad="82"/>
+<connect gate="G$1" pin="ERXDV/ECRSDV/RH13" pad="101"/>
+<connect gate="G$1" pin="ETXCLK/RPD7/RD7" pad="121"/>
+<connect gate="G$1" pin="ETXEN/RPD6/RD6" pad="120"/>
+<connect gate="G$1" pin="ETXERR/RJ0" pad="114"/>
+<connect gate="G$1" pin="OSC1/CLKI/RC12" pad="71"/>
+<connect gate="G$1" pin="OSC2/CLKO/RC15" pad="72"/>
+<connect gate="G$1" pin="PGEC1/AN1/RPB1/RB1" pad="35"/>
+<connect gate="G$1" pin="PGEC2/AN46/RPB6/RB6" pad="37"/>
+<connect gate="G$1" pin="PGED1/AN0/RPB0/RB0" pad="36"/>
+<connect gate="G$1" pin="PGED2/AN47/RPB7/RB7" pad="38"/>
+<connect gate="G$1" pin="RH14" pad="102"/>
+<connect gate="G$1" pin="RH3" pad="46"/>
+<connect gate="G$1" pin="RPA14/SCL1/RA14" pad="95"/>
+<connect gate="G$1" pin="RPA15/SDA1/RA15" pad="96"/>
+<connect gate="G$1" pin="RPD0/RTCC/INT0/RD0" pad="104"/>
+<connect gate="G$1" pin="RPD1/SCK1/RD1" pad="109"/>
+<connect gate="G$1" pin="RPD10/SCK4/RD10" pad="98"/>
+<connect gate="G$1" pin="RPF3/USBID/RF3" pad="78"/>
+<connect gate="G$1" pin="SCL2/RA2" pad="85"/>
+<connect gate="G$1" pin="SCL3/RPF8/RF8" pad="80"/>
+<connect gate="G$1" pin="SDA3/RPF2/RF2" pad="79"/>
+<connect gate="G$1" pin="SOSCI/RPC13/RC13" pad="105"/>
+<connect gate="G$1" pin="SOSCO/RPC14/T1CK/RC14" pad="106"/>
+<connect gate="G$1" pin="TCK/AN29/RA1" pad="56"/>
+<connect gate="G$1" pin="TDI/AN30/RPF13/SCK5/RF13" pad="57"/>
+<connect gate="G$1" pin="TDO/AN31/RPF12/RF12" pad="58"/>
+<connect gate="G$1" pin="TMS/AN24/RA0" pad="22"/>
+<connect gate="G$1" pin="TRCLK/SQICLK/RA6" pad="129"/>
+<connect gate="G$1" pin="TRD0/SQID0/RG13" pad="141"/>
+<connect gate="G$1" pin="TRD1/SQID1/RG12" pad="140"/>
+<connect gate="G$1" pin="TRD2/SQID2/RG14" pad="139"/>
+<connect gate="G$1" pin="TRD3/SQID3/RA7" pad="130"/>
+<connect gate="G$1" pin="VBUS" pad="73"/>
+<connect gate="G$1" pin="VDD" pad="18 33 55 64 88 107 122 137"/>
+<connect gate="G$1" pin="VREF+/CVREF+/AN28/RA10" pad="40"/>
+<connect gate="G$1" pin="VREF-/CVREF-/AN27/RA9" pad="39"/>
+<connect gate="G$1" pin="VSS" pad="17 32 54 63 75 89 108 123 136"/>
+<connect gate="G$1" pin="VUSB3V3" pad="74"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:34569132/2"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -1416,7 +1717,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <vertex x="-3.429" y="0"/>
 </polygon>
 </package>
-<package name="SATA0010225X" urn="urn:adsk.eagle:footprint:33985670/2" library_version="14">
+<package name="SATA0010225X" urn="urn:adsk.eagle:footprint:33985670/3" library_version="16">
 <wire x1="-23.75" y1="7.25" x2="-23.75" y2="6.2" width="0.127" layer="21"/>
 <wire x1="-23.75" y1="2.6" x2="-23.75" y2="0" width="0.127" layer="21"/>
 <wire x1="-23.75" y1="0" x2="23.75" y2="0" width="0.127" layer="21"/>
@@ -1455,8 +1756,8 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <smd name="D1" x="15.875" y="9.6" dx="0.65" dy="2" layer="1"/>
 <hole x="-13.5" y="3.4" drill="2.2"/>
 <hole x="13.5" y="3.4" drill="2.2"/>
-<pad name="H1" x="-22.25" y="4.4" drill="3"/>
-<pad name="H2" x="22.25" y="4.4" drill="3"/>
+<pad name="H1" x="-22.25" y="4.4" drill="2.5"/>
+<pad name="H2" x="22.25" y="4.4" drill="2.5"/>
 <text x="-25.4" y="1.27" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="26.67" y="1.27" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
@@ -1487,7 +1788,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <packageinstance name="5PIN-1.27"/>
 </packageinstances>
 </package3d>
-<package3d name="SATA0010225X" urn="urn:adsk.eagle:package:33985671/4" type="model" library_version="14">
+<package3d name="SATA0010225X" urn="urn:adsk.eagle:package:33985671/5" type="model" library_version="16">
 <packageinstances>
 <packageinstance name="SATA0010225X"/>
 </packageinstances>
@@ -1670,7 +1971,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="SATA0010225X" urn="urn:adsk.eagle:component:33985672/4" prefix="J" library_version="14">
+<deviceset name="SATA0010225X" urn="urn:adsk.eagle:component:33985672/5" prefix="J" library_version="16">
 <description>SATA 15+7 pin male connector</description>
 <gates>
 <gate name="D" symbol="SATA-DATA" x="0" y="20.32"/>
@@ -1694,7 +1995,7 @@ Source: http://www.kingtronics.com/SMD_M7/M7_SMD_4007.pdf</description>
 <connect gate="P" pin="SPU" pad="P11"/>
 </connects>
 <package3dinstances>
-<package3dinstance package3d_urn="urn:adsk.eagle:package:33985671/4"/>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:33985671/5"/>
 </package3dinstances>
 <technologies>
 <technology name=""/>
@@ -20637,7 +20938,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </class>
 </classes>
 <parts>
-<part name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="PIC32MZ-EF-144" device="" package3d_urn="urn:adsk.eagle:package:33783198/2"/>
+<part name="U1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="PIC32MZ-EF-144" device="PH" package3d_urn="urn:adsk.eagle:package:34569132/2" value="PIC32MZ-EF-144PH"/>
 <part name="J4" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="47053-1000" device="" package3d_urn="urn:adsk.eagle:package:33998595/2" value="PUMP"/>
 <part name="J5" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="47053-1000" device="" package3d_urn="urn:adsk.eagle:package:33998595/2" value="FANS"/>
 <part name="J6" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="22-23-2032" device="" package3d_urn="urn:adsk.eagle:package:33998596/3" value="FLOW"/>
@@ -20650,7 +20951,7 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 <part name="J9" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="SHUTDOWN"/>
 <part name="J2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2" value="USB"/>
 <part name="J3" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="5PIN-1.27" device="" package3d_urn="urn:adsk.eagle:package:33858429/2" value="ICSP"/>
-<part name="J1" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="SATA0010225X" device="" package3d_urn="urn:adsk.eagle:package:33985671/4"/>
+<part name="J1" library="BW-Connectors" library_urn="urn:adsk.eagle:library:33858393" deviceset="SATA0010225X" device="" package3d_urn="urn:adsk.eagle:package:33985671/5"/>
 <part name="LS1" library="BW-Active" library_urn="urn:adsk.eagle:library:33783073" deviceset="AI-1224-TWT-5V-R" device="" package3d_urn="urn:adsk.eagle:package:33999453/3"/>
 <part name="Y1" library="BW-PassiveMechanical" library_urn="urn:adsk.eagle:library:33858467" deviceset="HC49/4HSMX-CRYSTAL" device="" package3d_urn="urn:adsk.eagle:package:34006902/2" value="24MHz"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="18pF"/>

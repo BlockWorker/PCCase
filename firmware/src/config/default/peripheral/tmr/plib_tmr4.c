@@ -63,20 +63,20 @@ void TMR4_Initialize(void)
 
     /*
     SIDL = 0
-    TCKPS =0
-    T32   = 1
+    TCKPS =7
+    T32   = 0
     TCS = 0
     */
-    T4CONSET = 0x8;
+    T4CONSET = 0x70;
 
     /* Clear counter */
     TMR4 = 0x0;
 
     /*Set period */
-    PR4 = 4294967186U;
+    PR4 = 65535U;
 
-    /* Enable TMR Interrupt of odd numbered timer in 32-bit mode */
-    IEC0SET = _IEC0_T5IE_MASK;
+    /* Enable TMR Interrupt */
+    IEC0SET = _IEC0_T4IE_MASK;
 
 }
 
@@ -92,33 +92,33 @@ void TMR4_Stop (void)
     T4CONCLR = _T4CON_ON_MASK;
 }
 
-void TMR4_PeriodSet(uint32_t period)
+void TMR4_PeriodSet(uint16_t period)
 {
     PR4  = period;
 }
 
-uint32_t TMR4_PeriodGet(void)
+uint16_t TMR4_PeriodGet(void)
 {
-    return PR4;
+    return (uint16_t)PR4;
 }
 
-uint32_t TMR4_CounterGet(void)
+uint16_t TMR4_CounterGet(void)
 {
-    return (TMR4);
+    return (uint16_t)(TMR4);
 }
 
 
 uint32_t TMR4_FrequencyGet(void)
 {
-    return (100000000);
+    return (390625);
 }
 
 
-void TIMER_5_InterruptHandler (void)
+void TIMER_4_InterruptHandler (void)
 {
     uint32_t status  = 0U;
-    status = IFS0bits.T5IF;
-    IFS0CLR = _IFS0_T5IF_MASK;
+    status = IFS0bits.T4IF;
+    IFS0CLR = _IFS0_T4IF_MASK;
 
     if((tmr4Obj.callback_fn != NULL))
     {
@@ -129,13 +129,13 @@ void TIMER_5_InterruptHandler (void)
 
 void TMR4_InterruptEnable(void)
 {
-    IEC0SET = _IEC0_T5IE_MASK;
+    IEC0SET = _IEC0_T4IE_MASK;
 }
 
 
 void TMR4_InterruptDisable(void)
 {
-    IEC0CLR = _IEC0_T5IE_MASK;
+    IEC0CLR = _IEC0_T4IE_MASK;
 }
 
 

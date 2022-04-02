@@ -731,7 +731,8 @@ uint64_t SYS_TIME_Counter64Get ( void )
 
     if (SYS_TIME_ResourceLock() == false)
     {
-        return counter64;
+        //return counter64;
+        return (((uint64_t)(counterObj->swCounter64High) << 32) + counterObj->swCounter64Low);
     }
 
     elapsedCount = SYS_TIME_GetElapsedCount(counterObj->timePlib->timerCounterGet());

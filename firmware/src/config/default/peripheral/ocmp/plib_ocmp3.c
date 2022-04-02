@@ -53,12 +53,19 @@ void OCMP3_Initialize (void)
 {
     /*Setup OC3CON        */
     /*OCM         = 6        */
-    /*OCTSEL       = 0        */
+    /*OCTSEL       = 1        */
     /*OC32         = 0        */
     /*SIDL         = false    */
 
-    OC3CON = 0x6;
+    OC3CON = 0xe;
 
+    /* unlock system for configuration */
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;  
+    CFGCON |= 0x00010000;
+    /* Lock system since done with configuration */
+    SYSKEY = 0x33333333;    
     OC3R = 0;
     OC3RS = 0;
 

@@ -38,14 +38,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usb_device, value: '96'}
+        attributes: {id: usb_device, value: '134'}
   - type: Integer
     attributes: {id: CONFIG_USB_DEVICE_ENDPOINT_WRITE_QUEUE_SIZE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: usb_device, value: '96'}
+        attributes: {id: usb_device, value: '134'}
   - type: Integer
     attributes: {id: CONFIG_USB_DEVICE_FUNCTIONS_NUMBER}
     children:

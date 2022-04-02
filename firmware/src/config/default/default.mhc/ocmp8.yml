@@ -60,4 +60,4 @@ children:
       - type: Dynamic
         attributes: {id: ocmp8, value: '6'}
 - type: ElementPosition
-  attributes: {x: '357', y: '770', id: ocmp8}
+  attributes: {x: '358', y: '770', id: ocmp8}

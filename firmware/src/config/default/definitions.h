@@ -71,7 +71,7 @@
 #include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/tmr/plib_tmr7.h"
 #include "peripheral/tmr/plib_tmr4.h"
-#include "peripheral/tmr/plib_tmr2.h"
+#include "peripheral/tmr/plib_tmr5.h"
 #include "peripheral/tmr/plib_tmr3.h"
 #include "system/int/sys_int.h"
 #include "system/reset/sys_reset.h"

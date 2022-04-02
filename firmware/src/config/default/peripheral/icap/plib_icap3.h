@@ -117,7 +117,7 @@ void ICAP3_Disable (void);
 
 // *****************************************************************************
 /* Function:
-   uint32_t ICAP3_CaptureBufferRead (void)
+   uint16_t ICAP3_CaptureBufferRead (void)
 
   Summary:
     Read buffer function ICAP3 peripheral
@@ -130,10 +130,9 @@ void ICAP3_Disable (void);
     none
 
   Returns:
-    uint32_t
+    uint16_t
 */
-uint32_t ICAP3_CaptureBufferRead (void);
-
+uint16_t ICAP3_CaptureBufferRead (void);
 
 // *****************************************************************************
 /* Function:

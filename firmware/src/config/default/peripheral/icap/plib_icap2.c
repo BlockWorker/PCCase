@@ -54,11 +54,11 @@ void ICAP2_Initialize (void)
     /*ICM     = 3        */
     /*ICI     = 0        */
     /*ICTMR = 1*/
-    /*C32     = 1        */
+    /*C32     = 0        */
     /*FEDGE = 0        */
     /*SIDL     = false    */
 
-    IC2CON = 0x183;
+    IC2CON = 0x83;
 
     /* unlock system for configuration */
     SYSKEY = 0x00000000;
@@ -83,9 +83,9 @@ void ICAP2_Disable (void)
     IC2CONCLR = _IC2CON_ON_MASK;
 }
 
-uint32_t ICAP2_CaptureBufferRead (void)
+uint16_t ICAP2_CaptureBufferRead (void)
 {
-    return IC2BUF;
+    return (uint16_t)IC2BUF;
 }
 
 

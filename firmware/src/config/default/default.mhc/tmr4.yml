@@ -10,7 +10,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: '8'}
+        attributes: {id: tmr4, value: '112'}
   - type: Comment
     attributes: {id: TIMER_32BIT_COMMENT}
     children:
@@ -19,21 +19,14 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'true'}
-  - type: KeyValueSet
-    attributes: {id: TIMER_32BIT_MODE_SEL}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: '0'}
+        - {type: Value, value: 'false'}
   - type: Integer
     attributes: {id: TIMER_CLOCK_FREQ}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: '100000000'}
+        attributes: {id: tmr4, value: '390625'}
   - type: Long
     attributes: {id: TIMER_PERIOD}
     children:
@@ -42,11 +35,18 @@ children:
       - type: Long
         attributes: {id: max}
         children:
-        - {type: Value, value: '4294967295'}
+        - {type: Value, value: '65535'}
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: '4294967186'}
+        attributes: {id: tmr4, value: '65535'}
+  - type: KeyValueSet
+    attributes: {id: TIMER_PRE_SCALER}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: '0'}
   - type: Float
     attributes: {id: TIMER_TIME_PERIOD_MS}
     children:
@@ -55,11 +55,11 @@ children:
       - type: Float
         attributes: {id: max}
         children:
-        - {type: Value, value: '42949.67'}
+        - {type: Value, value: '167.77472'}
     - type: Values
       children:
       - type: User
-        attributes: {value: '42949.67'}
+        attributes: {value: '168.77472'}
   - type: Combo
     attributes: {id: TIMER_UNIT}
     children:
@@ -89,11 +89,27 @@ children:
       - type: Boolean
         attributes: {id: visible}
         children:
-        - {type: Value, value: 'false'}
+        - {type: Value, value: 'true'}
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: 'false'}
+        attributes: {id: tmr4, value: 'true'}
+  - type: Comment
+    attributes: {id: TMR_INTRRUPT_ENABLE_COMMENT}
+    children:
+    - type: Attributes
+      children:
+      - type: Boolean
+        attributes: {id: visible}
+        children:
+        - {type: Value, value: 'false'}
+  - type: Integer
+    attributes: {id: TMR_PRESCALER_VALUE}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: tmr4, value: '256'}
   - type: Boolean
     attributes: {id: TMR_SLAVE_INTERRUPT_MODE}
     children:
@@ -102,4 +118,4 @@ children:
       - type: Dynamic
         attributes: {id: tmr4, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '39', y: '964', id: tmr4}
+  attributes: {x: '42', y: '1004', id: tmr4}

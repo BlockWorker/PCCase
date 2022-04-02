@@ -64,12 +64,10 @@ void GPIO_Initialize ( void )
 {
 
     /* PORTA Initialization */
-    ODCASET = 0x8000; /* Open Drain Enable */
     /* PORTB Initialization */
     /* PORTC Initialization */
     ANSELCCLR = 0xc; /* Digital Mode Enable */
     /* PORTD Initialization */
-    ODCDSET = 0x600; /* Open Drain Enable */
     /* PORTE Initialization */
     ANSELECLR = 0x100; /* Digital Mode Enable */
     CNPUESET = 0x100; /* Pull-Up Enable */

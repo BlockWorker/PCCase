@@ -139,17 +139,17 @@
 #define WD_DETECT_InterruptEnable()   (CNENHSET = (1<<8))
 #define WD_DETECT_InterruptDisable()  (CNENHCLR = (1<<8))
 
-/*** Macros for FPLED_R_INV pin ***/
-#define FPLED_R_INV_Get()               ((PORTA >> 15) & 0x1)
-#define FPLED_R_INV_PIN                  GPIO_PIN_RA15
+/*** Macros for FPLED_R pin ***/
+#define FPLED_R_Get()               ((PORTA >> 15) & 0x1)
+#define FPLED_R_PIN                  GPIO_PIN_RA15
 
-/*** Macros for FPLED_G_INV pin ***/
-#define FPLED_G_INV_Get()               ((PORTD >> 9) & 0x1)
-#define FPLED_G_INV_PIN                  GPIO_PIN_RD9
+/*** Macros for FPLED_G pin ***/
+#define FPLED_G_Get()               ((PORTD >> 9) & 0x1)
+#define FPLED_G_PIN                  GPIO_PIN_RD9
 
-/*** Macros for FPLED_B_INV pin ***/
-#define FPLED_B_INV_Get()               ((PORTD >> 10) & 0x1)
-#define FPLED_B_INV_PIN                  GPIO_PIN_RD10
+/*** Macros for FPLED_B pin ***/
+#define FPLED_B_Get()               ((PORTD >> 10) & 0x1)
+#define FPLED_B_PIN                  GPIO_PIN_RD10
 
 /*** Macros for ALED_OE pin ***/
 #define ALED_OE_Set()               (LATHSET = (1<<15))

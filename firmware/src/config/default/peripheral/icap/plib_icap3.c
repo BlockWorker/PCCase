@@ -54,11 +54,11 @@ void ICAP3_Initialize (void)
     /*ICM     = 3        */
     /*ICI     = 0        */
     /*ICTMR = 1*/
-    /*C32     = 1        */
+    /*C32     = 0        */
     /*FEDGE = 0        */
     /*SIDL     = false    */
 
-    IC3CON = 0x183;
+    IC3CON = 0x83;
 
     /* unlock system for configuration */
     SYSKEY = 0x00000000;
@@ -83,9 +83,9 @@ void ICAP3_Disable (void)
     IC3CONCLR = _IC3CON_ON_MASK;
 }
 
-uint32_t ICAP3_CaptureBufferRead (void)
+uint16_t ICAP3_CaptureBufferRead (void)
 {
-    return IC3BUF;
+    return (uint16_t)IC3BUF;
 }
 
 

@@ -59,8 +59,15 @@ void OCMP6_Initialize (void)
 
     OC6CON = 0xe;
 
-    OC6R = 255;
-    OC6RS = 255;
+    /* unlock system for configuration */
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;  
+    CFGCON |= 0x00010000;
+    /* Lock system since done with configuration */
+    SYSKEY = 0x33333333;    
+    OC6R = 0;
+    OC6RS = 0;
 
 }
 

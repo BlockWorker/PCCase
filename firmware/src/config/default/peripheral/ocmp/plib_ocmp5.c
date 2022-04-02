@@ -59,8 +59,15 @@ void OCMP5_Initialize (void)
 
     OC5CON = 0xe;
 
-    OC5R = 255;
-    OC5RS = 255;
+    /* unlock system for configuration */
+    SYSKEY = 0x00000000;
+    SYSKEY = 0xAA996655;
+    SYSKEY = 0x556699AA;  
+    CFGCON |= 0x00010000;
+    /* Lock system since done with configuration */
+    SYSKEY = 0x33333333;    
+    OC5R = 0;
+    OC5RS = 0;
 
 }
 

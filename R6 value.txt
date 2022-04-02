@@ -1,0 +1,2 @@
+Nominal: 4700 Ohm
+Measured: 4697 Ohm

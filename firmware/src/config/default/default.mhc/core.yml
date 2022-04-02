@@ -96,6 +96,13 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
+    attributes: {id: BSP_PIN_104_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
     attributes: {id: BSP_PIN_104_FUNCTION_NAME}
     children:
     - type: Values
@@ -116,6 +123,13 @@ children:
       children:
       - type: User
         attributes: {value: DIGITAL}
+  - type: String
+    attributes: {id: BSP_PIN_109_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
   - type: String
     attributes: {id: BSP_PIN_109_FUNCTION_NAME}
     children:
@@ -165,6 +179,13 @@ children:
       children:
       - type: User
         attributes: {value: DIGITAL}
+  - type: String
+    attributes: {id: BSP_PIN_110_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
   - type: String
     attributes: {id: BSP_PIN_110_FUNCTION_NAME}
     children:
@@ -880,12 +901,19 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
+    attributes: {id: BSP_PIN_96_DIR}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: ''}
+  - type: String
     attributes: {id: BSP_PIN_96_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: FPLED_R_INV}
+        attributes: {value: FPLED_R}
   - type: String
     attributes: {id: BSP_PIN_96_FUNCTION_TYPE}
     children:
@@ -906,14 +934,14 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: 'True'}
+        attributes: {value: ''}
   - type: String
     attributes: {id: BSP_PIN_97_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: FPLED_G_INV}
+        attributes: {value: FPLED_G}
   - type: String
     attributes: {id: BSP_PIN_97_FUNCTION_TYPE}
     children:
@@ -934,14 +962,14 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: 'True'}
+        attributes: {value: ''}
   - type: String
     attributes: {id: BSP_PIN_98_FUNCTION_NAME}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: FPLED_B_INV}
+        attributes: {value: FPLED_B}
   - type: String
     attributes: {id: BSP_PIN_98_FUNCTION_TYPE}
     children:
@@ -962,7 +990,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: 'True'}
+        attributes: {value: ''}
   - type: String
     attributes: {id: BSP_PIN_99_MODE}
     children:
@@ -1263,7 +1291,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '16'}
+        attributes: {id: core, value: '0'}
   - type: Integer
     attributes: {id: DCH0_ECON_SIRQEN_VALUE}
     children:
@@ -1277,14 +1305,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '1808'}
+        attributes: {id: core, value: '6160'}
   - type: Hex
     attributes: {id: DCH1_CON_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '16'}
+        attributes: {id: core, value: '0'}
   - type: Integer
     attributes: {id: DCH1_ECON_SIRQEN_VALUE}
     children:
@@ -1298,14 +1326,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '3088'}
+        attributes: {id: core, value: '6160'}
   - type: Hex
     attributes: {id: DCH2_CON_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '16'}
+        attributes: {id: core, value: '0'}
   - type: Integer
     attributes: {id: DCH2_ECON_SIRQEN_VALUE}
     children:
@@ -1319,7 +1347,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '4368'}
+        attributes: {id: core, value: '6160'}
   - type: Integer
     attributes: {id: DCH3_ECON_SIRQEN_VALUE}
     children:
@@ -1419,27 +1447,6 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
   - type: Boolean
-    attributes: {id: DMAC_0_ALWAYS_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'true'}
-  - type: Boolean
-    attributes: {id: DMAC_1_ALWAYS_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'true'}
-  - type: Boolean
-    attributes: {id: DMAC_2_ALWAYS_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: User
-        attributes: {value: 'true'}
-  - type: Boolean
     attributes: {id: DMAC_CHAN0_ENBL}
     children:
     - type: Values
@@ -1489,42 +1496,42 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: OUTPUT_COMPARE_1}
+        attributes: {value: TIMER_5}
   - type: Integer
     attributes: {id: DMAC_REQUEST_0_SOURCE_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '7'}
+        attributes: {id: core, value: '24'}
   - type: Combo
     attributes: {id: DMAC_REQUEST_1_SOURCE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: OUTPUT_COMPARE_2}
+        attributes: {value: TIMER_5}
   - type: Integer
     attributes: {id: DMAC_REQUEST_1_SOURCE_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '12'}
+        attributes: {id: core, value: '24'}
   - type: Combo
     attributes: {id: DMAC_REQUEST_2_SOURCE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: OUTPUT_COMPARE_3}
+        attributes: {value: TIMER_5}
   - type: Integer
     attributes: {id: DMAC_REQUEST_2_SOURCE_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '17'}
+        attributes: {id: core, value: '24'}
   - type: Combo
     attributes: {id: DMAC_REQUEST_3_SOURCE}
     children:
@@ -1866,21 +1873,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: EVIC_19_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
+        attributes: {id: core, value: 'true'}
   - type: String
     attributes: {id: EVIC_19_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: TIMER_4_Handler}
+        attributes: {id: core, value: TIMER_4_InterruptHandler}
   - type: Boolean
     attributes: {id: EVIC_1_ENABLE}
     children:
@@ -2146,21 +2153,21 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: Boolean
     attributes: {id: EVIC_9_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: EVIC_9_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: TIMER_2_InterruptHandler}
+        attributes: {id: core, value: TIMER_2_Handler}
   - type: Combo
     attributes: {id: EVIC_PRIORITY_1ATTRIBUTE}
     children:
@@ -2762,7 +2769,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '385'}
+        attributes: {id: core, value: '387'}
   - type: Hex
     attributes: {id: PMD5_REG_VALUE}
     children:
@@ -2895,7 +2902,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '32768'}
+        attributes: {id: core, value: '0'}
+  - type: Hex
+    attributes: {id: SYS_PORT_A_TRIS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: SYS_PORT_C_ANSEL}
     children:
@@ -2909,7 +2923,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '1536'}
+        attributes: {id: core, value: '0'}
+  - type: Hex
+    attributes: {id: SYS_PORT_D_TRIS}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: core, value: '0'}
   - type: Hex
     attributes: {id: SYS_PORT_E_ANSEL}
     children:
@@ -3541,33 +3562,12 @@ children:
       - type: Dynamic
         attributes: {id: core, value: 'true'}
   - type: Boolean
-    attributes: {id: TIMER_2_INTERRUPT_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tmr2, value: 'true'}
-  - type: Boolean
     attributes: {id: TIMER_2_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'false'}
-  - type: String
-    attributes: {id: TIMER_2_INTERRUPT_HANDLER}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tmr2, value: TIMER_2_InterruptHandler}
-  - type: Boolean
-    attributes: {id: TIMER_2_INTERRUPT_HANDLER_LOCK}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tmr2, value: 'true'}
+        attributes: {id: core, value: 'true'}
   - type: Boolean
     attributes: {id: TIMER_3_INTERRUPT_ENABLE}
     children:
@@ -3602,28 +3602,28 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: 'false'}
+        attributes: {id: tmr4, value: 'true'}
   - type: Boolean
     attributes: {id: TIMER_4_INTERRUPT_ENABLE_UPDATE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: 'true'}
+        attributes: {id: core, value: 'false'}
   - type: String
     attributes: {id: TIMER_4_INTERRUPT_HANDLER}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: TIMER_4_Handler}
+        attributes: {id: tmr4, value: TIMER_4_InterruptHandler}
   - type: Boolean
     attributes: {id: TIMER_4_INTERRUPT_HANDLER_LOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr4, value: 'false'}
+        attributes: {id: tmr4, value: 'true'}
   - type: Boolean
     attributes: {id: TIMER_5_INTERRUPT_ENABLE}
     children:
@@ -3722,20 +3722,13 @@ children:
       children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
-  - type: Boolean
-    attributes: {id: TMR2_CLOCK_ENABLE}
-    children:
-    - type: Values
-      children:
-      - type: Dynamic
-        attributes: {id: tmr2, value: 'true'}
   - type: Integer
     attributes: {id: TMR2_CLOCK_FREQUENCY}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: core, value: '100000000'}
+        attributes: {id: core, value: '0'}
   - type: Boolean
     attributes: {id: TMR3_CLOCK_ENABLE}
     children:
@@ -4098,4 +4091,4 @@ children:
       - type: Dynamic
         attributes: {id: core, value: '0'}
 - type: ElementPosition
-  attributes: {x: '220', y: '20', id: core}
+  attributes: {x: '219', y: '20', id: core}

@@ -534,9 +534,9 @@ const USB_DEVICE_INIT usbDevInitData =
     .usbDriverInterface = DRV_USBHS_DEVICE_INTERFACE,
 	
 	/* Specify queue size for vendor endpoint read */
-    .queueSizeEndpointRead = 96,
+    .queueSizeEndpointRead = 134,
     
     /* Specify queue size for vendor endpoint write */
-    .queueSizeEndpointWrite= 96,
+    .queueSizeEndpointWrite= 134,
 };
 // </editor-fold>

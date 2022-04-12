@@ -24,7 +24,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: tmr3, value: '2047'}
+        attributes: {id: tmr3, value: '2040'}
   - type: KeyValueSet
     attributes: {id: TIMER_PRE_SCALER}
     children:
@@ -44,7 +44,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '5244.0'}
+        attributes: {value: '5226.0'}
   - type: Combo
     attributes: {id: TIMER_UNIT}
     children:
@@ -74,4 +74,4 @@ children:
       - type: Dynamic
         attributes: {id: tmr3, value: 'true'}
 - type: ElementPosition
-  attributes: {x: '36', y: '653', id: tmr3}
+  attributes: {x: '35', y: '655', id: tmr3}

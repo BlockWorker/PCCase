@@ -4,6 +4,8 @@
 #include "app_power.h"
 #include "system/time/sys_time.h"
 #include "app.h"
+#include "system/debug/sys_debug.h"
+#include "emergency.h"
 
 bool app_power_main = false;
 bool app_power_watchdog = false;
@@ -45,18 +47,25 @@ void APP_POWER_Init() {
 }
 
 void APP_POWER_Tasks() {    
-    if (app_power_main_timeout == 0 && PWR_DETECT_Get() != app_power_main) {
-        app_power_main_timeout = iter_start_time + app_power_timeout_delay;
+    if (app_power_main_timeout == 0) {
+        if (PWR_DETECT_Get() != app_power_main) {
+            app_power_main_timeout = iter_start_time + app_power_timeout_delay;
+        }
     } else if (app_power_main_timeout < iter_start_time) {
         app_power_main = PWR_DETECT_Get();
         app_power_main_timeout = 0;
+        if (!app_power_main) EMERGENCY_Reset();
+        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "Power: Main %d\n", app_power_main);
     }
     
-    if (app_power_watchdog_timeout == 0 && WD_DETECT_Get() != app_power_watchdog) {
-        app_power_watchdog_timeout = iter_start_time + app_power_timeout_delay;
+    if (app_power_watchdog_timeout == 0) {
+        if (WD_DETECT_Get() != app_power_watchdog) {
+            app_power_watchdog_timeout = iter_start_time + app_power_timeout_delay;
+        }
     } else if (app_power_watchdog_timeout < iter_start_time) {
         app_power_watchdog = WD_DETECT_Get();
         app_power_watchdog_timeout = 0;
+        SYS_DEBUG_PRINT(SYS_ERROR_INFO, "Power: Watchdog %d\n", app_power_main);
     }
 }
 

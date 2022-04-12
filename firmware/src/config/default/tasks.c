@@ -72,12 +72,7 @@
 void SYS_Tasks ( void )
 {
     /* Maintain system services */
-    SYS_CONSOLE_Tasks(SYS_CONSOLE_INDEX_0);
-
-
-SYS_CMD_Tasks();
-
-
+    
 
 
     /* Maintain Device Drivers */

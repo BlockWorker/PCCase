@@ -71,6 +71,9 @@ void TIMER_5_InterruptHandler( void );
 void TIMER_6_InterruptHandler( void );
 void TIMER_7_InterruptHandler( void );
 void ADC_DF1_InterruptHandler( void );
+void UART1_FAULT_InterruptHandler( void );
+void UART1_RX_InterruptHandler( void );
+void UART1_TX_InterruptHandler( void );
 void CHANGE_NOTICE_H_InterruptHandler( void );
 void DRV_USBHS_InterruptHandler( void );
 void DRV_USBHS_DMAInterruptHandler( void );
@@ -82,7 +85,7 @@ void NVM_InterruptHandler( void );
 
 
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
+void __ISR(_CORE_TIMER_VECTOR, ipl4SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
@@ -132,17 +135,32 @@ void __ISR(_ADC_DF1_VECTOR, ipl1SRS) ADC_DF1_Handler (void)
     ADC_DF1_InterruptHandler();
 }
 
+void __ISR(_UART1_FAULT_VECTOR, ipl2SRS) UART1_FAULT_Handler (void)
+{
+    UART1_FAULT_InterruptHandler();
+}
+
+void __ISR(_UART1_RX_VECTOR, ipl2SRS) UART1_RX_Handler (void)
+{
+    UART1_RX_InterruptHandler();
+}
+
+void __ISR(_UART1_TX_VECTOR, ipl2SRS) UART1_TX_Handler (void)
+{
+    UART1_TX_InterruptHandler();
+}
+
 void __ISR(_CHANGE_NOTICE_H_VECTOR, ipl1SRS) CHANGE_NOTICE_H_Handler (void)
 {
     CHANGE_NOTICE_H_InterruptHandler();
 }
 
-void __ISR(_USB_VECTOR, ipl1SRS) USB_Handler (void)
+void __ISR(_USB_VECTOR, ipl3SRS) USB_Handler (void)
 {
     DRV_USBHS_InterruptHandler();
 }
 
-void __ISR(_USB_DMA_VECTOR, ipl1SRS) USB_DMA_Handler (void)
+void __ISR(_USB_DMA_VECTOR, ipl3SRS) USB_DMA_Handler (void)
 {
     DRV_USBHS_DMAInterruptHandler();
 }

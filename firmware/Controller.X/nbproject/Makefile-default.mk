@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../src/config/default/driver/usb/usbhs/src/drv_usbhs.c ../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c ../src/config/default/peripheral/adchs/plib_adchs.c ../src/config/default/peripheral/clk/plib_clk.c ../src/config/default/peripheral/coretimer/plib_coretimer.c ../src/config/default/peripheral/dmac/plib_dmac.c ../src/config/default/peripheral/evic/plib_evic.c ../src/config/default/peripheral/gpio/plib_gpio.c ../src/config/default/peripheral/icap/plib_icap2.c ../src/config/default/peripheral/icap/plib_icap3.c ../src/config/default/peripheral/icap/plib_icap1.c ../src/config/default/peripheral/nvm/plib_nvm.c ../src/config/default/peripheral/ocmp/plib_ocmp8.c ../src/config/default/peripheral/ocmp/plib_ocmp9.c ../src/config/default/peripheral/ocmp/plib_ocmp6.c ../src/config/default/peripheral/ocmp/plib_ocmp7.c ../src/config/default/peripheral/ocmp/plib_ocmp1.c ../src/config/default/peripheral/ocmp/plib_ocmp4.c ../src/config/default/peripheral/ocmp/plib_ocmp5.c ../src/config/default/peripheral/ocmp/plib_ocmp2.c ../src/config/default/peripheral/ocmp/plib_ocmp3.c ../src/config/default/peripheral/power/plib_power.c ../src/config/default/peripheral/tmr/plib_tmr6.c ../src/config/default/peripheral/tmr/plib_tmr7.c ../src/config/default/peripheral/tmr/plib_tmr4.c ../src/config/default/peripheral/tmr/plib_tmr3.c ../src/config/default/stdio/xc32_monitor.c ../src/config/default/system/command/src/sys_command.c ../src/config/default/system/console/src/sys_console_usb_cdc.c ../src/config/default/system/console/src/sys_console.c ../src/config/default/system/debug/src/sys_debug.c ../src/config/default/system/int/src/sys_int.c ../src/config/default/system/reset/sys_reset.c ../src/config/default/system/time/src/sys_time.c ../src/config/default/usb/src/usb_device.c ../src/config/default/usb/src/usb_device_endpoint_functions.c ../src/config/default/usb/src/usb_device_cdc.c ../src/config/default/usb/src/usb_device_cdc_acm.c ../src/config/default/usb_device_init_data.c ../src/config/default/tasks.c ../src/config/default/initialization.c ../src/config/default/interrupts.c ../src/config/default/exceptions.c ../src/app.c ../src/main.c ../src/argb.c ../src/config/default/peripheral/tmr/plib_tmr5.c ../src/app_power.c
+SOURCEFILES_QUOTED_IF_SPACED=../src/config/default/driver/usb/usbhs/src/drv_usbhs.c ../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c ../src/config/default/peripheral/adchs/plib_adchs.c ../src/config/default/peripheral/clk/plib_clk.c ../src/config/default/peripheral/coretimer/plib_coretimer.c ../src/config/default/peripheral/dmac/plib_dmac.c ../src/config/default/peripheral/evic/plib_evic.c ../src/config/default/peripheral/gpio/plib_gpio.c ../src/config/default/peripheral/icap/plib_icap2.c ../src/config/default/peripheral/icap/plib_icap3.c ../src/config/default/peripheral/icap/plib_icap1.c ../src/config/default/peripheral/nvm/plib_nvm.c ../src/config/default/peripheral/ocmp/plib_ocmp8.c ../src/config/default/peripheral/ocmp/plib_ocmp9.c ../src/config/default/peripheral/ocmp/plib_ocmp6.c ../src/config/default/peripheral/ocmp/plib_ocmp7.c ../src/config/default/peripheral/ocmp/plib_ocmp1.c ../src/config/default/peripheral/ocmp/plib_ocmp4.c ../src/config/default/peripheral/ocmp/plib_ocmp5.c ../src/config/default/peripheral/ocmp/plib_ocmp2.c ../src/config/default/peripheral/ocmp/plib_ocmp3.c ../src/config/default/peripheral/power/plib_power.c ../src/config/default/peripheral/tmr/plib_tmr6.c ../src/config/default/peripheral/tmr/plib_tmr7.c ../src/config/default/peripheral/tmr/plib_tmr4.c ../src/config/default/peripheral/tmr/plib_tmr3.c ../src/config/default/peripheral/tmr/plib_tmr5.c ../src/config/default/peripheral/uart/plib_uart1.c ../src/config/default/stdio/xc32_monitor.c ../src/config/default/system/console/src/sys_console.c ../src/config/default/system/console/src/sys_console_uart.c ../src/config/default/system/debug/src/sys_debug.c ../src/config/default/system/int/src/sys_int.c ../src/config/default/system/time/src/sys_time.c ../src/config/default/usb/src/usb_device.c ../src/config/default/usb/src/usb_device_hid.c ../src/config/default/usb_device_init_data.c ../src/config/default/tasks.c ../src/config/default/initialization.c ../src/config/default/interrupts.c ../src/config/default/exceptions.c ../src/app.c ../src/main.c ../src/argb.c ../src/app_power.c ../src/argb_hid.c ../src/cooling_control.c ../src/dee_emulation_pic32.c ../src/app_config.c ../src/emergency.c ../src/config_hid.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o ${OBJECTDIR}/_ext/1982400153/plib_adchs.o ${OBJECTDIR}/_ext/60165520/plib_clk.o ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o ${OBJECTDIR}/_ext/1865161661/plib_dmac.o ${OBJECTDIR}/_ext/1865200349/plib_evic.o ${OBJECTDIR}/_ext/1865254177/plib_gpio.o ${OBJECTDIR}/_ext/1865301019/plib_icap2.o ${OBJECTDIR}/_ext/1865301019/plib_icap3.o ${OBJECTDIR}/_ext/1865301019/plib_icap1.o ${OBJECTDIR}/_ext/60176403/plib_nvm.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o ${OBJECTDIR}/_ext/1996599795/plib_power.o ${OBJECTDIR}/_ext/60181895/plib_tmr6.o ${OBJECTDIR}/_ext/60181895/plib_tmr7.o ${OBJECTDIR}/_ext/60181895/plib_tmr4.o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ${OBJECTDIR}/_ext/1376093119/sys_command.o ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o ${OBJECTDIR}/_ext/1832805299/sys_console.o ${OBJECTDIR}/_ext/944882569/sys_debug.o ${OBJECTDIR}/_ext/1881668453/sys_int.o ${OBJECTDIR}/_ext/1000052432/sys_reset.o ${OBJECTDIR}/_ext/101884895/sys_time.o ${OBJECTDIR}/_ext/308758920/usb_device.o ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o ${OBJECTDIR}/_ext/1171490990/tasks.o ${OBJECTDIR}/_ext/1171490990/initialization.o ${OBJECTDIR}/_ext/1171490990/interrupts.o ${OBJECTDIR}/_ext/1171490990/exceptions.o ${OBJECTDIR}/_ext/1360937237/app.o ${OBJECTDIR}/_ext/1360937237/main.o ${OBJECTDIR}/_ext/1360937237/argb.o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ${OBJECTDIR}/_ext/1360937237/app_power.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o.d ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o.d ${OBJECTDIR}/_ext/1982400153/plib_adchs.o.d ${OBJECTDIR}/_ext/60165520/plib_clk.o.d ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o.d ${OBJECTDIR}/_ext/1865161661/plib_dmac.o.d ${OBJECTDIR}/_ext/1865200349/plib_evic.o.d ${OBJECTDIR}/_ext/1865254177/plib_gpio.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap2.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap3.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap1.o.d ${OBJECTDIR}/_ext/60176403/plib_nvm.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o.d ${OBJECTDIR}/_ext/1996599795/plib_power.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr6.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr7.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr4.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr3.o.d ${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d ${OBJECTDIR}/_ext/1376093119/sys_command.o.d ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o.d ${OBJECTDIR}/_ext/1832805299/sys_console.o.d ${OBJECTDIR}/_ext/944882569/sys_debug.o.d ${OBJECTDIR}/_ext/1881668453/sys_int.o.d ${OBJECTDIR}/_ext/1000052432/sys_reset.o.d ${OBJECTDIR}/_ext/101884895/sys_time.o.d ${OBJECTDIR}/_ext/308758920/usb_device.o.d ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o.d ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o.d ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o.d ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o.d ${OBJECTDIR}/_ext/1171490990/tasks.o.d ${OBJECTDIR}/_ext/1171490990/initialization.o.d ${OBJECTDIR}/_ext/1171490990/interrupts.o.d ${OBJECTDIR}/_ext/1171490990/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/app.o.d ${OBJECTDIR}/_ext/1360937237/main.o.d ${OBJECTDIR}/_ext/1360937237/argb.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d ${OBJECTDIR}/_ext/1360937237/app_power.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o ${OBJECTDIR}/_ext/1982400153/plib_adchs.o ${OBJECTDIR}/_ext/60165520/plib_clk.o ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o ${OBJECTDIR}/_ext/1865161661/plib_dmac.o ${OBJECTDIR}/_ext/1865200349/plib_evic.o ${OBJECTDIR}/_ext/1865254177/plib_gpio.o ${OBJECTDIR}/_ext/1865301019/plib_icap2.o ${OBJECTDIR}/_ext/1865301019/plib_icap3.o ${OBJECTDIR}/_ext/1865301019/plib_icap1.o ${OBJECTDIR}/_ext/60176403/plib_nvm.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o ${OBJECTDIR}/_ext/1996599795/plib_power.o ${OBJECTDIR}/_ext/60181895/plib_tmr6.o ${OBJECTDIR}/_ext/60181895/plib_tmr7.o ${OBJECTDIR}/_ext/60181895/plib_tmr4.o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ${OBJECTDIR}/_ext/1865657120/plib_uart1.o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ${OBJECTDIR}/_ext/1832805299/sys_console.o ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o ${OBJECTDIR}/_ext/944882569/sys_debug.o ${OBJECTDIR}/_ext/1881668453/sys_int.o ${OBJECTDIR}/_ext/101884895/sys_time.o ${OBJECTDIR}/_ext/308758920/usb_device.o ${OBJECTDIR}/_ext/308758920/usb_device_hid.o ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o ${OBJECTDIR}/_ext/1171490990/tasks.o ${OBJECTDIR}/_ext/1171490990/initialization.o ${OBJECTDIR}/_ext/1171490990/interrupts.o ${OBJECTDIR}/_ext/1171490990/exceptions.o ${OBJECTDIR}/_ext/1360937237/app.o ${OBJECTDIR}/_ext/1360937237/main.o ${OBJECTDIR}/_ext/1360937237/argb.o ${OBJECTDIR}/_ext/1360937237/app_power.o ${OBJECTDIR}/_ext/1360937237/argb_hid.o ${OBJECTDIR}/_ext/1360937237/cooling_control.o ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o ${OBJECTDIR}/_ext/1360937237/app_config.o ${OBJECTDIR}/_ext/1360937237/emergency.o ${OBJECTDIR}/_ext/1360937237/config_hid.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o.d ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o.d ${OBJECTDIR}/_ext/1982400153/plib_adchs.o.d ${OBJECTDIR}/_ext/60165520/plib_clk.o.d ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o.d ${OBJECTDIR}/_ext/1865161661/plib_dmac.o.d ${OBJECTDIR}/_ext/1865200349/plib_evic.o.d ${OBJECTDIR}/_ext/1865254177/plib_gpio.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap2.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap3.o.d ${OBJECTDIR}/_ext/1865301019/plib_icap1.o.d ${OBJECTDIR}/_ext/60176403/plib_nvm.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o.d ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o.d ${OBJECTDIR}/_ext/1996599795/plib_power.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr6.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr7.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr4.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr3.o.d ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d ${OBJECTDIR}/_ext/1865657120/plib_uart1.o.d ${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d ${OBJECTDIR}/_ext/1832805299/sys_console.o.d ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o.d ${OBJECTDIR}/_ext/944882569/sys_debug.o.d ${OBJECTDIR}/_ext/1881668453/sys_int.o.d ${OBJECTDIR}/_ext/101884895/sys_time.o.d ${OBJECTDIR}/_ext/308758920/usb_device.o.d ${OBJECTDIR}/_ext/308758920/usb_device_hid.o.d ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o.d ${OBJECTDIR}/_ext/1171490990/tasks.o.d ${OBJECTDIR}/_ext/1171490990/initialization.o.d ${OBJECTDIR}/_ext/1171490990/interrupts.o.d ${OBJECTDIR}/_ext/1171490990/exceptions.o.d ${OBJECTDIR}/_ext/1360937237/app.o.d ${OBJECTDIR}/_ext/1360937237/main.o.d ${OBJECTDIR}/_ext/1360937237/argb.o.d ${OBJECTDIR}/_ext/1360937237/app_power.o.d ${OBJECTDIR}/_ext/1360937237/argb_hid.o.d ${OBJECTDIR}/_ext/1360937237/cooling_control.o.d ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o.d ${OBJECTDIR}/_ext/1360937237/app_config.o.d ${OBJECTDIR}/_ext/1360937237/emergency.o.d ${OBJECTDIR}/_ext/1360937237/config_hid.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o ${OBJECTDIR}/_ext/1982400153/plib_adchs.o ${OBJECTDIR}/_ext/60165520/plib_clk.o ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o ${OBJECTDIR}/_ext/1865161661/plib_dmac.o ${OBJECTDIR}/_ext/1865200349/plib_evic.o ${OBJECTDIR}/_ext/1865254177/plib_gpio.o ${OBJECTDIR}/_ext/1865301019/plib_icap2.o ${OBJECTDIR}/_ext/1865301019/plib_icap3.o ${OBJECTDIR}/_ext/1865301019/plib_icap1.o ${OBJECTDIR}/_ext/60176403/plib_nvm.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o ${OBJECTDIR}/_ext/1996599795/plib_power.o ${OBJECTDIR}/_ext/60181895/plib_tmr6.o ${OBJECTDIR}/_ext/60181895/plib_tmr7.o ${OBJECTDIR}/_ext/60181895/plib_tmr4.o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ${OBJECTDIR}/_ext/1376093119/sys_command.o ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o ${OBJECTDIR}/_ext/1832805299/sys_console.o ${OBJECTDIR}/_ext/944882569/sys_debug.o ${OBJECTDIR}/_ext/1881668453/sys_int.o ${OBJECTDIR}/_ext/1000052432/sys_reset.o ${OBJECTDIR}/_ext/101884895/sys_time.o ${OBJECTDIR}/_ext/308758920/usb_device.o ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o ${OBJECTDIR}/_ext/1171490990/tasks.o ${OBJECTDIR}/_ext/1171490990/initialization.o ${OBJECTDIR}/_ext/1171490990/interrupts.o ${OBJECTDIR}/_ext/1171490990/exceptions.o ${OBJECTDIR}/_ext/1360937237/app.o ${OBJECTDIR}/_ext/1360937237/main.o ${OBJECTDIR}/_ext/1360937237/argb.o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ${OBJECTDIR}/_ext/1360937237/app_power.o
+OBJECTFILES=${OBJECTDIR}/_ext/2071311437/drv_usbhs.o ${OBJECTDIR}/_ext/2071311437/drv_usbhs_device.o ${OBJECTDIR}/_ext/1982400153/plib_adchs.o ${OBJECTDIR}/_ext/60165520/plib_clk.o ${OBJECTDIR}/_ext/1249264884/plib_coretimer.o ${OBJECTDIR}/_ext/1865161661/plib_dmac.o ${OBJECTDIR}/_ext/1865200349/plib_evic.o ${OBJECTDIR}/_ext/1865254177/plib_gpio.o ${OBJECTDIR}/_ext/1865301019/plib_icap2.o ${OBJECTDIR}/_ext/1865301019/plib_icap3.o ${OBJECTDIR}/_ext/1865301019/plib_icap1.o ${OBJECTDIR}/_ext/60176403/plib_nvm.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp8.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp9.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp6.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp7.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp1.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp4.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp5.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp2.o ${OBJECTDIR}/_ext/1865480137/plib_ocmp3.o ${OBJECTDIR}/_ext/1996599795/plib_power.o ${OBJECTDIR}/_ext/60181895/plib_tmr6.o ${OBJECTDIR}/_ext/60181895/plib_tmr7.o ${OBJECTDIR}/_ext/60181895/plib_tmr4.o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ${OBJECTDIR}/_ext/1865657120/plib_uart1.o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ${OBJECTDIR}/_ext/1832805299/sys_console.o ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o ${OBJECTDIR}/_ext/944882569/sys_debug.o ${OBJECTDIR}/_ext/1881668453/sys_int.o ${OBJECTDIR}/_ext/101884895/sys_time.o ${OBJECTDIR}/_ext/308758920/usb_device.o ${OBJECTDIR}/_ext/308758920/usb_device_hid.o ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o ${OBJECTDIR}/_ext/1171490990/tasks.o ${OBJECTDIR}/_ext/1171490990/initialization.o ${OBJECTDIR}/_ext/1171490990/interrupts.o ${OBJECTDIR}/_ext/1171490990/exceptions.o ${OBJECTDIR}/_ext/1360937237/app.o ${OBJECTDIR}/_ext/1360937237/main.o ${OBJECTDIR}/_ext/1360937237/argb.o ${OBJECTDIR}/_ext/1360937237/app_power.o ${OBJECTDIR}/_ext/1360937237/argb_hid.o ${OBJECTDIR}/_ext/1360937237/cooling_control.o ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o ${OBJECTDIR}/_ext/1360937237/app_config.o ${OBJECTDIR}/_ext/1360937237/emergency.o ${OBJECTDIR}/_ext/1360937237/config_hid.o
 
 # Source Files
-SOURCEFILES=../src/config/default/driver/usb/usbhs/src/drv_usbhs.c ../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c ../src/config/default/peripheral/adchs/plib_adchs.c ../src/config/default/peripheral/clk/plib_clk.c ../src/config/default/peripheral/coretimer/plib_coretimer.c ../src/config/default/peripheral/dmac/plib_dmac.c ../src/config/default/peripheral/evic/plib_evic.c ../src/config/default/peripheral/gpio/plib_gpio.c ../src/config/default/peripheral/icap/plib_icap2.c ../src/config/default/peripheral/icap/plib_icap3.c ../src/config/default/peripheral/icap/plib_icap1.c ../src/config/default/peripheral/nvm/plib_nvm.c ../src/config/default/peripheral/ocmp/plib_ocmp8.c ../src/config/default/peripheral/ocmp/plib_ocmp9.c ../src/config/default/peripheral/ocmp/plib_ocmp6.c ../src/config/default/peripheral/ocmp/plib_ocmp7.c ../src/config/default/peripheral/ocmp/plib_ocmp1.c ../src/config/default/peripheral/ocmp/plib_ocmp4.c ../src/config/default/peripheral/ocmp/plib_ocmp5.c ../src/config/default/peripheral/ocmp/plib_ocmp2.c ../src/config/default/peripheral/ocmp/plib_ocmp3.c ../src/config/default/peripheral/power/plib_power.c ../src/config/default/peripheral/tmr/plib_tmr6.c ../src/config/default/peripheral/tmr/plib_tmr7.c ../src/config/default/peripheral/tmr/plib_tmr4.c ../src/config/default/peripheral/tmr/plib_tmr3.c ../src/config/default/stdio/xc32_monitor.c ../src/config/default/system/command/src/sys_command.c ../src/config/default/system/console/src/sys_console_usb_cdc.c ../src/config/default/system/console/src/sys_console.c ../src/config/default/system/debug/src/sys_debug.c ../src/config/default/system/int/src/sys_int.c ../src/config/default/system/reset/sys_reset.c ../src/config/default/system/time/src/sys_time.c ../src/config/default/usb/src/usb_device.c ../src/config/default/usb/src/usb_device_endpoint_functions.c ../src/config/default/usb/src/usb_device_cdc.c ../src/config/default/usb/src/usb_device_cdc_acm.c ../src/config/default/usb_device_init_data.c ../src/config/default/tasks.c ../src/config/default/initialization.c ../src/config/default/interrupts.c ../src/config/default/exceptions.c ../src/app.c ../src/main.c ../src/argb.c ../src/config/default/peripheral/tmr/plib_tmr5.c ../src/app_power.c
+SOURCEFILES=../src/config/default/driver/usb/usbhs/src/drv_usbhs.c ../src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c ../src/config/default/peripheral/adchs/plib_adchs.c ../src/config/default/peripheral/clk/plib_clk.c ../src/config/default/peripheral/coretimer/plib_coretimer.c ../src/config/default/peripheral/dmac/plib_dmac.c ../src/config/default/peripheral/evic/plib_evic.c ../src/config/default/peripheral/gpio/plib_gpio.c ../src/config/default/peripheral/icap/plib_icap2.c ../src/config/default/peripheral/icap/plib_icap3.c ../src/config/default/peripheral/icap/plib_icap1.c ../src/config/default/peripheral/nvm/plib_nvm.c ../src/config/default/peripheral/ocmp/plib_ocmp8.c ../src/config/default/peripheral/ocmp/plib_ocmp9.c ../src/config/default/peripheral/ocmp/plib_ocmp6.c ../src/config/default/peripheral/ocmp/plib_ocmp7.c ../src/config/default/peripheral/ocmp/plib_ocmp1.c ../src/config/default/peripheral/ocmp/plib_ocmp4.c ../src/config/default/peripheral/ocmp/plib_ocmp5.c ../src/config/default/peripheral/ocmp/plib_ocmp2.c ../src/config/default/peripheral/ocmp/plib_ocmp3.c ../src/config/default/peripheral/power/plib_power.c ../src/config/default/peripheral/tmr/plib_tmr6.c ../src/config/default/peripheral/tmr/plib_tmr7.c ../src/config/default/peripheral/tmr/plib_tmr4.c ../src/config/default/peripheral/tmr/plib_tmr3.c ../src/config/default/peripheral/tmr/plib_tmr5.c ../src/config/default/peripheral/uart/plib_uart1.c ../src/config/default/stdio/xc32_monitor.c ../src/config/default/system/console/src/sys_console.c ../src/config/default/system/console/src/sys_console_uart.c ../src/config/default/system/debug/src/sys_debug.c ../src/config/default/system/int/src/sys_int.c ../src/config/default/system/time/src/sys_time.c ../src/config/default/usb/src/usb_device.c ../src/config/default/usb/src/usb_device_hid.c ../src/config/default/usb_device_init_data.c ../src/config/default/tasks.c ../src/config/default/initialization.c ../src/config/default/interrupts.c ../src/config/default/exceptions.c ../src/app.c ../src/main.c ../src/argb.c ../src/app_power.c ../src/argb_hid.c ../src/cooling_control.c ../src/dee_emulation_pic32.c ../src/app_config.c ../src/emergency.c ../src/config_hid.c
 
 
 
@@ -263,29 +263,35 @@ ${OBJECTDIR}/_ext/60181895/plib_tmr3.o: ../src/config/default/peripheral/tmr/pli
 	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr3.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr3.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ../src/config/default/peripheral/tmr/plib_tmr3.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
+${OBJECTDIR}/_ext/60181895/plib_tmr5.o: ../src/config/default/peripheral/tmr/plib_tmr5.c  .generated_files/flags/default/83ca0cac7c0a227cb76a0e68511fe4a6d097f7e8 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/60181895" 
+	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d 
+	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ../src/config/default/peripheral/tmr/plib_tmr5.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1865657120/plib_uart1.o: ../src/config/default/peripheral/uart/plib_uart1.c  .generated_files/flags/default/2d823c96941d8b84b021d4ee318426a381edffbf .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1865657120" 
+	@${RM} ${OBJECTDIR}/_ext/1865657120/plib_uart1.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1865657120/plib_uart1.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1865657120/plib_uart1.o.d" -o ${OBJECTDIR}/_ext/1865657120/plib_uart1.o ../src/config/default/peripheral/uart/plib_uart1.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
 ${OBJECTDIR}/_ext/163028504/xc32_monitor.o: ../src/config/default/stdio/xc32_monitor.c  .generated_files/flags/default/b310efa2a5fd8f1eaca709f78044d14dcce17582 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/163028504" 
 	@${RM} ${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d 
 	@${RM} ${OBJECTDIR}/_ext/163028504/xc32_monitor.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d" -o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ../src/config/default/stdio/xc32_monitor.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1376093119/sys_command.o: ../src/config/default/system/command/src/sys_command.c  .generated_files/flags/default/16a32b5bf4bf2ef9ffb2f5c263afdfe78241746f .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1376093119" 
-	@${RM} ${OBJECTDIR}/_ext/1376093119/sys_command.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1376093119/sys_command.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1376093119/sys_command.o.d" -o ${OBJECTDIR}/_ext/1376093119/sys_command.o ../src/config/default/system/command/src/sys_command.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o: ../src/config/default/system/console/src/sys_console_usb_cdc.c  .generated_files/flags/default/d7e8f0b0945bc184c8442b8a092357832ec7867f .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
-	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o ../src/config/default/system/console/src/sys_console_usb_cdc.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/1832805299/sys_console.o: ../src/config/default/system/console/src/sys_console.c  .generated_files/flags/default/99f64165cb049ab1f974c01c55a3edad76559c14 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
 	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console.o ../src/config/default/system/console/src/sys_console.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1832805299/sys_console_uart.o: ../src/config/default/system/console/src/sys_console_uart.c  .generated_files/flags/default/3c5be105446dddd1947a4c9bb426a67056acab76 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
+	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console_uart.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o ../src/config/default/system/console/src/sys_console_uart.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/_ext/944882569/sys_debug.o: ../src/config/default/system/debug/src/sys_debug.c  .generated_files/flags/default/421419d0d753879aab62398d61a118dd1abdf2cc .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/944882569" 
@@ -299,12 +305,6 @@ ${OBJECTDIR}/_ext/1881668453/sys_int.o: ../src/config/default/system/int/src/sys
 	@${RM} ${OBJECTDIR}/_ext/1881668453/sys_int.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1881668453/sys_int.o.d" -o ${OBJECTDIR}/_ext/1881668453/sys_int.o ../src/config/default/system/int/src/sys_int.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1000052432/sys_reset.o: ../src/config/default/system/reset/sys_reset.c  .generated_files/flags/default/7fec8038f548bab5622f32923edb056c78e9c312 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1000052432" 
-	@${RM} ${OBJECTDIR}/_ext/1000052432/sys_reset.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1000052432/sys_reset.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1000052432/sys_reset.o.d" -o ${OBJECTDIR}/_ext/1000052432/sys_reset.o ../src/config/default/system/reset/sys_reset.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/101884895/sys_time.o: ../src/config/default/system/time/src/sys_time.c  .generated_files/flags/default/ba75c3377384d63f7175cfb0f40ade320d48c068 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/101884895" 
 	@${RM} ${OBJECTDIR}/_ext/101884895/sys_time.o.d 
@@ -317,23 +317,11 @@ ${OBJECTDIR}/_ext/308758920/usb_device.o: ../src/config/default/usb/src/usb_devi
 	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device.o ../src/config/default/usb/src/usb_device.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o: ../src/config/default/usb/src/usb_device_endpoint_functions.c  .generated_files/flags/default/fa5bcca6adb9a8d7c690f14df5eaa433411f717e .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+${OBJECTDIR}/_ext/308758920/usb_device_hid.o: ../src/config/default/usb/src/usb_device_hid.c  .generated_files/flags/default/e0b002647b98b2a9efbd7999e0a27cb431e721c5 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o ../src/config/default/usb/src/usb_device_endpoint_functions.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/308758920/usb_device_cdc.o: ../src/config/default/usb/src/usb_device_cdc.c  .generated_files/flags/default/f8ab4fac9121dc04a0e7a65ce8599b13f6722e16 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_cdc.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o ../src/config/default/usb/src/usb_device_cdc.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o: ../src/config/default/usb/src/usb_device_cdc_acm.c  .generated_files/flags/default/af05e54abafaf27608e1ccc9dd408e30fe834d9a .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o ../src/config/default/usb/src/usb_device_cdc_acm.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_hid.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_hid.o ../src/config/default/usb/src/usb_device_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o: ../src/config/default/usb_device_init_data.c  .generated_files/flags/default/7414d016e1aada71f9c69956f7e790fe9ec0e567 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1171490990" 
@@ -383,17 +371,47 @@ ${OBJECTDIR}/_ext/1360937237/argb.o: ../src/argb.c  .generated_files/flags/defau
 	@${RM} ${OBJECTDIR}/_ext/1360937237/argb.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/argb.o.d" -o ${OBJECTDIR}/_ext/1360937237/argb.o ../src/argb.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/60181895/plib_tmr5.o: ../src/config/default/peripheral/tmr/plib_tmr5.c  .generated_files/flags/default/83ca0cac7c0a227cb76a0e68511fe4a6d097f7e8 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/60181895" 
-	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d 
-	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ../src/config/default/peripheral/tmr/plib_tmr5.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/1360937237/app_power.o: ../src/app_power.c  .generated_files/flags/default/2dfbe0f104209e80457533b5b9ff9ab954204b96 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/app_power.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/app_power.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/app_power.o.d" -o ${OBJECTDIR}/_ext/1360937237/app_power.o ../src/app_power.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/argb_hid.o: ../src/argb_hid.c  .generated_files/flags/default/1c8f1967e206388327426c2ddb5ac53f7109ba4f .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/argb_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/argb_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/argb_hid.o.d" -o ${OBJECTDIR}/_ext/1360937237/argb_hid.o ../src/argb_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/cooling_control.o: ../src/cooling_control.c  .generated_files/flags/default/67c085b21a0c1f43a60157152f2665fb90fd82ee .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/cooling_control.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/cooling_control.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/cooling_control.o.d" -o ${OBJECTDIR}/_ext/1360937237/cooling_control.o ../src/cooling_control.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o: ../src/dee_emulation_pic32.c  .generated_files/flags/default/7cd8f426cda01ac2473105391744ea4137a30381 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o.d" -o ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o ../src/dee_emulation_pic32.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/app_config.o: ../src/app_config.c  .generated_files/flags/default/bbb7ad9d49c6d327369752173c0355506d48ee8a .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/app_config.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/app_config.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/app_config.o.d" -o ${OBJECTDIR}/_ext/1360937237/app_config.o ../src/app_config.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/emergency.o: ../src/emergency.c  .generated_files/flags/default/48b55cd54536b6742a9f44b6bfa630b8b7dff794 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/emergency.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/emergency.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/emergency.o.d" -o ${OBJECTDIR}/_ext/1360937237/emergency.o ../src/emergency.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/config_hid.o: ../src/config_hid.c  .generated_files/flags/default/396da5077706697b38f247eed0ef2c802e47a2ae .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/config_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/config_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/config_hid.o.d" -o ${OBJECTDIR}/_ext/1360937237/config_hid.o ../src/config_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 else
 ${OBJECTDIR}/_ext/2071311437/drv_usbhs.o: ../src/config/default/driver/usb/usbhs/src/drv_usbhs.c  .generated_files/flags/default/f015d7ea4b9785e35c4007278b0618567e99344 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
@@ -552,29 +570,35 @@ ${OBJECTDIR}/_ext/60181895/plib_tmr3.o: ../src/config/default/peripheral/tmr/pli
 	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr3.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr3.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr3.o ../src/config/default/peripheral/tmr/plib_tmr3.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
+${OBJECTDIR}/_ext/60181895/plib_tmr5.o: ../src/config/default/peripheral/tmr/plib_tmr5.c  .generated_files/flags/default/4704f1d62eabf31e01e4b1941716fde523e2e823 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/60181895" 
+	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d 
+	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ../src/config/default/peripheral/tmr/plib_tmr5.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1865657120/plib_uart1.o: ../src/config/default/peripheral/uart/plib_uart1.c  .generated_files/flags/default/74c4c1503741f0cc656e30d76a54b65d98b7d62e .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1865657120" 
+	@${RM} ${OBJECTDIR}/_ext/1865657120/plib_uart1.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1865657120/plib_uart1.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1865657120/plib_uart1.o.d" -o ${OBJECTDIR}/_ext/1865657120/plib_uart1.o ../src/config/default/peripheral/uart/plib_uart1.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
 ${OBJECTDIR}/_ext/163028504/xc32_monitor.o: ../src/config/default/stdio/xc32_monitor.c  .generated_files/flags/default/663930153a9102738d5c22046823ba11e8cc1629 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/163028504" 
 	@${RM} ${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d 
 	@${RM} ${OBJECTDIR}/_ext/163028504/xc32_monitor.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/163028504/xc32_monitor.o.d" -o ${OBJECTDIR}/_ext/163028504/xc32_monitor.o ../src/config/default/stdio/xc32_monitor.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1376093119/sys_command.o: ../src/config/default/system/command/src/sys_command.c  .generated_files/flags/default/97ea057428e9c8f52468bcad78d3b7fd5650f74 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1376093119" 
-	@${RM} ${OBJECTDIR}/_ext/1376093119/sys_command.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1376093119/sys_command.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1376093119/sys_command.o.d" -o ${OBJECTDIR}/_ext/1376093119/sys_command.o ../src/config/default/system/command/src/sys_command.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o: ../src/config/default/system/console/src/sys_console_usb_cdc.c  .generated_files/flags/default/b044e6600735474e8588e1af6173a006125eb9a5 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
-	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console_usb_cdc.o ../src/config/default/system/console/src/sys_console_usb_cdc.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/1832805299/sys_console.o: ../src/config/default/system/console/src/sys_console.c  .generated_files/flags/default/c846cf0107691f4006b52c5ee40e7c2d7b585636 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
 	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console.o ../src/config/default/system/console/src/sys_console.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1832805299/sys_console_uart.o: ../src/config/default/system/console/src/sys_console_uart.c  .generated_files/flags/default/9f8ecb714168ab39ff8585f4e26ffb2cb78e3ed1 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1832805299" 
+	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1832805299/sys_console_uart.o.d" -o ${OBJECTDIR}/_ext/1832805299/sys_console_uart.o ../src/config/default/system/console/src/sys_console_uart.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/_ext/944882569/sys_debug.o: ../src/config/default/system/debug/src/sys_debug.c  .generated_files/flags/default/d2bc5918df84401704796762dc2bbb491c591157 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/944882569" 
@@ -588,12 +612,6 @@ ${OBJECTDIR}/_ext/1881668453/sys_int.o: ../src/config/default/system/int/src/sys
 	@${RM} ${OBJECTDIR}/_ext/1881668453/sys_int.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1881668453/sys_int.o.d" -o ${OBJECTDIR}/_ext/1881668453/sys_int.o ../src/config/default/system/int/src/sys_int.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/1000052432/sys_reset.o: ../src/config/default/system/reset/sys_reset.c  .generated_files/flags/default/3b46c10e7b1727028a1db4bcbc85128547312680 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/1000052432" 
-	@${RM} ${OBJECTDIR}/_ext/1000052432/sys_reset.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1000052432/sys_reset.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1000052432/sys_reset.o.d" -o ${OBJECTDIR}/_ext/1000052432/sys_reset.o ../src/config/default/system/reset/sys_reset.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/101884895/sys_time.o: ../src/config/default/system/time/src/sys_time.c  .generated_files/flags/default/611c73de794c81e36cce5395d68d69ea4c9cda0f .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/101884895" 
 	@${RM} ${OBJECTDIR}/_ext/101884895/sys_time.o.d 
@@ -606,23 +624,11 @@ ${OBJECTDIR}/_ext/308758920/usb_device.o: ../src/config/default/usb/src/usb_devi
 	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device.o ../src/config/default/usb/src/usb_device.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o: ../src/config/default/usb/src/usb_device_endpoint_functions.c  .generated_files/flags/default/c6afbd349aec5cbcc474de52a41d4814fb5b5ec7 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+${OBJECTDIR}/_ext/308758920/usb_device_hid.o: ../src/config/default/usb/src/usb_device_hid.c  .generated_files/flags/default/2bcd7c002ce5366127b5a726f92179992e70eae9 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_endpoint_functions.o ../src/config/default/usb/src/usb_device_endpoint_functions.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/308758920/usb_device_cdc.o: ../src/config/default/usb/src/usb_device_cdc.c  .generated_files/flags/default/a5689773fa3f133f7218616f5088f2db8dfb3ce6 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_cdc.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_cdc.o ../src/config/default/usb/src/usb_device_cdc.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
-${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o: ../src/config/default/usb/src/usb_device_cdc_acm.c  .generated_files/flags/default/68395bb0427b7258b84dff02899a882a9b60e495 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/308758920" 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_cdc_acm.o ../src/config/default/usb/src/usb_device_cdc_acm.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/308758920/usb_device_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/308758920/usb_device_hid.o.d" -o ${OBJECTDIR}/_ext/308758920/usb_device_hid.o ../src/config/default/usb/src/usb_device_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 ${OBJECTDIR}/_ext/1171490990/usb_device_init_data.o: ../src/config/default/usb_device_init_data.c  .generated_files/flags/default/7828fd97d4ca433b76299315f797e7f2b908f7f8 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1171490990" 
@@ -672,17 +678,47 @@ ${OBJECTDIR}/_ext/1360937237/argb.o: ../src/argb.c  .generated_files/flags/defau
 	@${RM} ${OBJECTDIR}/_ext/1360937237/argb.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/argb.o.d" -o ${OBJECTDIR}/_ext/1360937237/argb.o ../src/argb.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
-${OBJECTDIR}/_ext/60181895/plib_tmr5.o: ../src/config/default/peripheral/tmr/plib_tmr5.c  .generated_files/flags/default/4704f1d62eabf31e01e4b1941716fde523e2e823 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
-	@${MKDIR} "${OBJECTDIR}/_ext/60181895" 
-	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d 
-	@${RM} ${OBJECTDIR}/_ext/60181895/plib_tmr5.o 
-	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/60181895/plib_tmr5.o.d" -o ${OBJECTDIR}/_ext/60181895/plib_tmr5.o ../src/config/default/peripheral/tmr/plib_tmr5.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
-	
 ${OBJECTDIR}/_ext/1360937237/app_power.o: ../src/app_power.c  .generated_files/flags/default/922d4a8bd4a1920ab167d3e841e6d1e895c37314 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
 	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/app_power.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1360937237/app_power.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/app_power.o.d" -o ${OBJECTDIR}/_ext/1360937237/app_power.o ../src/app_power.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/argb_hid.o: ../src/argb_hid.c  .generated_files/flags/default/74da26758b24e2d149bea614f0a6914d3c7d2db7 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/argb_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/argb_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/argb_hid.o.d" -o ${OBJECTDIR}/_ext/1360937237/argb_hid.o ../src/argb_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/cooling_control.o: ../src/cooling_control.c  .generated_files/flags/default/bab6720f1343c1f3c98cb77378df78aad9b795ae .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/cooling_control.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/cooling_control.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/cooling_control.o.d" -o ${OBJECTDIR}/_ext/1360937237/cooling_control.o ../src/cooling_control.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o: ../src/dee_emulation_pic32.c  .generated_files/flags/default/890b1b1a7ce412fe0a53025a5dfed011676780f3 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o.d" -o ${OBJECTDIR}/_ext/1360937237/dee_emulation_pic32.o ../src/dee_emulation_pic32.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/app_config.o: ../src/app_config.c  .generated_files/flags/default/229b1b95470bf29c8f76684daecfc120e9f3109e .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/app_config.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/app_config.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/app_config.o.d" -o ${OBJECTDIR}/_ext/1360937237/app_config.o ../src/app_config.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/emergency.o: ../src/emergency.c  .generated_files/flags/default/aeb519ba67f7c07b654eb4d4ec2712af585a43f .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/emergency.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/emergency.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/emergency.o.d" -o ${OBJECTDIR}/_ext/1360937237/emergency.o ../src/emergency.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
+	
+${OBJECTDIR}/_ext/1360937237/config_hid.o: ../src/config_hid.c  .generated_files/flags/default/237e516127642d9638026176f0908112f999d414 .generated_files/flags/default/92dd346d5a950ca899bfbf952218a42ff5d50337
+	@${MKDIR} "${OBJECTDIR}/_ext/1360937237" 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/config_hid.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1360937237/config_hid.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O1 -I"../src" -I"../src/config/default" -Werror -Wall -MP -MMD -MF "${OBJECTDIR}/_ext/1360937237/config_hid.o.d" -o ${OBJECTDIR}/_ext/1360937237/config_hid.o ../src/config_hid.c    -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  
 	
 endif
 

@@ -106,12 +106,13 @@
               <itemPath>../src/config/default/peripheral/tmr/plib_tmr3.h</itemPath>
               <itemPath>../src/config/default/peripheral/tmr/plib_tmr5.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="f12" displayName="uart" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/uart/plib_uart_common.h</itemPath>
+              <itemPath>../src/config/default/peripheral/uart/plib_uart1.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f4" displayName="system" projectFiles="true">
-            <logicalFolder name="f5" displayName="command" projectFiles="true">
-              <itemPath>../src/config/default/system/command/sys_command.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f6" displayName="console" projectFiles="true">
+            <logicalFolder name="f3" displayName="console" projectFiles="true">
               <itemPath>../src/config/default/system/console/sys_console.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f4" displayName="debug" projectFiles="true">
@@ -120,9 +121,6 @@
             <logicalFolder name="f2" displayName="int" projectFiles="true">
               <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
               <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f3" displayName="reset" projectFiles="true">
-              <itemPath>../src/config/default/system/reset/sys_reset.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/default/system/time/sys_time.h</itemPath>
@@ -139,17 +137,17 @@
               <itemPath>../src/config/default/usb/src/usb_device_mapping.h</itemPath>
               <itemPath>../src/config/default/usb/src/usb_device_function_driver.h</itemPath>
               <itemPath>../src/config/default/usb/src/usb_external_dependencies.h</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_device_cdc_local.h</itemPath>
+              <itemPath>../src/config/default/usb/src/usb_device_hid_local.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/default/usb/usb_device.h</itemPath>
             <itemPath>../src/config/default/usb/usb_common.h</itemPath>
             <itemPath>../src/config/default/usb/usb_chapter_9.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_device_cdc.h</itemPath>
-            <itemPath>../src/config/default/usb/usb_cdc.h</itemPath>
             <itemPath>../src/config/default/usb/usb_host_client_driver.h</itemPath>
             <itemPath>../src/config/default/usb/usb_host_hub_interface.h</itemPath>
             <itemPath>../src/config/default/usb/usb_host.h</itemPath>
             <itemPath>../src/config/default/usb/usb_hub.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_device_hid.h</itemPath>
+            <itemPath>../src/config/default/usb/usb_hid.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
@@ -163,6 +161,12 @@
       <itemPath>../src/argb.h</itemPath>
       <itemPath>../src/app_power.h</itemPath>
       <itemPath>../src/app_util.h</itemPath>
+      <itemPath>../src/argb_hid.h</itemPath>
+      <itemPath>../src/cooling_control.h</itemPath>
+      <itemPath>../src/dee_emulation_pic32.h</itemPath>
+      <itemPath>../src/app_config.h</itemPath>
+      <itemPath>../src/emergency.h</itemPath>
+      <itemPath>../src/config_hid.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -236,30 +240,27 @@
               <itemPath>../src/config/default/peripheral/tmr/plib_tmr3.c</itemPath>
               <itemPath>../src/config/default/peripheral/tmr/plib_tmr5.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="f12" displayName="uart" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/uart/plib_uart1.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f5" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/default/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
           <logicalFolder name="f4" displayName="system" projectFiles="true">
-            <logicalFolder name="f5" displayName="command" projectFiles="true">
-              <itemPath>../src/config/default/system/command/src/sys_command.c</itemPath>
-            </logicalFolder>
             <logicalFolder name="f2" displayName="console" projectFiles="true">
-              <itemPath>../src/config/default/system/console/src/sys_console_usb_cdc.h</itemPath>
-              <itemPath>../src/config/default/system/console/src/sys_console_usb_cdc_definitions.h</itemPath>
-              <itemPath>../src/config/default/system/console/src/sys_console_usb_cdc.c</itemPath>
               <itemPath>../src/config/default/system/console/src/sys_console.c</itemPath>
               <itemPath>../src/config/default/system/console/src/sys_console_local.h</itemPath>
+              <itemPath>../src/config/default/system/console/src/sys_console_uart.h</itemPath>
+              <itemPath>../src/config/default/system/console/src/sys_console_uart_definitions.h</itemPath>
+              <itemPath>../src/config/default/system/console/src/sys_console_uart.c</itemPath>
             </logicalFolder>
-            <logicalFolder name="f6" displayName="debug" projectFiles="true">
+            <logicalFolder name="f4" displayName="debug" projectFiles="true">
               <itemPath>../src/config/default/system/debug/src/sys_debug_local.h</itemPath>
               <itemPath>../src/config/default/system/debug/src/sys_debug.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f3" displayName="int" projectFiles="true">
               <itemPath>../src/config/default/system/int/src/sys_int.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="f4" displayName="reset" projectFiles="true">
-              <itemPath>../src/config/default/system/reset/sys_reset.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f1" displayName="time" projectFiles="true">
               <itemPath>../src/config/default/system/time/src/sys_time.c</itemPath>
@@ -268,9 +269,7 @@
           <logicalFolder name="f3" displayName="usb" projectFiles="true">
             <logicalFolder name="f1" displayName="src" projectFiles="true">
               <itemPath>../src/config/default/usb/src/usb_device.c</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_device_endpoint_functions.c</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_device_cdc.c</itemPath>
-              <itemPath>../src/config/default/usb/src/usb_device_cdc_acm.c</itemPath>
+              <itemPath>../src/config/default/usb/src/usb_device_hid.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/default/usb_device_init_data.c</itemPath>
@@ -284,6 +283,12 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/argb.c</itemPath>
       <itemPath>../src/app_power.c</itemPath>
+      <itemPath>../src/argb_hid.c</itemPath>
+      <itemPath>../src/cooling_control.c</itemPath>
+      <itemPath>../src/dee_emulation_pic32.c</itemPath>
+      <itemPath>../src/app_config.c</itemPath>
+      <itemPath>../src/emergency.c</itemPath>
+      <itemPath>../src/config_hid.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -312,7 +317,6 @@
         <itemPath>../src/config/default/default.mhc/power.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/project.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/sys_command.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sys_console.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sys_debug.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/sys_time.yml</itemPath>
@@ -321,9 +325,9 @@
         <itemPath>../src/config/default/default.mhc/tmr5.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/tmr6.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/tmr7.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/uart1.yml</itemPath>
         <itemPath>../src/config/default/default.mhc/usb_device.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/usb_device_cdc.yml</itemPath>
-        <itemPath>../src/config/default/default.mhc/usb_device_vendor.yml</itemPath>
+        <itemPath>../src/config/default/default.mhc/usb_device_hid.yml</itemPath>
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
@@ -848,8 +852,6 @@
         <property key="communication.interface" value=""/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>

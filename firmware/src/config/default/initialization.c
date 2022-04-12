@@ -196,45 +196,34 @@ const SYS_TIME_INIT sysTimeInitData =
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
-/* These buffers are passed to the USB CDC Function Driver */
-static uint8_t CACHE_ALIGN sysConsole0USBCdcRdBuffer[SYS_CONSOLE_USB_CDC_READ_WRITE_BUFFER_SIZE];
-static uint8_t CACHE_ALIGN sysConsole0USBCdcWrBuffer[SYS_CONSOLE_USB_CDC_READ_WRITE_BUFFER_SIZE];
+/* Declared in console device implementation (sys_console_uart.c) */
+extern const SYS_CONSOLE_DEV_DESC sysConsoleUARTDevDesc;
 
-/* These are the USB CDC Ring Buffers. Data received from USB layer are copied to these ring buffer. */
-static uint8_t sysConsole0USBCdcRdRingBuffer[SYS_CONSOLE_USB_CDC_RD_BUFFER_SIZE_IDX0];
-static uint8_t sysConsole0USBCdcWrRingBuffer[SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0];
-
-/* Declared in console device implementation (sys_console_usb_cdc.c) */
-extern const SYS_CONSOLE_DEV_DESC sysConsoleUSBCdcDevDesc;
-
-const SYS_CONSOLE_USB_CDC_INIT_DATA sysConsole0USBCdcInitData =
+const SYS_CONSOLE_UART_PLIB_INTERFACE sysConsole0UARTPlibAPI =
 {
-	.cdcInstanceIndex			= 0,
-	.cdcReadBuffer				= sysConsole0USBCdcRdBuffer,
-	.cdcWriteBuffer				= sysConsole0USBCdcWrBuffer,
-    .consoleReadBuffer 			= sysConsole0USBCdcRdRingBuffer,
-    .consoleWriteBuffer 		= sysConsole0USBCdcWrRingBuffer,
-    .consoleReadBufferSize 		= SYS_CONSOLE_USB_CDC_RD_BUFFER_SIZE_IDX0,
-    .consoleWriteBufferSize 	= SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0,
+    .read = (SYS_CONSOLE_UART_PLIB_READ)UART1_Read,
+	.readCountGet = (SYS_CONSOLE_UART_PLIB_READ_COUNT_GET)UART1_ReadCountGet,
+	.readFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_READ_FREE_BUFFFER_COUNT_GET)UART1_ReadFreeBufferCountGet,
+    .write = (SYS_CONSOLE_UART_PLIB_WRITE)UART1_Write,
+	.writeCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_COUNT_GET)UART1_WriteCountGet,
+	.writeFreeBufferCountGet = (SYS_CONSOLE_UART_PLIB_WRITE_FREE_BUFFER_COUNT_GET)UART1_WriteFreeBufferCountGet,
+};
+
+const SYS_CONSOLE_UART_INIT_DATA sysConsole0UARTInitData =
+{
+    .uartPLIB = &sysConsole0UARTPlibAPI,    
 };
 
 const SYS_CONSOLE_INIT sysConsole0Init =
 {
-    .deviceInitData = (const void*)&sysConsole0USBCdcInitData,
-    .consDevDesc = &sysConsoleUSBCdcDevDesc,
+    .deviceInitData = (const void*)&sysConsole0UARTInitData,
+    .consDevDesc = &sysConsoleUARTDevDesc,
     .deviceIndex = 0,
 };
 
 
+
 // </editor-fold>
-
-
-const SYS_CMD_INIT sysCmdInit =
-{
-    .moduleInit = {0},
-    .consoleCmdIOParam = SYS_CMD_SINGLE_CHARACTER_READ_CONSOLE_IO_PARAM,
-	.consoleIndex = 0,
-};
 
 
 const SYS_DEBUG_INIT debugInit =
@@ -318,6 +307,8 @@ void SYS_Initialize ( void* data )
 
     TMR4_Initialize();
 
+	UART1_Initialize();
+
     TMR5_Initialize();
 
     TMR3_Initialize();
@@ -328,8 +319,6 @@ void SYS_Initialize ( void* data )
 
     sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
     sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
-
-    SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
     sysObj.sysDebug = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
 

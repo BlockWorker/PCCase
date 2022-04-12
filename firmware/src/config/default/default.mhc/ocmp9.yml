@@ -46,7 +46,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '25000'}
+        attributes: {value: '2000'}
   - type: Comment
     attributes: {id: OCMP_PERIOD_COMMENT}
     children:

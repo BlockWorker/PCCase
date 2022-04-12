@@ -8,3 +8,4 @@ debug/
 dist/
 *.mc3.bak*
 *STP/
+USBDescriptorTool/

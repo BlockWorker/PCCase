@@ -49,13 +49,311 @@
 /**************************************************
  * USB Device Function Driver Init Data
  **************************************************/
-	
-
-const USB_DEVICE_CDC_INIT cdcInit0 =
+/****************************************************
+ * Class specific descriptor - HID Report descriptor
+ ****************************************************/
+const uint8_t hid_rpt1[] =
 {
-	.queueSizeRead = 20,
-	.queueSizeWrite = 20,
-	.queueSizeSerialStateNotification = 5
+	0x06, 0x20, 0xff,              // USAGE_PAGE (Vendor Defined Page 32)
+    0x09, 0x01,                    // USAGE (Vendor Usage 1)
+    0xa1, 0x01,                    // COLLECTION (Application)
+    0x19, 0x06,                    //   USAGE_MINIMUM (Vendor Usage 6)
+    0x29, 0x0d,                    //   USAGE_MAXIMUM (Vendor Usage 13)
+    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
+    0x75, 0x01,                    //   REPORT_SIZE (1)
+    0x95, 0x20,                    //   REPORT_COUNT (32)
+    0xb1, 0x02,                    //   FEATURE (Data,Var,Abs)
+    0x19, 0x0e,                    //   USAGE_MINIMUM (Vendor Usage 14)
+    0x2a, 0xd5, 0x00,              //   USAGE_MAXIMUM (Undefined)
+    0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //   REPORT_SIZE (8)
+    0x95, 0xc8,                    //   REPORT_COUNT (200)
+    0xb1, 0x02,                    //   FEATURE (Data,Var,Abs)
+    0x19, 0x06,                    //   USAGE_MINIMUM (Vendor Usage 6)
+    0x29, 0x0d,                    //   USAGE_MAXIMUM (Vendor Usage 13)
+    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
+    0x75, 0x01,                    //   REPORT_SIZE (1)
+    0x95, 0x20,                    //   REPORT_COUNT (32)
+    0x91, 0x02,                    //   OUTPUT (Data,Var,Abs)
+    0x19, 0x0e,                    //   USAGE_MINIMUM (Vendor Usage 14)
+    0x2a, 0xd5, 0x00,              //   USAGE_MAXIMUM (Undefined)
+    0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //   REPORT_SIZE (8)
+    0x95, 0xc8,                    //   REPORT_COUNT (200)
+    0x91, 0x02,                    //   OUTPUT (Data,Var,Abs)
+    0x19, 0x02,                    //   USAGE_MINIMUM (Vendor Usage 2)
+    0x29, 0x05,                    //   USAGE_MAXIMUM (Vendor Usage 5)
+    0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
+    0x27, 0xff, 0xff, 0xff, 0x7f,  //   LOGICAL_MAXIMUM (2147483647)
+    0x75, 0x20,                    //   REPORT_SIZE (32)
+    0x95, 0x04,                    //   REPORT_COUNT (4)
+    0x81, 0x02,                    //   INPUT (Data,Var,Abs)
+    0xc0                           // END_COLLECTION
+};
+
+/**************************************************
+ * USB Device HID Function Init Data
+ **************************************************/
+const USB_DEVICE_HID_INIT hidInit1 =
+{
+	 .hidReportDescriptorSize = sizeof(hid_rpt1),
+	 .hidReportDescriptor = (void *)&hid_rpt1,
+	 .queueSizeReportReceive = 20,
+	 .queueSizeReportSend = 20
+};
+
+
+/****************************************************
+ * Class specific descriptor - HID Report descriptor
+ ****************************************************/
+const uint8_t hid_rpt0[] =
+{
+	//0x05, 0x59,                    // USAGE_PAGE (Lighting And Illumination)
+	0x06, 0x59, 0xff,              // USAGE_PAGE (Lighting And Illumination) (vendor because of windows bug)
+    0x09, 0x01,                    // USAGE (LampArray)
+    0xa1, 0x01,                    // COLLECTION (Application)
+    0x09, 0x02,                    //   USAGE (LampArrayAttributesReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x01,                    //     REPORT_ID (1)
+    0x09, 0x03,                    //     USAGE (LampCount)
+    0x15, 0x01,                    //     LOGICAL_MINIMUM (1)
+    0x27, 0xff, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65535)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0x19, 0x04,                    //     USAGE_MINIMUM (BoundingBoxWidthInMicrometers)
+    0x29, 0x08,                    //     USAGE_MAXIMUM (MinUpdateIntervalInMicroseconds)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xff, 0xff, 0xff, 0x7f,  //     LOGICAL_MAXIMUM (2147483647)
+    0x75, 0x20,                    //     REPORT_SIZE (32)
+    0x95, 0x05,                    //     REPORT_COUNT (5)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x09, 0x20,                    //   USAGE (LampAttributesRequestReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x02,                    //     REPORT_ID (2)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xfe, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65534)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x02,                    //     FEATURE (Data,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x09, 0x22,                    //   USAGE (LampAttributesResponseReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x03,                    //     REPORT_ID (3)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xfe, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65534)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0x19, 0x23,                    //     USAGE_MINIMUM (PositionXInMicrometers)
+    0x29, 0x27,                    //     USAGE_MAXIMUM (UpdateLatencyInMicroseconds)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xff, 0xff, 0xff, 0x7f,  //     LOGICAL_MAXIMUM (2147483647)
+    0x75, 0x20,                    //     REPORT_SIZE (32)
+    0x95, 0x05,                    //     REPORT_COUNT (5)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0x19, 0x28,                    //     USAGE_MINIMUM (RedLevelCount)
+    0x29, 0x2b,                    //     USAGE_MAXIMUM (IntensityLevelCount)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x26, 0xff, 0x00,              //     LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x04,                    //     REPORT_COUNT (4)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0x09, 0x2c,                    //     USAGE (IsProgrammable)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0x09, 0x2d,                    //     USAGE (InputBinding)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x25, 0x00,                    //     LOGICAL_MAXIMUM (0)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x03,                    //     FEATURE (Cnst,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x09, 0x50,                    //   USAGE (LampMultiUpdateReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x04,                    //     REPORT_ID (4)
+    0x09, 0x03,                    //     USAGE (LampCount)
+    0x15, 0x01,                    //     LOGICAL_MINIMUM (1)
+    0x25, 0x10,                    //     LOGICAL_MAXIMUM (16)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xfe, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65534)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x21,                    //     USAGE (LampId)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x26, 0xff, 0x00,              //     LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x04,                    //     REPORT_COUNT (4)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x55,                    //     USAGE (LampUpdateFlags)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x09, 0x60,                    //   USAGE (LampRangeUpdateReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x05,                    //     REPORT_ID (5)
+    0x09, 0x61,                    //     USAGE (LampIdStart)
+    0x09, 0x62,                    //     USAGE (LampIdEnd)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xfe, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65534)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x02,                    //     REPORT_COUNT (2)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x19, 0x51,                    //     USAGE_MINIMUM (RedUpdateChannel)
+    0x29, 0x54,                    //     USAGE_MAXIMUM (IntensityUpdateChannel)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x26, 0xff, 0x00,              //     LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x04,                    //     REPORT_COUNT (4)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x55,                    //     USAGE (LampUpdateFlags)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x09, 0x70,                    //   USAGE (LampArrayControlReport)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x06,                    //     REPORT_ID (6)
+    0x09, 0x71,                    //     USAGE (AutonomousMode)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0xb1, 0x02,                    //     FEATURE (Data,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0x0a, 0x01, 0x7f,              //   USAGE (Undefined)
+    0xa1, 0x02,                    //   COLLECTION (Logical)
+    0x85, 0x07,                    //     REPORT_ID (7)
+    0x09, 0x61,                    //     USAGE (LampIdStart)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x27, 0xfe, 0xff, 0x00, 0x00,  //     LOGICAL_MAXIMUM (65534)
+    0x75, 0x10,                    //     REPORT_SIZE (16)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x03,                    //     USAGE (LampCount)
+    0x15, 0x01,                    //     LOGICAL_MINIMUM (1)
+    0x25, 0x20,                    //     LOGICAL_MAXIMUM (32)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x1a, 0x04, 0x7f,              //     USAGE_MINIMUM (Undefined)
+    0x2a, 0x43, 0x7f,              //     USAGE_MAXIMUM (Undefined)
+    0x15, 0x00,                    //     LOGICAL_MINIMUM (0)
+    0x26, 0xff, 0x00,              //     LOGICAL_MAXIMUM (255)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x40,                    //     REPORT_COUNT (64)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0x09, 0x55,                    //     USAGE (LampUpdateFlags)
+    0x25, 0x01,                    //     LOGICAL_MAXIMUM (1)
+    0x75, 0x08,                    //     REPORT_SIZE (8)
+    0x95, 0x01,                    //     REPORT_COUNT (1)
+    0x91, 0x02,                    //     OUTPUT (Data,Var,Abs)
+    0xc0,                          //   END_COLLECTION
+    0xc0                           // END_COLLECTION
+};
+
+/**************************************************
+ * USB Device HID Function Init Data
+ **************************************************/
+const USB_DEVICE_HID_INIT hidInit0 =
+{
+	 .hidReportDescriptorSize = sizeof(hid_rpt0),
+	 .hidReportDescriptor = (void *)&hid_rpt0,
+	 .queueSizeReportReceive = 60,
+	 .queueSizeReportSend = 1
 };
 
 
@@ -66,29 +364,31 @@ const USB_DEVICE_CDC_INIT cdcInit0 =
  **************************************************/
 const USB_DEVICE_FUNCTION_REGISTRATION_TABLE funcRegistrationTable[2] =
 {
-    
-	/* Vendor Function 0 */
+
+	/* HID Function 1 */
     { 
         .configurationValue = 1,    /* Configuration value */ 
-        .interfaceNumber = 2,       /* First interfaceNumber of this function */ 
+        .interfaceNumber = 1,       /* First interfaceNumber of this function */ 
         .speed = USB_SPEED_HIGH|USB_SPEED_FULL,    /* Function Speed */ 
         .numberOfInterfaces = 1,    /* Number of interfaces */
-        .funcDriverIndex = 0,  /* Index of Function Driver */
-        .driver = NULL,    
-        .funcDriverInit = NULL    /* Function driver init data */
+        .funcDriverIndex = 1,  /* Index of HID Function Driver */
+        .driver = (void*)USB_DEVICE_HID_FUNCTION_DRIVER,    /* USB HID function data exposed to device layer */
+        .funcDriverInit = (void*)&hidInit1    /* Function driver init data */
     },
 
 
-	/* CDC Function 0 */
-    {
-        .configurationValue = 1,                            // Configuration value
-        .interfaceNumber = 0,                               // First interfaceNumber of this function
-        .speed = USB_SPEED_HIGH|USB_SPEED_FULL,             // Function Speed
-        .numberOfInterfaces = 2,                            // Number of interfaces
-        .funcDriverIndex = 0,                               // Index of CDC Function Driver
-        .driver = (void*)USB_DEVICE_CDC_FUNCTION_DRIVER,    // USB CDC function data exposed to device layer
-        .funcDriverInit = (void*)&cdcInit0                  // Function driver init data
+
+	/* HID Function 0 */
+    { 
+        .configurationValue = 1,    /* Configuration value */ 
+        .interfaceNumber = 0,       /* First interfaceNumber of this function */ 
+        .speed = USB_SPEED_HIGH|USB_SPEED_FULL,    /* Function Speed */ 
+        .numberOfInterfaces = 1,    /* Number of interfaces */
+        .funcDriverIndex = 0,  /* Index of HID Function Driver */
+        .driver = (void*)USB_DEVICE_HID_FUNCTION_DRIVER,    /* USB HID function data exposed to device layer */
+        .funcDriverInit = (void*)&hidInit0    /* Function driver init data */
     },
+
 
 
 };
@@ -109,8 +409,8 @@ const USB_DEVICE_DESCRIPTOR deviceDescriptor =
     0x02,                                                   // Subclass code
     0x01,                                                   // Protocol code
     USB_DEVICE_EP0_BUFFER_SIZE,                             // Max packet size for EP0, see configuration.h
-    0x04D8,                                                 // Vendor ID
-    0x85A1,                                                 // Product ID				
+    0x1209,                                                 // Vendor ID
+    0x5001,                                                 // Product ID				
     0x0100,                                                 // Device release number in BCD format
     0x01,                                                   // Manufacturer string index
     0x02,                                                   // Product string index
@@ -146,128 +446,99 @@ const uint8_t highSpeedConfigurationDescriptor[]=
 
     0x09,                                                   // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,                           // Descriptor Type
-    USB_DEVICE_16bitTo8bitArrange(98),                      //(98 Bytes)Size of the Configuration descriptor
-    3,                                                      // Number of interfaces in this configuration
+    USB_DEVICE_16bitTo8bitArrange(73),                      //(73 Bytes)Size of the Configuration descriptor
+    2,                                                      // Number of interfaces in this configuration
     0x01,                                               // Index value of this configuration
     0x00,                                               // Configuration string index
     USB_ATTRIBUTE_DEFAULT, // Attributes
     250,
 	
+
 	/* Interface Descriptor */
-
-    0x09,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
-    2,                          // Interface Number
-    0,                          // Alternate Setting Number
-    2,                          // Number of endpoints in this intf
-    0xFF,                       // Class code
-    0xFF,                       // Subclass code
-    0xFF,                       // Protocol code
-    0,                          // Interface string index
-
-    /* Endpoint (OUT) Descriptor */
-
-    0x07,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor 
-    3 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
-    USB_TRANSFER_TYPE_BULK,     // Attributes
-    0x00,0x02,                  // Max packet size of this EP
-    1,                          // Interval
-
-    /* Endpoint (IN) Descriptor */
-
-    0x07,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
-    3 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
-    USB_TRANSFER_TYPE_BULK,     // Attributes
-    0x00,0x02,                  // Max packet size of this EP
-    1,                          // Interval
-
-
-	/* Descriptor for Function - CDC     */ 
-    /* Interface Association Descriptor: CDC Function*/
-    0x08,   // Size of this descriptor in bytes
-    0x0B,   // Interface association descriptor type
-    0,   // The first associated interface
-    0x02,   // Number of contiguous associated interface
-    0x02,   // bInterfaceClass of the first interface
-    0x02,   // bInterfaceSubclass of the first interface
-    0x01,   // bInterfaceProtocol of the first interface
-    0x00,   // Interface string index
-	/* Interface Descriptor */
-
-    0x09,                                           // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,                       // Descriptor Type is Interface descriptor
-    0,                                  // Interface Number
-    0x00,                                           // Alternate Setting Number
-    0x01,                                           // Number of endpoints in this interface
-    USB_CDC_COMMUNICATIONS_INTERFACE_CLASS_CODE,    // Class code
-    USB_CDC_SUBCLASS_ABSTRACT_CONTROL_MODEL,        // Subclass code
-    USB_CDC_PROTOCOL_AT_V250,                       // Protocol code
-    0x00,                                           // Interface string index
-
-    /* CDC Class-Specific Descriptors */
-
-    sizeof(USB_CDC_HEADER_FUNCTIONAL_DESCRIPTOR),               // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                  // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_HEADER,                                  // Type of functional descriptor
-    0x20,0x01,                                                  // CDC spec version
-
-    sizeof(USB_CDC_ACM_FUNCTIONAL_DESCRIPTOR),                  // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                  // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_ABSTRACT_CONTROL_MANAGEMENT,             // Type of functional descriptor
-    USB_CDC_ACM_SUPPORT_LINE_CODING_LINE_STATE_AND_NOTIFICATION,// bmCapabilities of ACM
-
-    sizeof(USB_CDC_UNION_FUNCTIONAL_DESCRIPTOR_HEADER) + 1,     // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                  // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_UNION,                                   // Type of functional descriptor
-    0,                                                       // com interface number
-    1,
-
-    sizeof(USB_CDC_CALL_MANAGEMENT_DESCRIPTOR),                 // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                  // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_CALL_MANAGEMENT,                         // Type of functional descriptor
-    0x00,                                                       // bmCapabilities of CallManagement
-    1,                                                       // Data interface number
-
-    /* Interrupt Endpoint (IN) Descriptor */
-
-    0x07,                           // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
-    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN INTERRUPT)
-    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes type of EP (INTERRUPT)
-    0x10,0x00,                      // Max packet size of this EP
-    0x02,                           // Interval (in ms)
-
-    /* Interface Descriptor */
 
     0x09,                               // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,           // INTERFACE descriptor type
-    1,      // Interface Number
-    0x00,                               // Alternate Setting Number
-    0x02,                               // Number of endpoints in this interface
-    USB_CDC_DATA_INTERFACE_CLASS_CODE,  // Class code
-    0x00,                               // Subclass code
-    USB_CDC_PROTOCOL_NO_CLASS_SPECIFIC, // Protocol code
-    0x00,                               // Interface string index
+    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
+    1,                                  // Interface Number
+    0x00,                                  // Alternate Setting Number
+    0x02,                                  // Number of endpoints in this interface
+    USB_HID_CLASS_CODE,                 // Class code
+    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
+    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
+    0x00,                                  // Interface string index
 
-    /* Bulk Endpoint (OUT) Descriptor */
+    /* HID Class-Specific Descriptor */
 
-    0x07,                       // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
-    2 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP2 OUT )
-    USB_TRANSFER_TYPE_BULK,     // Attributes type of EP (BULK)
-    0x00, 0x02,                 // Max packet size of this EP
-    0x00,                       // Interval (in ms)
+    0x09,                           // Size of this descriptor in bytes
+    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
+    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
+    0x00,                           // Country Code (0x00 for Not supported)
+    1,                              // Number of class descriptors
+    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
+    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt1)),   // Size of the report descriptor
 
-     /* Bulk Endpoint (IN)Descriptor */
+    /* Endpoint Descriptor */
 
-    0x07,                       // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
     2 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP2 IN )
-    0x02,                       // Attributes type of EP (BULK)
-    0x00, 0x02,                 // Max packet size of this EP
-    0x00,                       // Interval (in ms)
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // Size
+    0x01,                           // Interval
+
+    /* Endpoint Descriptor */
+
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    2 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP2 OUT )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // size
+    0x01,                           // Interval
+    
+    
+
+
+
+	/* Interface Descriptor */
+
+    0x09,                               // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
+    0,                                  // Interface Number
+    0x00,                                  // Alternate Setting Number
+    0x02,                                  // Number of endpoints in this interface
+    USB_HID_CLASS_CODE,                 // Class code
+    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
+    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
+    0x00,                                  // Interface string index
+
+    /* HID Class-Specific Descriptor */
+
+    0x09,                           // Size of this descriptor in bytes
+    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
+    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
+    0x00,                           // Country Code (0x00 for Not supported)
+    1,                              // Number of class descriptors
+    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
+    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt0)),   // Size of the report descriptor
+
+    /* Endpoint Descriptor */
+
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // Size
+    0x01,                           // Interval
+
+    /* Endpoint Descriptor */
+
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // size
+    0x01,                           // Interval
+    
+    
 
 
 
@@ -290,129 +561,99 @@ const uint8_t fullSpeedConfigurationDescriptor[]=
 
     0x09,                                                   // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,                           // Descriptor Type
-    USB_DEVICE_16bitTo8bitArrange(98),                      //(98 Bytes)Size of the Configuration descriptor
-    3,                                                      // Number of interfaces in this configuration
+    USB_DEVICE_16bitTo8bitArrange(73),                      //(73 Bytes)Size of the Configuration descriptor
+    2,                                                      // Number of interfaces in this configuration
     0x01,                                                   // Index value of this configuration
     0x00,                                                   // Configuration string index
     USB_ATTRIBUTE_DEFAULT, // Attributes
     250,
 	
-	/* Interface Descriptor */
-
-    0x09,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
-    2,                          // Interface Number
-    0,                          // Alternate Setting Number
-    2,                          // Number of endpoints in this intf
-    0xFF,                       // Class code
-    0xFF,                       // Subclass code
-    0xFF,                       // Protocol code
-    0,                          // Interface string index
-
-    /* Endpoint (OUT) Descriptor */
-
-    0x07,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor 
-    3 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
-    USB_TRANSFER_TYPE_BULK,     // Attributes
-    0x40,0x00,                  // Max packet size of this EP
-    1,                          // Interval
-
-    /* Endpoint (IN) Descriptor */
-
-    0x07,                       // Size of this descriptor in bytes
-    USB_DESCRIPTOR_ENDPOINT,    // Endpoint Descriptor
-    3 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
-    USB_TRANSFER_TYPE_BULK,     // Attributes
-    0x40,0x00,                  // Max packet size of this EP
-    1,                          // Interval
-
-
 	
-	/* Descriptor for Function - CDC     */ 
-    /* Interface Association Descriptor: CDC Function*/
-    0x08,   // Size of this descriptor in bytes
-    0x0B,   // Interface association descriptor type
-    0,   // The first associated interface
-    0x02,   // Number of contiguous associated interface
-    0x02,   // bInterfaceClass of the first interface
-    0x02,   // bInterfaceSubclass of the first interface
-    0x01,   // bInterfaceProtocol of the first interface
-    0x00,   // Interface string index
 	/* Interface Descriptor */
 
-    0x09,                                                   // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,                               // Descriptor Type is Interface descriptor
-    0,                                                      // Interface Number
-    0x00,                                                   // Alternate Setting Number
-    0x01,                                                   // Number of endpoints in this interface
-    USB_CDC_COMMUNICATIONS_INTERFACE_CLASS_CODE,            // Class code
-    USB_CDC_SUBCLASS_ABSTRACT_CONTROL_MODEL,                // Subclass code
-    USB_CDC_PROTOCOL_AT_V250,                               // Protocol code
-    0x00,                                                   // Interface string index
+    0x09,                               // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
+    1,                                  // Interface Number
+    0x00,                                  // Alternate Setting Number
+    0x02,                                  // Number of endpoints in this interface
+    USB_HID_CLASS_CODE,                 // Class code
+    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
+    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
+    0x00,                                  // Interface string index
 
-    /* CDC Class-Specific Descriptors */
+    /* HID Class-Specific Descriptor */
 
-    sizeof(USB_CDC_HEADER_FUNCTIONAL_DESCRIPTOR),                   // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                      // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_HEADER,                                      // Type of functional descriptor
-    0x20,0x01,                                                      // CDC spec version
+    0x09,                           // Size of this descriptor in bytes
+    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
+    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
+    0x00,                           // Country Code (0x00 for Not supported)
+    1,                              // Number of class descriptors
+    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
+    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt1)),   // Size of the report descriptor
 
-    sizeof(USB_CDC_ACM_FUNCTIONAL_DESCRIPTOR),                      // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                      // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_ABSTRACT_CONTROL_MANAGEMENT,                 // Type of functional descriptor
-    USB_CDC_ACM_SUPPORT_LINE_CODING_LINE_STATE_AND_NOTIFICATION,    // bmCapabilities of ACM
+    /* Endpoint Descriptor */
 
-    sizeof(USB_CDC_UNION_FUNCTIONAL_DESCRIPTOR_HEADER) + 1,         // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                      // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_UNION,                                       // Type of functional descriptor
-    0,                                                              // com interface number
-    1,
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    2 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP2 IN )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // Size
+    0x01,                           // Interval
 
-    sizeof(USB_CDC_CALL_MANAGEMENT_DESCRIPTOR),                     // Size of the descriptor
-    USB_CDC_DESC_CS_INTERFACE,                                      // CS_INTERFACE
-    USB_CDC_FUNCTIONAL_CALL_MANAGEMENT,                             // Type of functional descriptor
-    0x00,                                                           // bmCapabilities of CallManagement
-    1,                                                              // Data interface number
+    /* Endpoint Descriptor */
 
-    /* Interrupt Endpoint (IN) Descriptor */
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    2 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP2 OUT )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // size
+    0x01,                           // Interval
+    
+    
 
-    0x07,                                                   // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,                                // Endpoint Descriptor
-    1 | USB_EP_DIRECTION_IN,                                // EndpointAddress ( EP1 IN INTERRUPT)
-    USB_TRANSFER_TYPE_INTERRUPT,                            // Attributes type of EP (INTERRUPT)
-    0x10,0x00,                                              // Max packet size of this EP
-    0x02,                                                   // Interval (in ms)
 
-    /* Interface Descriptor */
 
-    0x09,                                                   // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,                               // INTERFACE descriptor type
-    1,                                                      // Interface Number
-    0x00,                                                   // Alternate Setting Number
-    0x02,                                                   // Number of endpoints in this interface
-    USB_CDC_DATA_INTERFACE_CLASS_CODE,                      // Class code
-    0x00,                                                   // Subclass code
-    USB_CDC_PROTOCOL_NO_CLASS_SPECIFIC,                     // Protocol code
-    0x00,                                                   // Interface string index
+	/* Interface Descriptor */
 
-    /* Bulk Endpoint (OUT) Descriptor */
+    0x09,                               // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,           // Descriptor Type is Interface descriptor
+    0,                                  // Interface Number
+    0x00,                                  // Alternate Setting Number
+    0x02,                                  // Number of endpoints in this interface
+    USB_HID_CLASS_CODE,                 // Class code
+    USB_HID_SUBCLASS_CODE_NO_SUBCLASS , // Subclass code
+    USB_HID_PROTOCOL_CODE_NONE,         // No Protocol
+    0x00,                                  // Interface string index
 
-    0x07,                                                   // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,                                // Endpoint Descriptor
-    2 | USB_EP_DIRECTION_OUT,                               // EndpointAddress ( EP2 OUT )
-    USB_TRANSFER_TYPE_BULK,                                 // Attributes type of EP (BULK)
-    0x40, 0x00,                                             // Max packet size of this EP
-    0x00,                                                   // Interval (in ms)
+    /* HID Class-Specific Descriptor */
 
-     /* Bulk Endpoint (IN)Descriptor */
+    0x09,                           // Size of this descriptor in bytes
+    USB_HID_DESCRIPTOR_TYPES_HID,   // HID descriptor type
+    0x11,0x01,                      // HID Spec Release Number in BCD format (1.11)
+    0x00,                           // Country Code (0x00 for Not supported)
+    1,                              // Number of class descriptors
+    USB_HID_DESCRIPTOR_TYPES_REPORT,// Report descriptor type
+    USB_DEVICE_16bitTo8bitArrange(sizeof(hid_rpt0)),   // Size of the report descriptor
 
-    0x07,                                                   // Size of this descriptor
-    USB_DESCRIPTOR_ENDPOINT,                                // Endpoint Descriptor
-    2 | USB_EP_DIRECTION_IN,                                // EndpointAddress ( EP2 IN )
-    0x02,                                                   // Attributes type of EP (BULK)
-    0x40, 0x00,                                             // Max packet size of this EP
-    0x00,                                                   // Interval (in ms)
+    /* Endpoint Descriptor */
+
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_IN,    // EndpointAddress ( EP1 IN )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // Size
+    0x01,                           // Interval
+
+    /* Endpoint Descriptor */
+
+    0x07,                           // Size of this descriptor in bytes
+    USB_DESCRIPTOR_ENDPOINT,        // Endpoint Descriptor
+    1 | USB_EP_DIRECTION_OUT,   // EndpointAddress ( EP1 OUT )
+    USB_TRANSFER_TYPE_INTERRUPT,    // Attributes
+    0x40,0x00,                      // size
+    0x01,                           // Interval
+    
+    
 
 
 
@@ -534,9 +775,9 @@ const USB_DEVICE_INIT usbDevInitData =
     .usbDriverInterface = DRV_USBHS_DEVICE_INTERFACE,
 	
 	/* Specify queue size for vendor endpoint read */
-    .queueSizeEndpointRead = 134,
+    .queueSizeEndpointRead = 115,
     
     /* Specify queue size for vendor endpoint write */
-    .queueSizeEndpointWrite= 134,
+    .queueSizeEndpointWrite= 115,
 };
 // </editor-fold>

@@ -37,14 +37,10 @@ extern "C" {
         ARGB_CHANNEL_A = 0,
         ARGB_CHANNEL_B = 1,
         ARGB_CHANNEL_C = 2
-    } argb_channel_t;    
+    } argb_channel_t;
     
-    
-    uint32_t argb_a_colors[ARGB_MAX_LENGTH];
-    uint32_t argb_b_colors[ARGB_MAX_LENGTH];
-    uint32_t argb_c_colors[ARGB_MAX_LENGTH];
 
-    uint32_t* argb_colors[3];
+    uint32_t* argb_colors[4];
     
     
     void ARGB_Init();

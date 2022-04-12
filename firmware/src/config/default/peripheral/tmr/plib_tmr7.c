@@ -63,17 +63,17 @@ void TMR7_Initialize(void)
 
     /*
     SIDL = 0
-    TCKPS =0
+    TCKPS =7
     T32   = 0
     TCS = 0
     */
-    T7CONSET = 0x0;
+    T7CONSET = 0x70;
 
     /* Clear counter */
     TMR7 = 0x0;
 
     /*Set period */
-    PR7 = 49998U;
+    PR7 = 4000U;
 
     /* Enable TMR Interrupt */
     IEC1SET = _IEC1_T7IE_MASK;
@@ -110,7 +110,7 @@ uint16_t TMR7_CounterGet(void)
 
 uint32_t TMR7_FrequencyGet(void)
 {
-    return (100000000);
+    return (390625);
 }
 
 

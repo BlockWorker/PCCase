@@ -66,8 +66,8 @@ void OCMP9_Initialize (void)
     CFGCON |= 0x00010000;
     /* Lock system since done with configuration */
     SYSKEY = 0x33333333;    
-    OC9R = 25000;
-    OC9RS = 25000;
+    OC9R = 2000;
+    OC9RS = 2000;
 
 }
 

@@ -55,7 +55,7 @@ void EVIC_Initialize( void )
     INTCONSET = _INTCON_MVEC_MASK;
 
     /* Set up priority and subpriority of enabled interrupts */
-    IPC0SET = 0x4 | 0x0;  /* CORE_TIMER:  Priority 1 / Subpriority 0 */
+    IPC0SET = 0x10 | 0x0;  /* CORE_TIMER:  Priority 4 / Subpriority 0 */
     IPC1SET = 0x40000 | 0x0;  /* INPUT_CAPTURE_1:  Priority 1 / Subpriority 0 */
     IPC2SET = 0x4000000 | 0x0;  /* INPUT_CAPTURE_2:  Priority 1 / Subpriority 0 */
     IPC3SET = 0x40000 | 0x0;  /* TIMER_3:  Priority 1 / Subpriority 0 */
@@ -65,9 +65,12 @@ void EVIC_Initialize( void )
     IPC7SET = 0x4 | 0x0;  /* TIMER_6:  Priority 1 / Subpriority 0 */
     IPC8SET = 0x4 | 0x0;  /* TIMER_7:  Priority 1 / Subpriority 0 */
     IPC13SET = 0x4 | 0x0;  /* ADC_DF1:  Priority 1 / Subpriority 0 */
+    IPC28SET = 0x8 | 0x0;  /* UART1_FAULT:  Priority 2 / Subpriority 0 */
+    IPC28SET = 0x800 | 0x0;  /* UART1_RX:  Priority 2 / Subpriority 0 */
+    IPC28SET = 0x80000 | 0x0;  /* UART1_TX:  Priority 2 / Subpriority 0 */
     IPC31SET = 0x400 | 0x0;  /* CHANGE_NOTICE_H:  Priority 1 / Subpriority 0 */
-    IPC33SET = 0x4 | 0x0;  /* USB:  Priority 1 / Subpriority 0 */
-    IPC33SET = 0x400 | 0x0;  /* USB_DMA:  Priority 1 / Subpriority 0 */
+    IPC33SET = 0xc | 0x0;  /* USB:  Priority 3 / Subpriority 0 */
+    IPC33SET = 0xc00 | 0x0;  /* USB_DMA:  Priority 3 / Subpriority 0 */
     IPC33SET = 0x40000 | 0x0;  /* DMA0:  Priority 1 / Subpriority 0 */
     IPC33SET = 0x4000000 | 0x0;  /* DMA1:  Priority 1 / Subpriority 0 */
     IPC34SET = 0x4 | 0x0;  /* DMA2:  Priority 1 / Subpriority 0 */

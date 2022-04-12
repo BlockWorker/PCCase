@@ -725,17 +725,25 @@ uint64_t SYS_TIME_Counter64Get ( void )
 {
     SYS_TIME_COUNTER_OBJ * counterObj = (SYS_TIME_COUNTER_OBJ *)&gSystemCounterObj;
     uint64_t counter64 = 0;
-    uint32_t counter32 = 0;
+    //uint32_t counter32 = 0;
     uint32_t elapsedCount;
-    uint8_t isSwCounter32Oveflow = false;
+    //uint8_t isSwCounter32Oveflow = false;
 
     if (SYS_TIME_ResourceLock() == false)
     {
         //return counter64;
-        return (((uint64_t)(counterObj->swCounter64High) << 32) + counterObj->swCounter64Low);
+        return (((uint64_t)(counterObj->swCounter64High) << 32) | (uint64_t)(counterObj->swCounter64Low));
     }
 
-    elapsedCount = SYS_TIME_GetElapsedCount(counterObj->timePlib->timerCounterGet());
+    counterObj->hwTimerCurrentValue = counterObj->timePlib->timerCounterGet();
+
+    elapsedCount = SYS_TIME_GetElapsedCount(counterObj->hwTimerCurrentValue);
+    
+    SYS_TIME_Counter64Update(elapsedCount);
+    
+    counter64 = (((uint64_t)(counterObj->swCounter64High) << 32) | (uint64_t)(counterObj->swCounter64Low));
+    
+    /*elapsedCount = SYS_TIME_GetElapsedCount(counterObj->timePlib->timerCounterGet());
 
     counter32 = SYS_TIME_Counter32Update(elapsedCount, &isSwCounter32Oveflow);
     counter64 = counterObj->swCounter64High;
@@ -745,7 +753,9 @@ uint64_t SYS_TIME_Counter64Get ( void )
         counter64++;
     }
 
-    counter64 = ((counter64 << 32) + counter32);
+    counter64 = ((counter64 << 32) + counter32);*/
+    
+    counterObj->hwTimerPreviousValue = counterObj->hwTimerCurrentValue;
 
     SYS_TIME_ResourceUnlock();
 

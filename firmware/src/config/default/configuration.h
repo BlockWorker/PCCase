@@ -90,18 +90,7 @@ extern "C" {
 
 #define SYS_CONSOLE_INDEX_0                       0
 
-/* RX buffer size has one additional element for the empty spot needed in circular buffer */
-#define SYS_CONSOLE_USB_CDC_RD_BUFFER_SIZE_IDX0    1025
 
-/* TX buffer size has one additional element for the empty spot needed in circular buffer */
-#define SYS_CONSOLE_USB_CDC_WR_BUFFER_SIZE_IDX0    1025
-
-
-
-#define SYS_CMD_ENABLE
-#define SYS_CMD_DEVICE_MAX_INSTANCES       SYS_CONSOLE_DEVICE_MAX_INSTANCES
-#define SYS_CMD_PRINT_BUFFER_SIZE          1024
-#define SYS_CMD_BUFFER_DMA_READY
 
 
 
@@ -112,11 +101,10 @@ extern "C" {
 
 
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			1
-#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			0
-#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		1
-#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		200
+#define SYS_CONSOLE_UART_MAX_INSTANCES 	   			1
+#define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		0
+#define SYS_CONSOLE_PRINT_BUFFER_SIZE        		1024
 
-#define SYS_CONSOLE_USB_CDC_READ_WRITE_BUFFER_SIZE 	512
 
 
 
@@ -133,7 +121,7 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 /* Number of Endpoints used */
-#define DRV_USBHS_ENDPOINTS_NUMBER                        5
+#define DRV_USBHS_ENDPOINTS_NUMBER                        4
 
 /* The USB Device Layer will not initialize the USB Driver */
 #define USB_DEVICE_DRIVER_INITIALIZE_EXPLICIT
@@ -144,24 +132,6 @@ extern "C" {
 /* EP0 size in bytes */
 #define USB_DEVICE_EP0_BUFFER_SIZE                          64
 
-
-
-
-
-
-/* Maximum instances of CDC function driver */
-#define USB_DEVICE_CDC_INSTANCES_NUMBER                     1
-
-
-/* CDC Transfer Queue Size for both read and
-   write. Applicable to all instances of the
-   function driver */
-#define USB_DEVICE_CDC_QUEUE_DEPTH_COMBINED                 45
-
-/* Endpoint Transfer Queue Size for both read and
-   write. Applicable to all instances of the
-   function driver */
-#define USB_DEVICE_ENDPOINT_QUEUE_DEPTH_COMBINED                 40
 
 /*** USB Driver Configuration ***/
 
@@ -183,6 +153,14 @@ extern "C" {
 
 /* Alignment for buffers that are submitted to USB Driver*/ 
 #define USB_ALIGN  CACHE_ALIGN  __ALIGNED(16)
+
+/* Maximum instances of HID function driver */
+#define USB_DEVICE_HID_INSTANCES_NUMBER     2 
+
+/* HID Transfer Queue Size for both read and
+   write. Applicable to all instances of the
+   function driver */
+#define USB_DEVICE_HID_QUEUE_DEPTH_COMBINED                 101
 
 
 

@@ -260,11 +260,13 @@ void COOLCTL_Tasks() {
                 
                 CONFIG_HID_SendUpdate();
             } else { //startup operation
+#ifndef APP_POWER_DEBUG
                 if (_coolctl_startup_count++ >= COOLCTL_STARTUP_MAX_COUNT) { //maximum startup duration: force shutdown if exceeded (cooling system failed to start)
                     EMERGENCY_Shutdown();
                     _coolctl_next_update = UINT64_MAX;
                     return;
                 }
+#endif
                 
                 //check for each measurement to be within acceptable start range
                 bool fan_started = (coolctl_fan_rpm >= COOLCTL_FAN_STARTUP_NOMINAL_RPM_MIN && coolctl_fan_rpm <= COOLCTL_FAN_STARTUP_NOMINAL_RPM_MAX);

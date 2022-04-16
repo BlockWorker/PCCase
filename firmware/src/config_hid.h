@@ -10,6 +10,14 @@
 
 
 #define CONFIG_HID_REQUEST_COUNT 10
+#define CONFIG_HID_BUFFER_SIZE 256
+
+#define CONFIG_HID_DATA_SIZE (58 * 4)
+#define CONFIG_HID_REPORT_SIZE (CONFIG_HID_DATA_SIZE + 4)
+
+#if (CONFIG_HID_REPORT_SIZE > CONFIG_HID_BUFFER_SIZE)
+#error "Config HID buffer size too small!"
+#endif
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus

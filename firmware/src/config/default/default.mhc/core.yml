@@ -929,12 +929,19 @@ children:
       - type: User
         attributes: {value: DIGITAL}
   - type: String
+    attributes: {id: BSP_PIN_96_FUNCTION_NAME}
+    children:
+    - type: Values
+      children:
+      - type: User
+        attributes: {value: FPLED_R}
+  - type: String
     attributes: {id: BSP_PIN_96_FUNCTION_TYPE}
     children:
     - type: Values
       children:
       - type: User
-        attributes: {value: U1TX}
+        attributes: {value: OC4}
   - type: String
     attributes: {id: BSP_PIN_96_MODE}
     children:
@@ -3439,7 +3446,7 @@ children:
     - type: Values
       children:
       - type: User
-        attributes: {value: '24'}
+        attributes: {value: '12'}
   - type: KeyValueSet
     attributes: {id: SYS_PORT_PPS_OUTPUT_FUNCTION_13}
     children:

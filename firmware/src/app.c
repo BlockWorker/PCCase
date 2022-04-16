@@ -48,6 +48,7 @@
 #include "cooling_control.h"
 #include "app_config.h"
 #include "config_hid.h"
+#include "argb_effect.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -74,8 +75,6 @@ APP_DATA appData;
 
 uint64_t iter_start_time = 0;
 
-
-static bool frame_ended = false;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -144,7 +143,6 @@ void APP_Initialize() {
     appData.state = APP_STATE_INIT_START;
 
     iter_start_time = 0;
-    frame_ended = false;
 }
 
 
@@ -155,35 +153,6 @@ void APP_Initialize() {
   Remarks:
     See prototype in app.h.
  */
-
-void frame_end_cb(uintptr_t context) {
-    frame_ended = true;
-}
-
-void newframe() {
-    static int32_t r = 250;
-    static int32_t g = 0;
-    static int32_t b = 0;
-    
-    if(r > 0 && b == 0){
-        r -= 10;
-        g += 10;
-    }
-    if(g > 0 && r == 0){
-        g -= 10;
-        b += 10;
-    }
-    if(b > 0 && g == 0){
-        r += 10;
-        b -= 10;
-    }
-    
-    uint32_t i;
-    for (i = ARGB_MAX_LENGTH - 1; i > 0; i--) {
-        argb_colors[0][i] = argb_colors[0][i - 1];
-    }
-    argb_colors[0][0] = 0x01000000u | (g << 16) | (r << 8) | b;
-}
 
 void APP_Tasks() {
     iter_start_time = SYS_TIME_Counter64Get();
@@ -196,7 +165,7 @@ void APP_Tasks() {
             
             APP_POWER_Init();
             ARGB_Init();
-            ARGB_SetFrameCallback(frame_end_cb, NULL);
+            ARGB_EFFECT_Init();
             COOLCTL_Init();
 
             appData.state = APP_STATE_INIT_USB;
@@ -214,12 +183,8 @@ void APP_Tasks() {
         case APP_STATE_SERVICE_TASKS:
             APP_POWER_Tasks();
             
-            if (frame_ended) {
-                frame_ended = false;
-                if (argb_hid_autonomous_mode) newframe();
-            }
-            
             ARGB_Tasks();
+            ARGB_EFFECT_Tasks();
             
             COOLCTL_Tasks();
             

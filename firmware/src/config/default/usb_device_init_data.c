@@ -46,6 +46,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "config_hid.h"
 /**************************************************
  * USB Device Function Driver Init Data
  **************************************************/
@@ -58,30 +59,36 @@ const uint8_t hid_rpt1[] =
     0x09, 0x01,                    // USAGE (Vendor Usage 1)
     0xa1, 0x01,                    // COLLECTION (Application)
     0x19, 0x06,                    //   USAGE_MINIMUM (Vendor Usage 6)
-    0x29, 0x0d,                    //   USAGE_MAXIMUM (Vendor Usage 13)
+    0x29, 0x0e,                    //   USAGE_MAXIMUM (Vendor Usage 14)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
     0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
     0x75, 0x01,                    //   REPORT_SIZE (1)
     0x95, 0x20,                    //   REPORT_COUNT (32)
     0xb1, 0x02,                    //   FEATURE (Data,Var,Abs)
-    0x19, 0x0e,                    //   USAGE_MINIMUM (Vendor Usage 14)
-    0x2a, 0xd5, 0x00,              //   USAGE_MAXIMUM (Undefined)
+    0x19, 0x0f,                    //   USAGE_MINIMUM (Vendor Usage 15)
+    0x2a,                          //   USAGE_MAXIMUM (Vendor Usage as required)
+    ((0x0f + CONFIG_HID_DATA_SIZE - 1) & 0xff),
+    (((0x0f + CONFIG_HID_DATA_SIZE - 1) >> 8) & 0xff),
     0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
     0x75, 0x08,                    //   REPORT_SIZE (8)
-    0x95, 0xc8,                    //   REPORT_COUNT (200)
+    0x95,                          //   REPORT_COUNT (As required)
+    CONFIG_HID_DATA_SIZE,
     0xb1, 0x02,                    //   FEATURE (Data,Var,Abs)
     0x19, 0x06,                    //   USAGE_MINIMUM (Vendor Usage 6)
-    0x29, 0x0d,                    //   USAGE_MAXIMUM (Vendor Usage 13)
+    0x29, 0x0e,                    //   USAGE_MAXIMUM (Vendor Usage 14)
     0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
     0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
     0x75, 0x01,                    //   REPORT_SIZE (1)
     0x95, 0x20,                    //   REPORT_COUNT (32)
     0x91, 0x02,                    //   OUTPUT (Data,Var,Abs)
-    0x19, 0x0e,                    //   USAGE_MINIMUM (Vendor Usage 14)
-    0x2a, 0xd5, 0x00,              //   USAGE_MAXIMUM (Undefined)
+    0x19, 0x0f,                    //   USAGE_MINIMUM (Vendor Usage 15)
+    0x2a,                          //   USAGE_MAXIMUM (Vendor Usage as required)
+    ((0x0f + CONFIG_HID_DATA_SIZE - 1) & 0xff),
+    (((0x0f + CONFIG_HID_DATA_SIZE - 1) >> 8) & 0xff),
     0x26, 0xff, 0x00,              //   LOGICAL_MAXIMUM (255)
     0x75, 0x08,                    //   REPORT_SIZE (8)
-    0x95, 0xc8,                    //   REPORT_COUNT (200)
+    0x95,                          //   REPORT_COUNT (As required)
+    CONFIG_HID_DATA_SIZE,
     0x91, 0x02,                    //   OUTPUT (Data,Var,Abs)
     0x19, 0x02,                    //   USAGE_MINIMUM (Vendor Usage 2)
     0x29, 0x05,                    //   USAGE_MAXIMUM (Vendor Usage 5)

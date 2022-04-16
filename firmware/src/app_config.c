@@ -24,6 +24,9 @@ float config_cooling_acceptable_max[4] = { 0.0f };
 float config_cooling_nominal_min[4] = { 0.0f };
 float config_cooling_nominal_max[4] = { 0.0f };
 
+uint32_t config_argb_effect_index = 0;
+uint32_t config_argb_effect_params[7] = { 0 };
+
 
 void APP_CONFIG_Init() {
     uint32_t initReadBuffer = 0;
@@ -54,6 +57,11 @@ void APP_CONFIG_Init() {
                 if ((error = DataEERead((uint32_t*)(config_cooling_acceptable_max + i), APP_CONFIG_COOLING_ACCEPTABLE + i + 4))) break;
                 if ((error = DataEERead((uint32_t*)(config_cooling_nominal_min + i), APP_CONFIG_COOLING_NOMINAL + i))) break;
                 if ((error = DataEERead((uint32_t*)(config_cooling_nominal_max + i), APP_CONFIG_COOLING_NOMINAL + i + 4))) break;
+            }
+            
+            if ((error = DataEERead(&config_argb_effect_index, APP_CONFIG_ARGB_EFFECT))) break;
+            for (i = 0; i < 7; i++) {
+                if ((error = DataEERead(config_argb_effect_params + i, APP_CONFIG_ARGB_EFFECT + i + 1))) break;
             }
         } while (false);
         
@@ -89,6 +97,10 @@ void APP_CONFIG_Init() {
         config_cooling_nominal_max[1] = 4000.0f;
         config_cooling_nominal_max[2] = 3000.0f;
         config_cooling_nominal_max[3] = 50.0f;
+        config_argb_effect_index = 0;
+        for (i = 0; i < 7; i++) {
+            config_argb_effect_params[i] = 0;
+        }
         
         APP_CONFIG_Write(APP_CONFIG_ALL);
     }
@@ -138,6 +150,13 @@ void APP_CONFIG_Write(APP_CONFIG_SECTION section) {
                 error = DataEEWrite(*((uint32_t*)(config_cooling_nominal_min + i)), APP_CONFIG_COOLING_NOMINAL + i);
                 if (error) break;
                 error = DataEEWrite(*((uint32_t*)(config_cooling_nominal_max + i)), APP_CONFIG_COOLING_NOMINAL + i + 4);
+            }
+            if (!all || error) break;
+        case APP_CONFIG_ARGB_EFFECT:
+            error = DataEEWrite(config_argb_effect_index, APP_CONFIG_ARGB_EFFECT);
+            for (i = 0; i < 7; i++) {
+                if (error) break;
+                error = DataEEWrite(config_argb_effect_params[i], APP_CONFIG_ARGB_EFFECT + i + 1);
             }
             break;
         default:

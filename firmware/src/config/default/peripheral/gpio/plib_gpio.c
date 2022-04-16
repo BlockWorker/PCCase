@@ -116,7 +116,7 @@ void GPIO_Initialize ( void )
     RPC2R = 13;
     RPC3R = 12;
     RPG7R = 12;
-    RPA15R = 1;
+    RPA15R = 11;
     RPD9R = 11;
     RPD10R = 12;
     RPD0R = 12;

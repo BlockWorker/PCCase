@@ -4,25 +4,27 @@
 #include <string.h>
 
 #include "argb_hid.h"
+#include "argb_positions.h"
 #include "usb/usb_device_hid.h"
 #include "app.h"
 #include "system/debug/sys_debug.h"
 #include "system/time/sys_time.h"
+#include "argb_effect.h"
 
 
 
 static const uint8_t _argb_hid_array_attrib_report[] = {
-    (uint8_t)ARGB_HID_REPORT_ARRAY_ATTRIB,          //Report ID
+    (uint8_t)ARGB_HID_REPORT_ARRAY_ATTRIB,              //Report ID
     (uint8_t)(ARGB_HID_LAMPCOUNT & 0xff),
-    (uint8_t)((ARGB_HID_LAMPCOUNT >> 8) & 0xff),    //Lamp Count
-    0xB0, 0x1E, 0x04, 0x00,                         //BB Width (270000 um)
-    0x20, 0xA1, 0x07, 0x00,                         //BB Height (500000 um)
-    0x20, 0xA1, 0x07, 0x00,                         //BB Depth (500000 um)
-    0x07, 0x00, 0x00, 0x00,                         //Array kind: Chassis
-    (uint8_t)(ARGB_FRAMETIME_US & 0xff),
-    (uint8_t)((ARGB_FRAMETIME_US >> 8) & 0xff),
-    (uint8_t)((ARGB_FRAMETIME_US >> 16) & 0xff),
-    (uint8_t)((ARGB_FRAMETIME_US >> 24) & 0xff)     //Min update interval = frame time
+    (uint8_t)((ARGB_HID_LAMPCOUNT >> 8) & 0xff),        //Lamp Count
+    0xB0, 0x1E, 0x04, 0x00,                             //BB Width (270000 um)
+    0x20, 0xA1, 0x07, 0x00,                             //BB Height (500000 um)
+    0x20, 0xA1, 0x07, 0x00,                             //BB Depth (500000 um)
+    0x07, 0x00, 0x00, 0x00,                             //Array kind: Chassis
+    (uint8_t)((2 * ARGB_FRAMETIME_US) & 0xff),
+    (uint8_t)(((2 * ARGB_FRAMETIME_US) >> 8) & 0xff),
+    (uint8_t)(((2 * ARGB_FRAMETIME_US) >> 16) & 0xff),
+    (uint8_t)(((2 * ARGB_FRAMETIME_US) >> 24) & 0xff)   //Min update interval = frame time * 2 (otherwise overloaded it seems)
 };
 
 static const uint8_t _argb_hid_lamp_attrib_template[] = {
@@ -79,9 +81,9 @@ void _argb_hid_handle_get_report(USB_DEVICE_HID_EVENT_DATA_GET_REPORT* data) {
             case ARGB_HID_REPORT_LAMP_ATTRIB_RES:
                 memcpy(_argb_hid_ctrl_send_buffer, _argb_hid_lamp_attrib_template, sizeof(_argb_hid_lamp_attrib_template));
                 memcpy(_argb_hid_ctrl_send_buffer + 1, &_argb_hid_lamp_attrib_id, sizeof(uint16_t));
-                //TODO: Actual positions
-                uint32_t dummy_position[] = { 0x1bb00 + _argb_hid_lamp_attrib_id, 0x2bb00 + _argb_hid_lamp_attrib_id, 0x3bb00 + _argb_hid_lamp_attrib_id };
-                memcpy(_argb_hid_ctrl_send_buffer + 3, &dummy_position, 3 * sizeof(uint32_t));
+                uint16_t section = _argb_hid_lamp_attrib_id / ARGB_MAX_LENGTH;
+                uint16_t id_in_section = _argb_hid_lamp_attrib_id % ARGB_MAX_LENGTH;
+                memcpy(_argb_hid_ctrl_send_buffer + 3, argb_positions[section] + (3 * id_in_section), 3 * sizeof(uint32_t));
                 _argb_hid_lamp_attrib_id = (_argb_hid_lamp_attrib_id + 1) % ARGB_HID_LAMPCOUNT;
                 USB_DEVICE_ControlSend(appData.usbHandle, _argb_hid_ctrl_send_buffer, sizeof(_argb_hid_lamp_attrib_template));
                 return;
@@ -157,6 +159,7 @@ void _argb_hid_handle_report_received(uint8_t* buffer, uint8_t length, bool from
             if (length != 2) break;
             if (buffer[1] < 2) {
                 argb_hid_autonomous_mode = (bool)buffer[1]; //update autonomous mode status
+                if (argb_hid_autonomous_mode) argb_effect_update_requested = true;
                 success = true;
             }
             break;

@@ -34,6 +34,12 @@
 #include "configuration.h"
 #include "config/default/usb/usb_device.h"
 
+
+//power debug switch: allow this to be defined in order to disable automatic emergency shutdown and warnings, to allow power testing
+#define APP_POWER_DEBUG
+#undef APP_POWER_DEBUG
+
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 

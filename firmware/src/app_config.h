@@ -22,6 +22,7 @@ extern "C" {
         APP_CONFIG_WATCHDOG = 0x030,
         APP_CONFIG_COOLING_ACCEPTABLE = 0x038,
         APP_CONFIG_COOLING_NOMINAL = 0x040,
+        APP_CONFIG_ARGB_EFFECT = 0x100,
     } APP_CONFIG_SECTION;
     
     
@@ -41,6 +42,9 @@ extern "C" {
     float config_cooling_acceptable_max[4];
     float config_cooling_nominal_min[4];
     float config_cooling_nominal_max[4];
+    
+    uint32_t config_argb_effect_index;
+    uint32_t config_argb_effect_params[7];
     
     
     void APP_CONFIG_Init();

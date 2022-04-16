@@ -167,6 +167,8 @@
       <itemPath>../src/app_config.h</itemPath>
       <itemPath>../src/emergency.h</itemPath>
       <itemPath>../src/config_hid.h</itemPath>
+      <itemPath>../src/argb_positions.h</itemPath>
+      <itemPath>../src/argb_effect.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -289,6 +291,7 @@
       <itemPath>../src/app_config.c</itemPath>
       <itemPath>../src/emergency.c</itemPath>
       <itemPath>../src/config_hid.c</itemPath>
+      <itemPath>../src/argb_effect.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

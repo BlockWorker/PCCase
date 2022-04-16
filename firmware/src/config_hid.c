@@ -9,15 +9,16 @@
 #include "app_config.h"
 #include "cooling_control.h"
 #include "system/debug/sys_debug.h"
+#include "argb_effect.h"
 
 
 
-static uint8_t _config_hid_ctrl_send_buffer[256] = { 0 };
+static uint8_t _config_hid_ctrl_send_buffer[CONFIG_HID_BUFFER_SIZE] = { 0 };
 
 static uint8_t _config_hid_interrupt_send_buffer[32] = { 0 };
 
 static USB_DEVICE_HID_TRANSFER_HANDLE _config_hid_interrupt_receive_handles[CONFIG_HID_REQUEST_COUNT] = { 0 };
-static uint8_t _config_hid_interrupt_receive_buffers[CONFIG_HID_REQUEST_COUNT][256] = { { 0 } };
+static uint8_t _config_hid_interrupt_receive_buffers[CONFIG_HID_REQUEST_COUNT][CONFIG_HID_BUFFER_SIZE] = { { 0 } };
 
 static uint32_t _config_hid_requested_writes = 0;
 
@@ -41,7 +42,7 @@ void _config_hid_handle_get_report(USB_DEVICE_HID_EVENT_DATA_GET_REPORT* data) {
     } else if (data->reportType == 0x03) { //requesting feature report
         uint32_t* sendbuf_32b = (uint32_t*)_config_hid_ctrl_send_buffer;
         
-        sendbuf_32b[0] = 0xff;
+        sendbuf_32b[0] = 0x1ff;
         
         sendbuf_32b[1] = config_fan_curve_point_count;
         memcpy(sendbuf_32b + 2, config_fan_curve_temperatures, 12 * sizeof(float));
@@ -59,7 +60,10 @@ void _config_hid_handle_get_report(USB_DEVICE_HID_EVENT_DATA_GET_REPORT* data) {
         memcpy(sendbuf_32b + 43, config_cooling_nominal_min, 4 * sizeof(float));
         memcpy(sendbuf_32b + 47, config_cooling_nominal_max, 4 * sizeof(float));
         
-        USB_DEVICE_ControlSend(appData.usbHandle, _config_hid_ctrl_send_buffer, 204);
+        sendbuf_32b[51] = config_argb_effect_index;
+        memcpy(sendbuf_32b + 52, config_argb_effect_params, 7 * sizeof(uint32_t));
+        
+        USB_DEVICE_ControlSend(appData.usbHandle, _config_hid_ctrl_send_buffer, CONFIG_HID_REPORT_SIZE);
         return;
     }
     USB_DEVICE_ControlStatus(appData.usbHandle, USB_DEVICE_CONTROL_STATUS_ERROR); //fallback for all other cases: error
@@ -75,32 +79,38 @@ void _config_hid_handle_report_received(USB_DEVICE_HID_EVENT_DATA_REPORT_RECEIVE
             break;
         }
     }
-    if (!found || data->status != USB_DEVICE_HID_RESULT_OK || data->length != 204) return;
+    if (!found || data->status != USB_DEVICE_HID_RESULT_OK || data->length != CONFIG_HID_REPORT_SIZE) return;
     
     uint32_t* rcvbuf_32b = (uint32_t*)_config_hid_interrupt_receive_buffers[i];
     
     uint32_t active_fields = rcvbuf_32b[0];
     
-    if (active_fields & 0x01) {
+    if (active_fields & 0x001) {
         config_fan_curve_point_count = rcvbuf_32b[1];
         memcpy(config_fan_curve_temperatures, rcvbuf_32b + 2, 12 * sizeof(float));
         memcpy(config_fan_curve_values, rcvbuf_32b + 14, 12);
     }
     
-    if (active_fields & 0x02) {
+    if (active_fields & 0x002) {
         config_pump_curve_point_count = rcvbuf_32b[17];
         memcpy(config_pump_curve_temperatures, rcvbuf_32b + 18, 12 * sizeof(float));
         memcpy(config_pump_curve_values, rcvbuf_32b + 30, 12);
     }
     
-    if (active_fields & 0x04) config_watchdog_interval_seconds = rcvbuf_32b[33];
-    if (active_fields & 0x08) config_watchdog_runtime_seconds = rcvbuf_32b[34];
+    if (active_fields & 0x004) config_watchdog_interval_seconds = rcvbuf_32b[33];
+    if (active_fields & 0x008) config_watchdog_runtime_seconds = rcvbuf_32b[34];
     
-    if (active_fields & 0x10) memcpy(config_cooling_acceptable_min, rcvbuf_32b + 35, 4 * sizeof(float));
-    if (active_fields & 0x20) memcpy(config_cooling_acceptable_max, rcvbuf_32b + 39, 4 * sizeof(float));
+    if (active_fields & 0x010) memcpy(config_cooling_acceptable_min, rcvbuf_32b + 35, 4 * sizeof(float));
+    if (active_fields & 0x020) memcpy(config_cooling_acceptable_max, rcvbuf_32b + 39, 4 * sizeof(float));
     
-    if (active_fields & 0x40) memcpy(config_cooling_nominal_min, rcvbuf_32b + 43, 4 * sizeof(float));
-    if (active_fields & 0x80) memcpy(config_cooling_nominal_max, rcvbuf_32b + 47, 4 * sizeof(float));
+    if (active_fields & 0x040) memcpy(config_cooling_nominal_min, rcvbuf_32b + 43, 4 * sizeof(float));
+    if (active_fields & 0x080) memcpy(config_cooling_nominal_max, rcvbuf_32b + 47, 4 * sizeof(float));
+    
+    if (active_fields & 0x100) {
+        config_argb_effect_index = rcvbuf_32b[51];
+        memcpy(config_argb_effect_params, rcvbuf_32b + 52, 7 * sizeof(uint32_t));
+        argb_effect_update_requested = true;
+    }
     
     _config_hid_requested_writes |= active_fields;
     
@@ -112,7 +122,7 @@ void _config_hid_queue_transfers() {
     USB_DEVICE_HID_RESULT result;
     for (i = 0; i < CONFIG_HID_REQUEST_COUNT; i++) {
         if (_config_hid_interrupt_receive_handles[i] != USB_DEVICE_HID_TRANSFER_HANDLE_INVALID) continue; //leave valid handles, request already present
-        result = USB_DEVICE_HID_ReportReceive(USB_DEVICE_HID_INDEX_1, _config_hid_interrupt_receive_handles + i, _config_hid_interrupt_receive_buffers + i, 256);
+        result = USB_DEVICE_HID_ReportReceive(USB_DEVICE_HID_INDEX_1, _config_hid_interrupt_receive_handles + i, _config_hid_interrupt_receive_buffers + i, CONFIG_HID_BUFFER_SIZE);
         if (result != USB_DEVICE_HID_RESULT_OK) break; //stop requesting once an error is encountered
     }
 }
@@ -173,7 +183,7 @@ void CONFIG_HID_SendUpdate() {
 void CONFIG_HID_Init() {
     uint8_t i;
     for (i = 0; i < CONFIG_HID_REQUEST_COUNT; i++) { //initialize transfer arrays
-        memset(_config_hid_interrupt_receive_buffers[i], 0, 256);
+        memset(_config_hid_interrupt_receive_buffers[i], 0, CONFIG_HID_BUFFER_SIZE);
         _config_hid_interrupt_receive_handles[i] = USB_DEVICE_HID_TRANSFER_HANDLE_INVALID;
     }
     
@@ -186,11 +196,12 @@ void CONFIG_HID_Tasks() {
     if (!_config_hid_initialized) return;
     
     if (_config_hid_requested_writes > 0) {
-        if (_config_hid_requested_writes & 0x01) APP_CONFIG_Write(APP_CONFIG_FAN_CURVE);
-        if (_config_hid_requested_writes & 0x02) APP_CONFIG_Write(APP_CONFIG_PUMP_CURVE);
-        if (_config_hid_requested_writes & 0x0c) APP_CONFIG_Write(APP_CONFIG_WATCHDOG);
-        if (_config_hid_requested_writes & 0x30) APP_CONFIG_Write(APP_CONFIG_COOLING_ACCEPTABLE);
-        if (_config_hid_requested_writes & 0xc0) APP_CONFIG_Write(APP_CONFIG_COOLING_NOMINAL);
+        if (_config_hid_requested_writes & 0x001) APP_CONFIG_Write(APP_CONFIG_FAN_CURVE);
+        if (_config_hid_requested_writes & 0x002) APP_CONFIG_Write(APP_CONFIG_PUMP_CURVE);
+        if (_config_hid_requested_writes & 0x00c) APP_CONFIG_Write(APP_CONFIG_WATCHDOG);
+        if (_config_hid_requested_writes & 0x030) APP_CONFIG_Write(APP_CONFIG_COOLING_ACCEPTABLE);
+        if (_config_hid_requested_writes & 0x0c0) APP_CONFIG_Write(APP_CONFIG_COOLING_NOMINAL);
+        if (_config_hid_requested_writes & 0x100) APP_CONFIG_Write(APP_CONFIG_ARGB_EFFECT);
         
         _config_hid_requested_writes = 0;
     }

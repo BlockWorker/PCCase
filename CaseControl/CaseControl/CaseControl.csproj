@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainFormA.cs">
+    <Compile Update="TestFormA.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

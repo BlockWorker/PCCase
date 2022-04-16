@@ -2,7 +2,7 @@ using HidSharp;
 using System.Runtime.InteropServices;
 
 namespace CaseControl {
-    public partial class MainFormA : Form {
+    public partial class TestFormA : Form {
 
         private DeviceList devList;
         private HidDevice? connectedDevice = null;
@@ -16,8 +16,9 @@ namespace CaseControl {
         private float accMaxFlow = 0;
         private float nomMinFlow = 0;
         private float nomMaxFlow = 0;
+        private int effect = 0;
 
-        public MainFormA() {
+        public TestFormA() {
             InitializeComponent();
         }
 
@@ -52,7 +53,7 @@ namespace CaseControl {
         private void button1_Click(object sender, EventArgs e) {
             if (connectedDevice == null || hidStream == null) return;
 
-            byte[] report = new byte[205];
+            byte[] report = new byte[237];
             report[0] = 0;
 
             for (int i = 0; i < 10; i++) {
@@ -72,14 +73,16 @@ namespace CaseControl {
             accMaxFlow = BitConverter.ToSingle(report, 157);
             nomMinFlow = BitConverter.ToSingle(report, 173);
             nomMaxFlow = BitConverter.ToSingle(report, 189);
+            effect = BitConverter.ToInt32(report, 205);
 
-            label1.Text = $"Fan: {fanPoints}, Pump: {pumpPoints}, WDInt: {wdInt}, WDRun: {wdRun}, Acc Flow: {accMinFlow} - {accMaxFlow}, Nom Flow: {nomMinFlow} - {nomMaxFlow}";
+
+            label1.Text = $"Fan: {fanPoints}, Pump: {pumpPoints}, WDInt: {wdInt}, WDRun: {wdRun}, Acc Flow: {accMinFlow} - {accMaxFlow}, Nom Flow: {nomMinFlow} - {nomMaxFlow}, Effect {effect}";
         }
 
         private void button2_Click(object sender, EventArgs e) {
             if (connectedDevice == null || hidStream == null) return;
 
-            byte[] report = new byte[205];
+            byte[] report = new byte[237];
             report[0] = 0;
 
             report[1] = 0x08;
@@ -87,6 +90,33 @@ namespace CaseControl {
             int runtime = (int)numericUpDown1.Value;
 
             BitConverter.TryWriteBytes(new Span<byte>(report, 137, 4), runtime);
+
+            hidStream.Write(report);
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            if (connectedDevice == null || hidStream == null) return;
+
+            byte[] report = new byte[237];
+            report[0] = 0;
+
+            report[1] = 0x00;
+            report[2] = 0x01;
+
+            int index = (int)numericUpDown2.Value;
+            var boxes = new TextBox[] { textBox1, textBox2, textBox3, textBox4 };
+            var values = new uint[4];
+            for (int i = 0; i < 4; i++) {
+                var text = boxes[i].Text;
+                if (text.StartsWith("0x")) {
+                    values[i] = uint.Parse(text[2..], System.Globalization.NumberStyles.AllowHexSpecifier);
+                } else {
+                    values[i] = uint.Parse(text);
+                }
+            }
+
+            BitConverter.TryWriteBytes(new Span<byte>(report, 205, 4), index);
+            for (int i = 0; i < 4; i++) BitConverter.TryWriteBytes(new Span<byte>(report, 209 + (4 * i), 4), values[i]);
 
             hidStream.Write(report);
         }

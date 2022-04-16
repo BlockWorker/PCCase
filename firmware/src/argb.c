@@ -15,6 +15,7 @@
 #include "peripheral/ocmp/plib_ocmp6.h"
 #include "system/debug/sys_debug.h"
 #include "argb_hid.h"
+#include "peripheral/tmr/plib_tmr3.h"
 
 //RGB color values (IIRRGGBB), intensity is binary
 static uint32_t _argb_color_array[ARGB_MAX_LENGTH * 3 + 1] = { 0 };
@@ -60,7 +61,7 @@ void _argb_swap_buffers() {
         argb_colors[i] = _argb_colors_alt[i];
         _argb_colors_alt[i] = temp_addr;
     }
-    memcpy(argb_colors[0], _argb_colors_alt[0], ARGB_MAX_LENGTH * 3 + 1); //overwrite new primary buffer with swapped (current) frame
+    memcpy(argb_colors[0], _argb_colors_alt[0], (ARGB_MAX_LENGTH * 3 + 1) * sizeof(uint32_t)); //overwrite new primary buffer with swapped (current) frame
     __builtin_enable_interrupts();
     
     
@@ -81,9 +82,9 @@ void _argb_swap_buffers() {
     //apply front panel color
     uint8_t* fp_color_bytes = (uint8_t*)_argb_colors_alt[3];
     if (fp_color_bytes[3]) {
-        OCMP4_CompareSecondaryValueSet((uint16_t)fp_color_bytes[0] * 8);
+        OCMP4_CompareSecondaryValueSet((uint16_t)fp_color_bytes[2] * 8);
         OCMP5_CompareSecondaryValueSet((uint16_t)fp_color_bytes[1] * 8);
-        OCMP6_CompareSecondaryValueSet((uint16_t)fp_color_bytes[2] * 8);
+        OCMP6_CompareSecondaryValueSet((uint16_t)fp_color_bytes[0] * 8);
     } else {
         OCMP4_CompareSecondaryValueSet(0);
         OCMP5_CompareSecondaryValueSet(0);
@@ -152,6 +153,11 @@ void ARGB_Init() {
     OCMP1_Enable();
     OCMP2_Enable();
     OCMP3_Enable();
+    
+    TMR3_Start();
+    OCMP4_Enable();
+    OCMP5_Enable();
+    OCMP6_Enable();
     
     argb_running = false;
     ALED_OE_Clear();

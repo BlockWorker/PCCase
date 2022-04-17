@@ -64,8 +64,9 @@ namespace CaseControl {
         [STAThread]
         static void Main() {
             ApplicationConfiguration.Initialize();
-            DeviceList.Local.Changed += (_, _) => UpdateDevices();
-            Application.Run(new MainForm());
+            //DeviceList.Local.Changed += (_, _) => UpdateDevices();
+            //UpdateDevices();
+            Application.Run(new TestFormA());
         }
     }
 }

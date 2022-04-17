@@ -22,6 +22,25 @@ namespace CaseControl {
             InitializeComponent();
         }
 
+        private void ReadInputRep() {
+            while (hidStream != null) {
+                try {
+                    byte[] report = hidStream.Read();
+                    float fanRPM = BitConverter.ToSingle(report, 0);
+                    float pumpRPM = BitConverter.ToSingle(report, 4);
+                    float flowLPH = BitConverter.ToSingle(report, 8);
+                    float tempC = BitConverter.ToSingle(report, 12);
+
+                    Invoke(() => {
+                        label4.Text = $"Current Values: Fan {fanRPM} RPM, Pump {pumpRPM} RPM, Flow {flowLPH} l/h, Temp {tempC} °C";
+                    });
+                } catch {
+
+                }
+                Thread.Sleep(200);
+            }
+        }
+
         private void UpdateDeviceList() {
             deviceBox.Items.Clear();
             var devices = devList.GetHidDevices(0x1209, 0x5001).Where(d => d.GetReportDescriptor().DeviceItems.FirstOrDefault()?.Usages.ContainsValue(0xff200001u) ?? false);
@@ -48,6 +67,7 @@ namespace CaseControl {
                 MessageBox.Show("Failed to connect.");
                 return;
             }
+            Task.Run(() => ReadInputRep());
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -117,6 +137,26 @@ namespace CaseControl {
 
             BitConverter.TryWriteBytes(new Span<byte>(report, 205, 4), index);
             for (int i = 0; i < 4; i++) BitConverter.TryWriteBytes(new Span<byte>(report, 209 + (4 * i), 4), values[i]);
+
+            hidStream.Write(report);
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            if (connectedDevice == null || hidStream == null) return;
+
+            byte[] report = new byte[237];
+            report[0] = 0;
+
+            report[1] = 0x02;
+            report[2] = 0x00;
+
+            Array.Fill(report, (byte)0, 3, 234);
+
+            int value = (int)numericUpDown3.Value;
+            if (value > 0) {
+                report[69] = 0x01;
+                report[121] = (byte)value;
+            }
 
             hidStream.Write(report);
         }

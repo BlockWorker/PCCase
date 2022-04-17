@@ -38,8 +38,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // refreshButton
@@ -196,11 +200,45 @@
             this.textBox4.TabIndex = 15;
             this.textBox4.Text = "0";
             // 
-            // MainFormA
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 366);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(118, 15);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Current values: None";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(631, 142);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(120, 23);
+            this.numericUpDown3.TabIndex = 17;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(541, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "Set Pump";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // TestFormA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -216,11 +254,12 @@
             this.Controls.Add(this.deviceBox);
             this.Controls.Add(this.connectButton);
             this.Controls.Add(this.refreshButton);
-            this.Name = "MainFormA";
+            this.Name = "TestFormA";
             this.Text = "Case Controller Alt";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +282,8 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
+        private Label label4;
+        private NumericUpDown numericUpDown3;
+        private Button button4;
     }
 }

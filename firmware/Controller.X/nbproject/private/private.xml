@@ -3,20 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/config_hid.h</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/app.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/argb_hid.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/cooling_control.h</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/config_hid.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/app.h</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/config/default/usb_device_init_data.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/argb_hid.h</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/cooling_control.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/emergency.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/argb.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/argb.h</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/app_config.c</file>
-            <file>file:/E:/Users/Alex/Documents/eagle/projects/PCCase/firmware/src/app_config.h</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app.h</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app_config.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/cooling_control.h</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app_power.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config_hid.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/cooling_control.c</file>
         </group>
     </open-files>
 </project-private>

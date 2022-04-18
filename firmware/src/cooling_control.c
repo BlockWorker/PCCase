@@ -49,6 +49,7 @@ static bool _coolctl_wd_pump_on = false;
 static int16_t _coolctl_startup_count = -1;
 
 static uint8_t _coolctl_unacceptable_counter = 0;
+static uint8_t _coolctl_warn_counter = 0;
 
 
 void _coolctl_icap_callback(uintptr_t context) {    
@@ -103,7 +104,7 @@ void _coolctl_set_pwm(uint8_t fan_speed, uint8_t pump_speed) {
     uint32_t inverse_fan = 255 - fan_speed;
     uint32_t inverse_pump = 255 - pump_speed;
     OCMP7_CompareSecondaryValueSet((uint16_t)((inverse_fan * 3999) / 255));
-    OCMP7_CompareSecondaryValueSet((uint16_t)((inverse_pump * 3999) / 255));
+    OCMP8_CompareSecondaryValueSet((uint16_t)((inverse_pump * 3999) / 255));
 }
 
 uint8_t _coolctl_lerp_curve(float temp, uint32_t point_count, float* point_temps, uint8_t* point_values) {
@@ -242,8 +243,14 @@ void COOLCTL_Tasks() {
                 }
                 
                 //outside of nominal: produce warning (buzzer)
-                if (outside_nominal) EMERGENCY_WarningEnable(EMERGENCY_SOURCE_COOLCTL);
-                else EMERGENCY_WarningDisable(EMERGENCY_SOURCE_COOLCTL);
+                if (outside_nominal) {
+                    if (++_coolctl_warn_counter >= COOLCTL_WARN_MAX_COUNT) {
+                        EMERGENCY_WarningEnable(EMERGENCY_SOURCE_COOLCTL);
+                    }
+                } else {
+                    _coolctl_warn_counter = 0;
+                    EMERGENCY_WarningDisable(EMERGENCY_SOURCE_COOLCTL);
+                }
                 
                 if (outside_acceptable) { //outside of acceptable: tolerate for a few cycles, then force shutdown
                     if (++_coolctl_unacceptable_counter >= COOLCTL_UNACCEPTABLE_MAX_COUNT) {

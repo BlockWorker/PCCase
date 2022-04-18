@@ -81,7 +81,7 @@ void APP_CONFIG_Init() {
         }
         config_watchdog_interval_seconds = 28800;
         config_watchdog_runtime_seconds = 120;
-        config_cooling_acceptable_min[0] = 40.0f;
+        config_cooling_acceptable_min[0] = 10.0f;
         config_cooling_acceptable_min[1] = 100.0f;
         config_cooling_acceptable_min[2] = 100.0f;
         config_cooling_acceptable_min[3] = 4.0f;
@@ -89,7 +89,7 @@ void APP_CONFIG_Init() {
         config_cooling_acceptable_max[1] = 5000.0f;
         config_cooling_acceptable_max[2] = 4000.0f;
         config_cooling_acceptable_max[3] = 60.0f;
-        config_cooling_nominal_min[0] = 60.0f;
+        config_cooling_nominal_min[0] = 20.0f;
         config_cooling_nominal_min[1] = 300.0f;
         config_cooling_nominal_min[2] = 300.0f;
         config_cooling_nominal_min[3] = 10.0f;

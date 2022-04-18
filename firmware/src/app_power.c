@@ -54,7 +54,12 @@ void APP_POWER_Tasks() {
     } else if (app_power_main_timeout < iter_start_time) {
         app_power_main = PWR_DETECT_Get();
         app_power_main_timeout = 0;
-        if (!app_power_main) EMERGENCY_Reset();
+        if (!app_power_main) {
+            EMERGENCY_Reset();
+            USB_DEVICE_Detach(appData.usbHandle);
+        } else {
+            USB_DEVICE_Attach(appData.usbHandle);
+        }
         SYS_DEBUG_PRINT(SYS_ERROR_INFO, "Power: Main %d\n", app_power_main);
     }
     

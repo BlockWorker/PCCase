@@ -1,25 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {}
+    "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {}
   },
   "projects": {
-    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {
+    "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
+        "projectUniqueName": "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
         "projectName": "CaseControl",
-        "projectPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
+        "projectPath": "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\obj\\",
+        "outputPath": "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +25,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/IllusionMods/Nuget/_packaging/IllusionMods/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
@@ -45,12 +42,6 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "dependencies": {
-            "HidSharp": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -61,15 +52,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

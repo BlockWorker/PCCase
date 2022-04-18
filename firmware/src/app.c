@@ -97,7 +97,7 @@ void _config_hid_USBDeviceHIDEventHandler(USB_DEVICE_HID_INDEX index, USB_DEVICE
 void _app_USBDeviceEventCallBack(USB_DEVICE_EVENT event, void * eventData, uintptr_t context) {
     switch (event) {
         case USB_DEVICE_EVENT_POWER_DETECTED:
-            USB_DEVICE_Attach(appData.usbHandle);
+            if (APP_POWER_Main()) USB_DEVICE_Attach(appData.usbHandle);
             break;
         case USB_DEVICE_EVENT_POWER_REMOVED:
             USB_DEVICE_Detach(appData.usbHandle);
@@ -175,7 +175,7 @@ void APP_Tasks() {
             
             if (appData.usbHandle != USB_DEVICE_HANDLE_INVALID) {
                 USB_DEVICE_EventHandlerSet(appData.usbHandle, _app_USBDeviceEventCallBack, NULL);
-                USB_DEVICE_Attach(appData.usbHandle);
+                if (APP_POWER_Main()) USB_DEVICE_Attach(appData.usbHandle);
                 appData.state = APP_STATE_SERVICE_TASKS;
             }
             

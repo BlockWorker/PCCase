@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2+sJljYKVCM9cYBMDEBL4Is9U8nNBYwKLGkGStuuEvSMRrLauokbAI3f8WQE+JzgmwZw0+IX12K1F4AaoojvUQ==",
+  "dgSpecHash": "l4KId4828o/8Tl1wvGt89jmVNeEK/0x+14HwuQSbNg1XXgbAW0L3+c8/m0Em/BiSiu9K15kXINSC4hfCoIyXbg==",
   "success": true,
-  "projectFilePath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Alex\\.nuget\\packages\\hidsharp\\2.1.0\\hidsharp.2.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Alex\\Documents\\EAGLE\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

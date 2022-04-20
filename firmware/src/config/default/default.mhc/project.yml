@@ -27,13 +27,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: D230A6B646D2E78CEAA6AA924E04FCA0
-- generatedChecksum: 3A5171B48BA8A3D4D657E3F82CA6F832
+- generatedChecksum: 26CA604BB1776258F5BC49142ADFD84D
   logicalPath: config/default
   name: initialization.c
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 3A5171B48BA8A3D4D657E3F82CA6F832
+  userChecksum: 26CA604BB1776258F5BC49142ADFD84D
 - generatedChecksum: 24BF8444436297B479061BC31F831F96
   logicalPath: config/default
   name: interrupts.c
@@ -89,7 +89,7 @@ files:
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 1DD7432876E1C809E7B2856F17209013
+  userChecksum: 5012503878B5BA1012EBF3780A816FBA
 - generatedChecksum: F2FA9D0943C28ABFCD237003B3FBC9E8
   logicalPath: config/default/peripheral/icap
   name: plib_icap1.c
@@ -230,6 +230,13 @@ files:
   security: NON_SECURE
   type: SOURCE
   userChecksum: F335D40394341E9D0089E1898C7B76CB
+- generatedChecksum: 8C6E1D4EEB7D704E9F4035EA94081DF2
+  logicalPath: config/default/peripheral/wdt
+  name: plib_wdt.c
+  physicalPath: peripheral/wdt
+  security: NON_SECURE
+  type: SOURCE
+  userChecksum: 8C6E1D4EEB7D704E9F4035EA94081DF2
 - generatedChecksum: 20C22A19D5DC74DEBFC4CCCA83B6F603
   logicalPath: config/default/system/console
   name: sys_console.c
@@ -342,13 +349,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: 0010388D3105B3602750703A8E10D4AD
-- generatedChecksum: 422E487B132007A44DA0552B0265394E
+- generatedChecksum: C832BE2F121DEE44A7F4ABAC8AEED3DA
   logicalPath: config/default
   name: definitions.h
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 422E487B132007A44DA0552B0265394E
+  userChecksum: C832BE2F121DEE44A7F4ABAC8AEED3DA
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/default
   name: device.h
@@ -664,6 +671,13 @@ files:
   security: NON_SECURE
   type: HEADER
   userChecksum: A43EF80856E989F22BE33D4591A11A55
+- generatedChecksum: 6BF8BA236EAC566FD8AED334FE777FF8
+  logicalPath: config/default/peripheral/wdt
+  name: plib_wdt.h
+  physicalPath: peripheral/wdt
+  security: NON_SECURE
+  type: HEADER
+  userChecksum: 6BF8BA236EAC566FD8AED334FE777FF8
 - generatedChecksum: 91CB36F6EC29DAA7C584282A875E5CBA
   logicalPath: config/default/system/console
   name: sys_console.h

@@ -49,6 +49,7 @@
 #include "app_config.h"
 #include "config_hid.h"
 #include "argb_effect.h"
+#include "peripheral/wdt/plib_wdt.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -156,6 +157,8 @@ void APP_Initialize() {
 
 void APP_Tasks() {
     iter_start_time = SYS_TIME_Counter64Get();
+    
+    WDT_Clear();
     
     /* Check the application's current state. */
     switch (appData.state) {

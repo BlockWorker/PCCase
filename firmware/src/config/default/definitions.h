@@ -78,6 +78,7 @@
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
+#include "peripheral/wdt/plib_wdt.h"
 #include "peripheral/dmac/plib_dmac.h"
 #include "driver/usb/usbhs/drv_usbhs.h"
 #include "peripheral/power/plib_power.h"

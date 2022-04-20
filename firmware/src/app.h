@@ -39,6 +39,10 @@
 #define APP_POWER_DEBUG
 #undef APP_POWER_DEBUG
 
+//UART debug switch: allow this to be defined in order to enable UART debugging (replacing front panel LED red channel)
+#define APP_UART_DEBUG
+#undef APP_UART_DEBUG
+
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

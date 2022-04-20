@@ -42,6 +42,7 @@
 //DOM-IGNORE-END
 
 #include "plib_gpio.h"
+#include "app.h"
 
 
 /* Array to store callback objects of each configured interrupt */
@@ -116,7 +117,11 @@ void GPIO_Initialize ( void )
     RPC2R = 13;
     RPC3R = 12;
     RPG7R = 12;
+#ifdef APP_UART_DEBUG
+    RPA15R = 1;
+#else
     RPA15R = 11;
+#endif
     RPD9R = 11;
     RPD10R = 12;
     RPD0R = 12;

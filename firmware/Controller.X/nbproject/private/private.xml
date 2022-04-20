@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/peripheral/gpio/plib_gpio.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/interrupts.c</file>
             <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app.h</file>
-            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app_config.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/usb/src/usb_device_hid.c</file>
             <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/cooling_control.h</file>
             <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app_power.c</file>
             <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app.c</file>
-            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config_hid.c</file>
             <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/cooling_control.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/exceptions.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/peripheral/evic/plib_evic.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/app_config.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/driver/usb/usbhs/src/drv_usbhs_device.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/usb/src/usb_device.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config_hid.c</file>
+            <file>file:/C:/Users/Alex/Documents/EAGLE/projects/PCCase/firmware/src/config/default/peripheral/wdt/plib_wdt.c</file>
         </group>
     </open-files>
 </project-private>

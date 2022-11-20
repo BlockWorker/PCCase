@@ -181,7 +181,7 @@ void COOLCTL_Init() {
     }
     
     if (_coolctl_wd_running) {
-        _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time * (uint64_t)config_watchdog_interval_seconds;
+        _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time;// * (uint64_t)config_watchdog_interval_seconds;
     } else {
         _coolctl_next_watchdog_run = 0;
     }
@@ -208,7 +208,7 @@ void COOLCTL_Tasks() {
             _coolctl_wd_pump_on = false;
             _coolctl_curr_watchdog_end = 0;
             if (APP_POWER_Watchdog()) { //go to watchdog operation if needed
-                _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time * (uint64_t)config_watchdog_interval_seconds;
+                _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time;// * (uint64_t)config_watchdog_interval_seconds;
                 _coolctl_wd_running = true;
                 OCMP7_CompareSecondaryValueSet(0);
                 OCMP8_CompareSecondaryValueSet(0);
@@ -336,7 +336,7 @@ void COOLCTL_Tasks() {
     } else if (APP_POWER_Watchdog()) { //power up watchdog mode if needed
         PUMP_WD_RUN_Clear();
         _coolctl_wd_pump_on = false;
-        _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time * (uint64_t)config_watchdog_interval_seconds;
+        _coolctl_next_watchdog_run = iter_start_time + _coolctl_one_second_time;// * (uint64_t)config_watchdog_interval_seconds; //made it turn on immediately
         _coolctl_curr_watchdog_end = 0;
         _coolctl_wd_running = true;
         OCMP7_CompareSecondaryValueSet(0);

@@ -86,7 +86,7 @@ void APP_CONFIG_Init() {
         config_cooling_acceptable_min[2] = 100.0f;
         config_cooling_acceptable_min[3] = 4.0f;
         config_cooling_acceptable_max[0] = 1000.0f;
-        config_cooling_acceptable_max[1] = 5000.0f;
+        config_cooling_acceptable_max[1] = 6000.0f;
         config_cooling_acceptable_max[2] = 4000.0f;
         config_cooling_acceptable_max[3] = 60.0f;
         config_cooling_nominal_min[0] = 20.0f;
@@ -94,7 +94,7 @@ void APP_CONFIG_Init() {
         config_cooling_nominal_min[2] = 300.0f;
         config_cooling_nominal_min[3] = 10.0f;
         config_cooling_nominal_max[0] = 800.0f;
-        config_cooling_nominal_max[1] = 4000.0f;
+        config_cooling_nominal_max[1] = 5000.0f;
         config_cooling_nominal_max[2] = 3000.0f;
         config_cooling_nominal_max[3] = 50.0f;
         config_argb_effect_index = 0;

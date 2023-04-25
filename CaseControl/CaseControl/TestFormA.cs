@@ -26,10 +26,10 @@ namespace CaseControl {
             while (hidStream != null) {
                 try {
                     byte[] report = hidStream.Read();
-                    float fanRPM = BitConverter.ToSingle(report, 0);
-                    float pumpRPM = BitConverter.ToSingle(report, 4);
-                    float flowLPH = BitConverter.ToSingle(report, 8);
-                    float tempC = BitConverter.ToSingle(report, 12);
+                    float fanRPM = BitConverter.ToSingle(report, 1);
+                    float pumpRPM = BitConverter.ToSingle(report, 5);
+                    float flowLPH = BitConverter.ToSingle(report, 9);
+                    float tempC = BitConverter.ToSingle(report, 13);
 
                     Invoke(() => {
                         label4.Text = $"Current Values: Fan {fanRPM} RPM, Pump {pumpRPM} RPM, Flow {flowLPH} l/h, Temp {tempC} °C";
@@ -156,6 +156,26 @@ namespace CaseControl {
             if (value > 0) {
                 report[69] = 0x01;
                 report[121] = (byte)value;
+            }
+
+            hidStream.Write(report);
+        }
+
+        private void button5_Click(object sender, EventArgs e) {
+            if (connectedDevice == null || hidStream == null) return;
+
+            byte[] report = new byte[237];
+            report[0] = 0;
+
+            report[1] = 0x01;
+            report[2] = 0x00;
+
+            Array.Fill(report, (byte)0, 3, 234);
+
+            int value = (int)numericUpDown4.Value;
+            if (value > 0) {
+                report[5] = 0x01;
+                report[57] = (byte)value;
             }
 
             hidStream.Write(report);

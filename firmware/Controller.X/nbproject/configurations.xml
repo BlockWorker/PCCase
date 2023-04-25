@@ -340,6 +340,7 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/default/harmony-manifest-success.yml</itemPath>
+      <itemPath>Controller.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

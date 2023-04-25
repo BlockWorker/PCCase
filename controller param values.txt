@@ -1,2 +1,2 @@
 effect 4, params 1 - 5 - 40 - 3
-fans 80
+fans 80, pump 100

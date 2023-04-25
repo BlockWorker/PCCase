@@ -82,13 +82,13 @@ void _argb_swap_buffers() {
     //apply front panel color
     uint8_t* fp_color_bytes = (uint8_t*)_argb_colors_alt[3];
     if (fp_color_bytes[3]) {
-        OCMP4_CompareSecondaryValueSet((uint16_t)fp_color_bytes[2] * 8);
-        OCMP5_CompareSecondaryValueSet((uint16_t)fp_color_bytes[1] * 8);
-        OCMP6_CompareSecondaryValueSet((uint16_t)fp_color_bytes[0] * 8);
+        OCMP4_CompareSecondaryValueSet(2047 - (uint16_t)fp_color_bytes[2] * 8);
+        OCMP5_CompareSecondaryValueSet(2047 - (uint16_t)fp_color_bytes[1] * 8);
+        OCMP6_CompareSecondaryValueSet(2047 - (uint16_t)fp_color_bytes[0] * 8);
     } else {
-        OCMP4_CompareSecondaryValueSet(0);
-        OCMP5_CompareSecondaryValueSet(0);
-        OCMP6_CompareSecondaryValueSet(0);
+        OCMP4_CompareSecondaryValueSet(2047);
+        OCMP5_CompareSecondaryValueSet(2047);
+        OCMP6_CompareSecondaryValueSet(2047);
     }
 }
 
@@ -170,9 +170,9 @@ void ARGB_Tasks() {
             DMAC_ChannelDisable(DMAC_CHANNEL_1);
             DMAC_ChannelDisable(DMAC_CHANNEL_2);
             
-            OC1RS = 0;
-            OC2RS = 0;
-            OC3RS = 0;
+            OC1RS = 2047;
+            OC2RS = 2047;
+            OC3RS = 2047;
             
             argb_running = false;
             ALED_OE_Clear();

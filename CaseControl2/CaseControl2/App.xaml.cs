@@ -1,7 +1,21 @@
-using HidSharp;
+﻿using HidSharp;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Globalization;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 
-namespace CaseControl {
-    internal static class Program {
+namespace CaseControl2 {
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application {
+        private bool running = true;
 
         public static object configHidLock = new();
         public static object ledHidLock = new();
@@ -11,7 +25,13 @@ namespace CaseControl {
         public static HidStream? configStream = null;
         public static HidStream? ledStream = null;
 
+        public static float fanRPM = float.NaN;
+        public static float pumpRPM = float.NaN;
+        public static float flowLPH = float.NaN;
+        public static float tempC = float.NaN;
+
         public static event EventHandler? DevicesChanged;
+        public static event EventHandler? MeasurementNewValues;
 
         public static void UpdateDevices() {
             var changed = false;
@@ -37,7 +57,7 @@ namespace CaseControl {
                             changed = true;
                         }
                     }
-                
+
                     if (ledDevice != null && ledDeviceOptions.Count == 0) {
                         ledStream?.Close();
                         ledStream = null;
@@ -58,15 +78,41 @@ namespace CaseControl {
             }
         }
 
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main() {
-            ApplicationConfiguration.Initialize();
+        private void ReadInputRep() {
+            while (running) {
+                lock (configHidLock) {
+                    if (configStream != null) {
+                        try {
+                            byte[] report = configStream.Read();
+                            fanRPM = BitConverter.ToSingle(report, 1);
+                            pumpRPM = BitConverter.ToSingle(report, 5);
+                            flowLPH = BitConverter.ToSingle(report, 9);
+                            tempC = BitConverter.ToSingle(report, 13);
+                        } catch {
+                            fanRPM = pumpRPM = flowLPH = tempC = float.NaN;
+                        }
+                    } else {
+                        fanRPM = pumpRPM = flowLPH = tempC = float.NaN;
+                    }
+                }
+                MeasurementNewValues?.Invoke(null, EventArgs.Empty);
+                Thread.Sleep(200);
+            }
+        }
+
+        protected override void OnStartup(StartupEventArgs e) {
+            base.OnStartup(e);
+
             DeviceList.Local.Changed += (_, _) => UpdateDevices();
             UpdateDevices();
-            Application.Run(new MainForm());
+
+            running = true;
+            Task.Run(ReadInputRep);
+        }
+
+        protected override void OnExit(ExitEventArgs e) {
+            base.OnExit(e);
+            running = false;
         }
     }
 }

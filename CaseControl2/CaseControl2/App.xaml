@@ -1,0 +1,12 @@
+﻿<Application x:Class="CaseControl2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CaseControl2"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Color x:Key="BackColorMain">#FF282828</Color>
+        <Color x:Key="BorderColorMain">#FFA0A0A0</Color>
+        <Color x:Key="TextColorActive">#FF8080FE</Color>
+        <Color x:Key="TextColorInactive">White</Color>
+    </Application.Resources>
+</Application>

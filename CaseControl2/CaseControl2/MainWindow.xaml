@@ -1,0 +1,242 @@
+﻿<Window x:Class="CaseControl2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CaseControl2"
+        mc:Ignorable="d"
+        Title="CaseControl" Height="520" Width="660" Background="{x:Null}" MinWidth="590" MinHeight="450" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="#FF282828"/>
+        </Grid.Background>
+        <Grid Margin="10" VerticalAlignment="Top" Height="85">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Column="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Column="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Column="3">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="1" Grid.Column="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="1" Grid.Column="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="1" Grid.Column="3">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="2" Grid.RowSpan="2" Grid.ColumnSpan="4">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Label Content="Fan Speed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorActive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Pump Speed" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Grid.Column="1">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorActive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Flow Rate" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Grid.Column="2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorActive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Coolant Temperature" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Grid.Column="3">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorActive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="fanSpeedLabel" Content="N/A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Grid.Row="1">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="pumpSpeedLabel" Content="N/A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Grid.Row="1" Grid.Column="1">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="flowRateLabel" Content="N/A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Grid.Row="1" Grid.Column="2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="coolantTempLabel" Content="N/A" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Grid.Row="1" Grid.Column="3">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+        </Grid>
+        <Grid Margin="10,100,10,35">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="1">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Row="3">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="1" Grid.Column="1" Grid.RowSpan="4">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border BorderThickness="2" Grid.RowSpan="4" Grid.ColumnSpan="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Label x:Name="configTabLabel" Content="Config" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" MouseLeftButtonUp="OnTabMouseUp" Tag="{Binding ElementName=configTabGrid, Mode=OneWay}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorActive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="fanTabLabel" Content="Fan" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Grid.Row="1" MouseLeftButtonUp="OnTabMouseUp" Tag="{Binding ElementName=fanTabGrid, Mode=OneWay}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="pumpTabLabel" Content="Pump" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Grid.Row="2" MouseLeftButtonUp="OnTabMouseUp" Tag="{Binding ElementName=pumpTabGrid, Mode=OneWay}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="ledTabLabel" Content="LEDs" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" Grid.Row="3" MouseLeftButtonUp="OnTabMouseUp" Tag="{Binding ElementName=ledTabGrid, Mode=OneWay}">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Grid x:Name="configTabGrid" Grid.Column="1" Grid.RowSpan="4">
+
+            </Grid>
+            <Grid x:Name="fanTabGrid" Grid.Column="1" Grid.RowSpan="4" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <local:CurveEditor x:Name="fanCurveEditor" Margin="10" />
+                <Button x:Name="fanApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource BackColorMain}"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid x:Name="pumpTabGrid" Grid.Column="1" Grid.RowSpan="4" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <local:CurveEditor x:Name="pumpCurveEditor" Margin="10" />
+                <Button x:Name="pumpApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource BackColorMain}"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid x:Name="ledTabGrid" Grid.Column="1" Grid.RowSpan="4" Visibility="Hidden">
+
+            </Grid>
+        </Grid>
+        <Grid Margin="10" VerticalAlignment="Bottom" Height="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="2" Grid.ColumnSpan="4">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource BorderColorMain}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Label Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" Padding="2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label Content="Firmware v?.?" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" Padding="2" Grid.Column="1">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="controlStatusLabel" Content="Control: Disconnected" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" Padding="2" Grid.Column="2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="Red"/>
+                </Label.Foreground>
+            </Label>
+            <Label x:Name="rgbStatusLabel" Content="RGB: Disconnected" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="11" Padding="2" Grid.Column="3">
+                <Label.Foreground>
+                    <SolidColorBrush Color="Red"/>
+                </Label.Foreground>
+            </Label>
+        </Grid>
+    </Grid>
+</Window>

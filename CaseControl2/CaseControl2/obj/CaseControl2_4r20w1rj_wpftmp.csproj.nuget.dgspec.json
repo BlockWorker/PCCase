@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {}
+    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl2\\CaseControl2\\CaseControl2.csproj": {}
   },
   "projects": {
-    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj": {
+    "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl2\\CaseControl2\\CaseControl2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
+        "projectUniqueName": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl2\\CaseControl2\\CaseControl2.csproj",
         "projectName": "CaseControl",
-        "projectPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\CaseControl.csproj",
+        "projectPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl2\\CaseControl2\\CaseControl2.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl\\CaseControl\\obj\\",
+        "outputPath": "E:\\Users\\Alex\\Documents\\eagle\\projects\\PCCase\\CaseControl2\\CaseControl2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,7 +64,7 @@
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "Microsoft.WindowsDesktop.App.WPF": {
               "privateAssets": "none"
             }
           },

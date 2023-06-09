@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="CaseControl2.CurveEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CaseControl2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" MouseLeftButtonDown="MouseLeftDown" MouseLeftButtonUp="MouseLeftUp" MouseRightButtonUp="MouseRightUp" MouseMove="OnMouseMove" MouseLeave="OnMouseLeave">
+    <UserControl.Resources>
+        <Color x:Key="BackColor">#FF101010</Color>
+        <Color x:Key="BorderColor">#FFA0A0A0</Color>
+        <Color x:Key="RuleColor">#FF707070</Color>
+        <Color x:Key="PointColor">#FF00A0FF</Color>
+        <Color x:Key="LineColor">#E00080E0</Color>
+        <Color x:Key="ShadeColor">#100090ff</Color>
+        <Color x:Key="HintColor">#60ff9000</Color>
+    </UserControl.Resources>
+</UserControl>

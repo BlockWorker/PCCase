@@ -10,12 +10,18 @@
     <Compile Update="CurveEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="TripleRangeSlider.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CurveEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TripleRangeSlider.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

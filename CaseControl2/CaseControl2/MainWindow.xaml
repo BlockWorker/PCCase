@@ -169,7 +169,7 @@
                 </Label.Foreground>
             </Label>
             <Grid x:Name="configTabGrid" Grid.Column="1" Grid.RowSpan="4">
-
+                <local:TripleRangeSlider />
             </Grid>
             <Grid x:Name="fanTabGrid" Grid.Column="1" Grid.RowSpan="4" Visibility="Hidden">
                 <Grid.RowDefinitions>
@@ -177,7 +177,7 @@
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <local:CurveEditor x:Name="fanCurveEditor" Margin="10" />
-                <Button x:Name="fanApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10">
+                <Button x:Name="fanApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10" Click="FanApplyPress">
                     <Button.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
                     </Button.BorderBrush>
@@ -192,7 +192,7 @@
                     <RowDefinition Height="35"/>
                 </Grid.RowDefinitions>
                 <local:CurveEditor x:Name="pumpCurveEditor" Margin="10" />
-                <Button x:Name="pumpApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10">
+                <Button x:Name="pumpApplyButton" Content="Apply" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Foreground="White" Margin="10,0,10,10" Click="PumpApplyPress">
                     <Button.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource TextColorInactive}"/>
                     </Button.BorderBrush>

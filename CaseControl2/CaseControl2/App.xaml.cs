@@ -15,6 +15,14 @@ namespace CaseControl2 {
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application {
+
+        public const int REPORT_SIZE = 237;
+        public const int REPORT_FAN_OFFSET = 5;
+        public const int REPORT_PUMP_OFFSET = 69;
+        public const int REPORT_TAG_FAN = 0x001;
+        public const int REPORT_TAG_PUMP = 0x002;
+
+
         private bool running = true;
 
         public static object configHidLock = new();
@@ -29,6 +37,9 @@ namespace CaseControl2 {
         public static float pumpRPM = float.NaN;
         public static float flowLPH = float.NaN;
         public static float tempC = float.NaN;
+
+        public static List<Point> fanPoints = new();
+        public static List<Point> pumpPoints = new();
 
         public static event EventHandler? DevicesChanged;
         public static event EventHandler? MeasurementNewValues;
@@ -97,6 +108,42 @@ namespace CaseControl2 {
                 }
                 MeasurementNewValues?.Invoke(null, EventArgs.Empty);
                 Thread.Sleep(200);
+            }
+        }
+
+        public static void ReadConfig() {
+            byte[] report = new byte[REPORT_SIZE];
+            report[0] = 0;
+
+            for (int i = 0; i < 10; i++) {
+                try {
+                    lock (configHidLock) {
+                        if (configStream is null) return;
+
+                        configStream.GetFeature(report);
+                        break;
+                    }
+                } catch {
+                    Thread.Sleep(10);
+                }
+            }
+
+            fanPoints.Clear();
+            var fanPointCount = BitConverter.ToInt32(report, REPORT_FAN_OFFSET);
+            fanPoints.EnsureCapacity(fanPointCount);
+            for (int i = 0; i < fanPointCount; i++) {
+                var temp = Math.Clamp((double)BitConverter.ToSingle(report, REPORT_FAN_OFFSET + 4 + i * 4), 20d, 60d);
+                var speed = Math.Clamp(report[REPORT_FAN_OFFSET + 52 + i] / 2.55d, 0d, 100d);
+                fanPoints.Add(new Point(temp, speed));
+            }
+
+            pumpPoints.Clear();
+            var pumpPointCount = BitConverter.ToInt32(report, REPORT_PUMP_OFFSET);
+            pumpPoints.EnsureCapacity(pumpPointCount);
+            for (int i = 0; i < pumpPointCount; i++) {
+                var temp = Math.Clamp((double)BitConverter.ToSingle(report, REPORT_PUMP_OFFSET + 4 + i * 4), 20d, 60d);
+                var speed = Math.Clamp(report[REPORT_PUMP_OFFSET + 52 + i] / 2.55d, 0d, 100d);
+                pumpPoints.Add(new Point(temp, speed));
             }
         }
 

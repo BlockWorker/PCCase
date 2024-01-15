@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HidSharp;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -37,8 +38,20 @@ namespace CaseControl2
             });
         }
 
+        private void UpdateConfigFromDevice() {
+            App.ReadConfig();
+            Dispatcher.Invoke(() => {
+                fanCurveEditor.CurvePoints.Clear();
+                fanCurveEditor.CurvePoints.AddRange(App.fanPoints);
+                fanCurveEditor.InvalidateVisual();
+                pumpCurveEditor.CurvePoints.Clear();
+                pumpCurveEditor.CurvePoints.AddRange(App.pumpPoints);
+                pumpCurveEditor.InvalidateVisual();
+            });
+        }
+
         private void UpdateDevices() {
-            if (App.configStream == null) {
+            if (App.configStream is null) {
                 Dispatcher.Invoke(() => {
                     controlStatusLabel.Content = "Control: Disconnected";
                     controlStatusLabel.Foreground = Brushes.Red;
@@ -48,9 +61,11 @@ namespace CaseControl2
                     controlStatusLabel.Content = "Control: Connected";
                     controlStatusLabel.Foreground = Brushes.Lime;
                 });
+
+                UpdateConfigFromDevice();
             }
 
-            if (App.ledStream == null) {
+            if (App.ledStream is null) {
                 Dispatcher.Invoke(() => {
                     rgbStatusLabel.Content = "RGB: Disconnected";
                     rgbStatusLabel.Foreground = Brushes.Red;
@@ -76,6 +91,66 @@ namespace CaseControl2
 
             ((Label)sender).Foreground = new SolidColorBrush((Color)Application.Current.Resources["TextColorActive"]);
             ((Grid)((Label)sender).Tag).Visibility = Visibility.Visible;
+        }
+
+        private void FanApplyPress(object sender, RoutedEventArgs e) {
+            if (App.configStream is null) return;
+
+            byte[] report = new byte[App.REPORT_SIZE];
+            Array.Fill<byte>(report, 0);
+
+            BitConverter.TryWriteBytes(new Span<byte>(report, 1, 4), App.REPORT_TAG_FAN);
+
+            var pointCount = fanCurveEditor.CurvePoints.Count;
+            BitConverter.TryWriteBytes(new Span<byte>(report, App.REPORT_FAN_OFFSET, 4), pointCount);
+            for (int i = 0; i < pointCount; i++) {
+                var point = fanCurveEditor.CurvePoints[i];
+                BitConverter.TryWriteBytes(new Span<byte>(report, App.REPORT_FAN_OFFSET + 4 + i * 4, 4), (float)point.X);
+                report[App.REPORT_FAN_OFFSET + 52 + i] = (byte)(point.Y * 2.55f);
+            }
+
+            for (int i = 0; i < 10; i++) {
+                try {
+                    lock (App.configHidLock) {
+                        App.configStream.Write(report);
+                        break;
+                    }
+                } catch {
+                    Thread.Sleep(10);
+                }
+            }
+
+            UpdateConfigFromDevice();
+        }
+
+        private void PumpApplyPress(object sender, RoutedEventArgs e) {
+            if (App.configStream is null) return;
+
+            byte[] report = new byte[App.REPORT_SIZE];
+            Array.Fill<byte>(report, 0);
+
+            BitConverter.TryWriteBytes(new Span<byte>(report, 1, 4), App.REPORT_TAG_PUMP);
+
+            var pointCount = pumpCurveEditor.CurvePoints.Count;
+            BitConverter.TryWriteBytes(new Span<byte>(report, App.REPORT_PUMP_OFFSET, 4), pointCount);
+            for (int i = 0; i < pointCount; i++) {
+                var point = pumpCurveEditor.CurvePoints[i];
+                BitConverter.TryWriteBytes(new Span<byte>(report, App.REPORT_PUMP_OFFSET + 4 + i * 4, 4), (float)point.X);
+                report[App.REPORT_PUMP_OFFSET + 52 + i] = (byte)(point.Y * 2.55f);
+            }
+
+            for (int i = 0; i < 10; i++) {
+                try {
+                    lock (App.configHidLock) {
+                        App.configStream.Write(report);
+                        break;
+                    }
+                } catch {
+                    Thread.Sleep(10);
+                }
+            }
+
+            UpdateConfigFromDevice();
         }
     }
 }
